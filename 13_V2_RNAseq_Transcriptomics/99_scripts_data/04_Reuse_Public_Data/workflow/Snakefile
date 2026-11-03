@@ -1,0 +1,49 @@
+# Reproduce Himes et al. 2014 (GSE52778) from public data: download -> DESeq2 -> label check -> comparison with the paper.
+# Run (part 13/04):
+#   conda activate workflow && conda activate --stack rnaseq
+#   snakemake -s $P/04_Reuse_Public_Data/workflow/Snakefile --cores 1 --config scripts=$P
+# --cores 1: the two R jobs each need about 1 GB RAM; with more cores they could run at the same time.
+# All files are written below the current folder: data/ and results/.
+P = config["scripts"]                     # the 99_scripts_data folder of part 13
+
+rule all:
+    input:
+        "results/de_dex_deseq2.tsv",
+        "results/labels.tsv",
+        "results/paper_check.txt"
+
+rule download:
+    output:
+        matrix = "data/GSE52778_series_matrix.txt.gz",
+        counts = "data/counts.tsv.gz",
+        genes = "data/geneid2ens.tsv",
+        atlas = "data/e52778.tsv"
+    log: "logs/download.log"
+    shell: "bash {P}/03_Differential_Expression/data/download.sh data > {log} 2>&1"
+
+rule deseq2:
+    input:
+        matrix = "data/GSE52778_series_matrix.txt.gz",
+        counts = "data/counts.tsv.gz",
+        genes = "data/geneid2ens.tsv",
+        atlas = "data/e52778.tsv"
+    output:
+        table = "results/de_dex_deseq2.tsv",
+        pca = "results/pca_gse52778.png"
+    log: "logs/deseq2.log"
+    shell:
+        "cd results && Rscript {P}/03_Differential_Expression/scripts/de_gse52778.R "
+        "../{input.matrix} ../{input.counts} ../{input.genes} ../{input.atlas} > ../{log} 2>&1"
+
+rule check_labels:
+    input:
+        matrix = "data/GSE52778_series_matrix.txt.gz",
+        counts = "data/counts.tsv.gz"
+    output: "results/labels.tsv"
+    log: "logs/check_labels.log"
+    shell: "Rscript {P}/04_Reuse_Public_Data/scripts/check_labels.R {input.matrix} {input.counts} {output} > {log} 2>&1"
+
+rule paper_check:
+    input: "results/de_dex_deseq2.tsv"
+    output: "results/paper_check.txt"
+    shell: "python3 {P}/04_Reuse_Public_Data/scripts/paper_check.py {input} > {output}"
