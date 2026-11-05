@@ -4,12 +4,13 @@ Short handoff file. The full narrative of every session (decisions, problems, ve
 
 ## 1. Current goal
 Write course **v2** (parts 11–22, `NN_V2_…`, plan in `V2_ROADMAP.md`) in STYLE_GUIDE.md format: real dated outputs, known-answer data, ≥5 exercises with «راهنمایی» + solutions, 📺 + 📄 under every technique, منابع = paper + book + Coursera + edX + YouTube (DOIs via Crossref, videos via noembed). Run `_tools/rtl_wrap.py`, `_tools/persian_words.py`, `_tools/check_internal_links.py`. Commit + push every 3 modules / end of part.
-**Now (2026-11-05):** part 13 (RNA-seq) ✅ complete and pushed. Next: Windows route roll-out (starting 08/02), then part 14. Restructure (parts 11–12 before Linux?) deferred to the end of v2.
+**Now (2026-11-05):** part 13 (RNA-seq) ✅ complete and pushed. Windows route: 08/01 ✅, 08/02 ✅ (2026-11-05); next 08/03, 08/04, then 07, 06, 09, 03, 04, 11, 12, 13; then part 14. Restructure (parts 11–12 before Linux?) deferred to the end of v2.
 
 **Standing rules:** <1 GB RAM runs only (heavier = ✍️ "از مستندات"); never touch `/data/1/genomepipe` or `genomepipe_tools`; never put `$NCBI_API_KEY`, machine email or server IP in lessons/commits; never send the user's email anywhere; never commit `Bioinformatics_Course_ColorCoded.xlsx`, `advanced.odt`; commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`; plain Persian (§8); no shell functions in lessons; Windows route = pure Windows, Windows first, ✍️ for untested Windows steps. User wants very short answers (yes/no when possible).
 
 ## 2. Done so far
 - v1 parts 00–09 ✅ (07 written, not run). v2 parts 11 ✅, 12 ✅ (details in SESSION_LOG).
+- Windows 08/02 ✅: `00_lesson_windows.md`, new `scripts/vfdb_summary.py`, Windows hints + answers; VFDB via jsDelivr mirror (raw.githubusercontent.com throttled).
 - Windows pilot 08/01 ✅ (`a86c5af`): `windows/README.md`, `windows/get_k12_genome.py`, `00_lesson_windows.md`, `check_qrdr.py`.
 - Part 13 (`b58e594`, `30462bf`, pushed):
   - 01 design/QC, 02 alignment/quantification (shared simulated data, `envs/rnaseq.yml`).
@@ -51,6 +52,6 @@ Write course **v2** (parts 11–22, `NN_V2_…`, plan in `V2_ROADMAP.md`) in STY
 
 ## 6. Next steps (priority order, one session each)
 1. Ask user about updating the git remote to `course-bioinformatics`.
-2. **Windows route roll-out:** 08/02–08/04, then 07, 06, 09, 03, 04, 11, 12, 13 — one `00_lesson_windows.md` each; add a Windows marker (🪟) wherever a module can be done on pure Windows (user agreed 2026-11-03; some steps still need a few PowerShell/Python lines).
+2. **Windows route roll-out:** 08/03–08/04 (08/02 done), then 07, 06, 09, 03, 04, 11, 12, 13 — one `00_lesson_windows.md` each; add a Windows marker (🪟) wherever a module can be done on pure Windows (user agreed 2026-11-03; some steps still need a few PowerShell/Python lines).
 3. v2 part 14 (enrichment; input `de_dex_deseq2.tsv` from 13/03).
 4. Later: real runs of v1 part 07 (needs user approval); plan separate courses (`/data/Education/new/`); course-end link/video/book checks with the user's VPN; decide restructure.

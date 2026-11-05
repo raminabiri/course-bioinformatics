@@ -9,6 +9,7 @@
 | **زمان تقریبی** | ۴ ساعت (۲ درس، نزدیک به ۱ ساعت و ۴۵ دقیقه، و تمرین‌ها) |
 | **ابزار** | ‏AMRFinderPlus 4.2.7 + stxtyper، BLAST+ 2.17.0، VFDB setA، R/ggplot2 (اجرا شده)؛ ABRicate و Kleborate (از مستندات) |
 | **داده** | دو ژنوم شبیه‌سازی‌شده‌ی تازه: `isoD` (شبیه EHEC: ‏eae، stx2a، ehxA) و `isoE` (شبیه ExPEC: ‏papC، sat، cnf1، iutA + blaCTX-M-15)، ساخته با `99_scripts_data/02_Virulence_Factors/scripts/make_virulence_isolates.py`؛ و سه ژنوم ماژول ۰۱ |
+| **مسیر ویندوز** | ‏✍️ [00_lesson_windows.md](00_lesson_windows.md) (پایتون و BLAST+ اجرا شده؛ VirulenceFinder وب و Excel از مستندات) |
 | **وضعیت** | ✅ اجرا شده (2026-10-24)، جز بخش ABRicate/Kleborate درس ۲ (✍️ از مستندات) |
 
 ## اهداف یادگیری
@@ -20,6 +21,7 @@
 5. نقشه‌ی حرارتی مقاومت و بیماری‌زایی بسازید و هم‌گرایی را تشخیص دهید.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **مسیر ویندوز** (بی لینوکس): همان دو ژنوم با پایتون، BLAST+ روی ژن‌های معلوم و VFDB، `vfdb_summary.py`، Excel و VirulenceFinder وب. اگر لینوکس دارید، از درس ۱ آغاز کنید.
 1. ‏[01_lesson_virulence_amrfinder.md](01_lesson_virulence_amrfinder.md): درس ۱، مفهوم، پاتوتیپ‌ها، AMRFinderPlus و stxtyper.
 2. ‏[02_lesson_vfdb_heatmap.md](02_lesson_vfdb_heatmap.md): درس ۲، VFDB با BLAST، ABRicate و Kleborate، نقشه‌ی حرارتی.
 3. ‏[03_exercises.md](03_exercises.md): ۸ تمرین؛ زیر عنوان هر تمرین راهنمایی آمده است.

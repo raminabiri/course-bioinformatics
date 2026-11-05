@@ -14,10 +14,14 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 
 </div>
 
+**مسیر ویندوز:** اگر بی لینوکس کار می‌کنید، [مسیر ویندوز](00_lesson_windows.md) را بخوانید؛ زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
+
 ---
 
 ## تمرین ۱: بی `--plus`
-> **راهنمایی:** درس ۱، بخش ۵ (ستون Scope). ‏`amrfinder` را مانند درس ولی بی `--plus` اجرا کنید و با `tail -n +2 … | wc -l` سطرها را بشمارید.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۵ (ستون Scope). ‏`amrfinder` را مانند درس ولی بی `--plus` اجرا کنید و با `tail -n +2 … | wc -l` سطرها را بشمارید.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): همتای «بی `--plus`» این است که isoD و isoE را تنها به **ResFinder** (ابزار مقاومت، ماژول ۰۱) بدهید، نه به VirulenceFinder (✍️). چه ژن‌هایی می‌آید؟ بخش (ج) همان است.
 
 (الف) ‏`amrfinder -n genomes/isoD.fna --organism Escherichia --name isoD -o isoD.noplus.tsv` را اجرا کنید. چند سطر یافته دارد؟
 (ب) همین را برای isoE انجام دهید. چه چیزی ماند؟
@@ -26,7 +30,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۲: خواندن stxtyper
-> **راهنمایی:** درس ۱، بخش ۴. سطر stxtyper در ستون ۱۱ (Subtype) مقدار `STX_TYPE` دارد. ستون‌های ۴، ۵، ۷، ۱۳ و ۱۴ را ببینید.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۴. سطر stxtyper در ستون ۱۱ (Subtype) مقدار `STX_TYPE` دارد. ستون‌های ۴، ۵، ۷، ۱۳ و ۱۴ را ببینید.
+>
+> **ویندوز**: ‏stxtyper در ویندوز نیست. برای (الف) زیرنوع را از VirulenceFinder (گام ۵، ✍️) بخوانید. برای (ب)، ستون‌های `sstart` و `send` را به گزینه‌ی `-outfmt` گام ۲ بیفزایید و تنها isoD را بزنید؛ طول = send − sstart + 1.
 
 (الف) با یک دستور `awk` تنها سطر stxtyper را از `isoD.amr.tsv` جدا کنید و آغاز، پایان، نماد، Subclass و Method را چاپ کنید.
 (ب) طول اپرون (پایان − آغاز + ۱) چند باز است؟ آن را با طول توالی اپرون در `virulence_genes.fna` (۱۲۴۱ باز) بسنجید و فرق را توضیح دهید.
@@ -35,14 +41,18 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۳: پاتوتیپ هر ایزوله
-> **راهنمایی:** درس ۱، جدول ۲.۲؛ درس ۲، خروجی `amr_vir_matrix.tsv`.
+> **راهنمایی (لینوکس):** درس ۱، جدول ۲.۲؛ درس ۲، خروجی `amr_vir_matrix.tsv`.
+>
+> **ویندوز**: جدول PivotTable گام ۲ و `vf_specific_matrix.tsv` گام ۴ را کنار هم بگذارید؛ جهش‌های gyrA و parC را از `check_qrdr.py` ماژول ۰۱ بیاورید.
 
 برای هر یک از پنج ایزوله (`isoA` تا `isoE`) بگویید: (۱) پاتوتیپ احتمالی (یا «همزیست/بی نشانگر»)، (۲) آیا مقاومت بالینی (core) دارد، و (۳) یک جمله‌ی گزارشی.
 
 ---
 
 ## تمرین ۴: آستانه‌ی پوشش در VFDB
-> **راهنمایی:** درس ۲، بخش ۴ و کادر «امتحان کن» آن. همان حلقه‌ی `awk … | sort -u` را با `0.6` به جای `0.8` اجرا کنید.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۴ و کادر «امتحان کن» آن. همان حلقه‌ی `awk … | sort -u` را با `0.6` به جای `0.8` اجرا کنید.
+>
+> **ویندوز**: ‏`py $S\02_Virulence_Factors\scripts\vfdb_summary.py --mincov 0.6 isoC.vfdb.tsv isoD.vfdb.tsv isoE.vfdb.tsv` (گام ۴). برای (ج)، `isoE.vfdb.tsv` را در Excel باز کنید و ستون G را روی `papC` فیلتر کنید (Data ← Filter، Text Filters ← Contains).
 
 (الف) با فیلتر پوشش ۶۰٪، شمار ژن‌های یکتای VFDB در isoC و isoE چند است؟
 (ب) کدام ژن تازه در isoE پیدا شد؟
@@ -51,7 +61,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۵: یکسان کردن نام‌ها
-> **راهنمایی:** درس ۲، بخش ۴ (نکته‌ی ۱). نام‌های AMRFinderPlus در ستون ۷ `isoD.amr.tsv` و نام‌های VFDB در `isoD.vf.txt` منهای `isoC.vf.txt` هستند.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۴ (نکته‌ی ۱). نام‌های AMRFinderPlus در ستون ۷ `isoD.amr.tsv` و نام‌های VFDB در `isoD.vf.txt` منهای `isoC.vf.txt` هستند.
+>
+> **ویندوز**: نام‌های گام ۲ (ستون ۱ `known_hits.tsv`) را با نام‌های گام ۴ بسنجید. برای (ب) به جای `grep` در PowerShell: `Select-String -SimpleMatch "~~~hlyA~~~" isoD.vfdb.tsv`.
 
 (الف) برای چهار ژن ویژه‌ی isoD جدولی دوستونه بنویسید: نام در AMRFinderPlus، نام در VFDB.
 (ب) با `grep` در `isoD.vfdb.tsv` نشان دهید که `hlyA` در VFDB روی کدام contig ما و در کدام بازه است. آیا همان جای `ehxA` در AMRFinderPlus است؟
@@ -59,7 +71,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۶ (اختیاری): ABRicate با vfdb و ecoli_vf
-> **راهنمایی:** درس ۲، بخش ۵.۱. ستون `GENE` و ستون نخست (`#FILE`) را با `cut` جدا کنید.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۵.۱. ستون `GENE` و ستون نخست (`#FILE`) را با `cut` جدا کنید.
+>
+> **ویندوز**: ‏ABRicate نسخه‌ی ویندوزی ندارد؛ این تمرین تنها لینوکس است. به جایش (ج) را با VirulenceFinder (گام ۵) و VFDB (گام ۴) پاسخ دهید.
 
 (الف) ‏ABRicate را با `--db vfdb` روی isoC اجرا کنید. چند ژن یکتا؟ با ۶۵ (درس ۲) بسنجید.
 (ب) آیا ABRicate ‏papC را در isoE گزارش می‌کند؟ چرا شاید رفتارش با فیلتر ساده‌ی ما فرق کند؟
@@ -68,7 +82,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۷: امتیازهای Kleborate (فرضی)
-> **راهنمایی:** درس ۲، بخش ۵.۲، جدول امتیازها.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۵.۲، جدول امتیازها.
+>
+> **ویندوز**: همان؛ ابزاری نمی‌خواهد. ‏Kleborate را روی وب در **Pathogenwatch** (https://pathogen.watch) هم می‌شود دید (✍️).
 
 جدول زیر **فرضی** است (برای آموزش ساخته شده، خروجی هیچ اجرایی نیست): ژن‌ها و لوکوس‌های یافته‌شده در چهار ایزوله‌ی *K. pneumoniae*.
 
@@ -86,7 +102,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۸: فکری — ژن ناقص در نقشه
-> **راهنمایی:** درس ۲، بخش ۶ و کادر «امتحان کن» آن؛ ستون Method (۱۴) در جدول AMRFinderPlus.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۶ و کادر «امتحان کن» آن؛ ستون Method (۱۴) در جدول AMRFinderPlus.
+>
+> **ویندوز**: در Excel، به جای خط اسکریپت R، به **قاعده‌ی** رنگ‌آمیزی شرطی فکر کنید؛ در `known_hits.tsv` ستون `qcovs` همان نقش Method را دارد.
 
 اسکریپت `amr_vir_heatmap.R`، `tet(A)` ناقص را مانند یک ژن کامل «1» نشان می‌دهد. (الف) بگویید برای اینکه ژن‌های `PARTIAL…` جدا دیده شوند، کدام خط اسکریپت را چگونه تغییر می‌دهید (به زبان ساده، لازم نیست کد بنویسید). (ب) آیا ژن‌های ناقص را از نقشه **حذف** می‌کنید یا **نشانه‌دار**؟ چرا؟
 

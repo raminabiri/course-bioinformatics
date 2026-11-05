@@ -413,4 +413,12 @@
 - تمرین‌ها (اجرا شده): `-s 1` ‏۱۱۵ ژن را از جفت‌های antisense می‌شمارد (ryeA/sdsR، ibsB/sibB، ameF/mazEF)؛ `-Q 10`: ‏۸۲٪ rRNA و tufA ‏۲۴۰→۳، tufB ‏۳۶۲→۸۲، ۳۹ عنصر IS از ۵۲ ژن؛ رید میان recA–recX ‏۳٫۷ → ۲۶ (۷٫۱ برابر)، ompA–sulA صفر، umuD/umuC یک باز همپوشانی (مرز ۱٫۳ → ۲۰٫۳)؛ میانه‌ی نسبت S10 در سه جفت ۰٫۶۰، ۰٫۲۹، ۰٫۳۸ (واقعی ۰٫۳۵)؛ tisB ‏۹۰ باز padj ‏۱۰⁻⁵ در برابر recN ‏۱۰⁻³¹؛ ۷۰ از ۱۰۷ ncRNA ‏padj = NA (فیلتر مستقل تا baseMean ۳٫۶).
 - اشتباه پیش‌نویس تمرین ۳: ناحیه‌ی «کنترل» 1021550-1021600 درون ژن sxy بود → ompA–sulA ‏(1020100-1020360).
 
+## جلسه‌ی 2026-11-05 — مسیر ویندوز، ماژول 08/02
+
+- ‏`08_AMR_Virulence_Phylogeny/02_Virulence_Factors/00_lesson_windows.md`: ساختن isoD و isoE با پایتون؛ BLAST+ با `known_genes.fna` (ژن‌های اکتسابی + بیماری‌زایی) روی پنج ایزوله (۱۱ سطر؛ همه ۱۰۰٪ جز tet(A) ‏۵۰٪)؛ VFDB با `makeblastdb`/`blastn` (۸۷، ۹۲، ۱۰۲ سطر، زیر یک ثانیه، ۱۹۰ مگابایت)؛ اسکریپت تازه‌ی `vfdb_summary.py` (کتابخانه‌ی استاندارد) به جای awk/sort/uniq: ‏۶۵، ۶۹، ۶۸ و همان ۷ ژن ویژه‌ی درس ۲؛ `--mincov 0.6` ‏papC را برمی‌گرداند. ‏PivotTable و رنگ‌آمیزی Excel و VirulenceFinder (genepi.dk/virulencefinder) ✍️.
+- ‏raw.githubusercontent.com از سرور بسیار کند بود (۳۹ کیلوبایت در ۱۲۰ ثانیه)؛ آینه‌ی jsDelivr همان فایل VFDB را داد (۶٬۵۷۲٬۱۴۹ بایت، ۴۵۹۲ توالی) و در درس ویندوزی آمد.
+- ‏VFDB setA توالی papC ‏WP_000654937 را دو بار دارد → هر HSP دو بار در خروجی.
+- راهنمایی ویندوز زیر هر ۸ تمرین و بخش «پاسخ‌های مسیر ویندوز»؛ طول اپرون stx با BLAST ‏۱۲۴۱ (AMRFinderPlus ‏۱۲۳۸ بی کدون پایان)؛ hlyA ‏VFDB همان جای ehxA ‏(2001–4997، ۹۸٫۴٪).
+- برای VirulenceFinder فیلمی در YouTube یافت نشد؛ دو مقاله (Joensen 2014، Malberg Tetzschner 2020) با Crossref وارسی شدند.
+
 </div>
