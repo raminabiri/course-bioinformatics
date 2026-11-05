@@ -1,87 +1,56 @@
 # PROGRESS — Bioinformatics course (Persian, for biologists new to bioinformatics)
 
-Short handoff file. The full narrative of every session (decisions, problems, verified numbers) is in **SESSION_LOG.md** (Persian) — keep it updated; the user wants complete reports.
+Short handoff file. The full narrative of every session (decisions, problems, verified numbers) is in **SESSION_LOG.md** (Persian) — keep it updated; the user wants complete reports. Memory: `course-roadmap-2026-10.md`, `windows-route.md`.
 
 ## 1. Current goal
-Write course **version 2** (parts 11–22, folders `NN_V2_…`, plan in `V2_ROADMAP.md`) in the STYLE_GUIDE.md format: dissect every command, **real outputs only** (dated), known-answer data, strict prerequisites, ≥5 exercises with a «راهنمایی» hint plus detailed solutions, 📺 video + 📄 reference under every technique, منابع with papers + books + Coursera/edX/YouTube, RTL via `_tools/rtl_wrap.py`, wording via `_tools/persian_words.py`, links via `_tools/check_internal_links.py`. Commit + push every 3 modules (and at the end of a part).
+Write course **v2** (parts 11–22, `NN_V2_…`, plan in `V2_ROADMAP.md`) in STYLE_GUIDE.md format: real dated outputs, known-answer data, ≥5 exercises with «راهنمایی» + solutions, 📺 + 📄 under every technique, منابع = paper + book + Coursera + edX + YouTube (DOIs via Crossref, videos via noembed). Run `_tools/rtl_wrap.py`, `_tools/persian_words.py`, `_tools/check_internal_links.py`. Commit + push every 3 modules / end of part.
+**Now (2026-11-05):** part 13 (RNA-seq) ✅ complete and pushed. Next: Windows route roll-out (starting 08/02), then part 14. Restructure (parts 11–12 before Linux?) deferred to the end of v2.
 
-**State (2026-10-27, end of day):** v1 (parts 00–09) complete. v2 parts **11 and 12 complete and pushed** (12 = Ensembl/BioMart, UCSC/liftOver, IGV, InterPro/HMMER, GO/KEGG/Reactome/WikiPathways/MSigDB, GTEx/HPA/Expression Atlas/GDC/cBioPortal). **Next: part 13 (RNA-seq).** User said "go to 12"; ask before starting 13 unless told to continue. **Restructure question deferred:** finish all of v2 first, then decide (option: learning-path table + web-first/code-second modules, not renumbering).
-
-**Standing rules from the user:**
-- Run only what needs **< 1 GB RAM**; heavier work is code-only, labelled ✍️ "از مستندات". Do not touch `/data/1/genomepipe` or the `genomepipe_tools` env.
-- Plain Persian: avoid عدم، می‌باشد، استفاده، دستورالعمل، اکثر، لذا، توسط، نمودن/گردیدن، مثال، عملی… (STYLE_GUIDE §8).
-- **Never** put the NCBI API key (`$NCBI_API_KEY` in ~/.bashrc), the machine email or the server IP in lessons or commits; EDirect stderr prints them → send stderr to a scratch log. Never send the user's email to external services.
-- Never commit the untracked user files `Bioinformatics_Course_ColorCoded.xlsx`, `advanced.odt`.
-- Commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`.
+**Standing rules:** <1 GB RAM runs only (heavier = ✍️ "از مستندات"); never touch `/data/1/genomepipe` or `genomepipe_tools`; never put `$NCBI_API_KEY`, machine email or server IP in lessons/commits; never send the user's email anywhere; never commit `Bioinformatics_Course_ColorCoded.xlsx`, `advanced.odt`; commits end with `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>`; plain Persian (§8); no shell functions in lessons; Windows route = pure Windows, Windows first, ✍️ for untested Windows steps. User wants very short answers (yes/no when possible).
 
 ## 2. Done so far
-- ✅ **v2 part 13, modules 01–02** (2026-10-28): env `envs/rnaseq.yml`; shared data `13_V2_RNAseq_Transcriptomics/99_scripts_data/shared/` (genes.tsv, make_mini_genome.py, simulate_reads.py, make_data.sh); 01 design + FastQC/MultiQC; 02 HISAT2/featureCounts/Salmon/kallisto/tximport vs known answer (`compare_counts.R`, `isoform_share.py`). Output `gene_counts_salmon.tsv` feeds 13/03.
-- ✅ **Windows route (pure Windows, no WSL)** agreed 2026-10-27 (memory `windows-route.md`): `windows/README.md` + `windows/get_k12_genome.py`; pilot module **08/01** `00_lesson_windows.md` + `check_qrdr.py`, Windows hints in exercises, Windows answers in solutions. Web/installer steps ✍️ (user will test later).
-- ✅ **v1 parts 00–06, 08, 09** written and run (09 is introductory by user decision). ✍️ **07** written but nothing run.
-- ✅ All v1 lessons have per-technique 📺/📄 boxes and book sections (cc70d8d). Part 10 is now a pointer to v2/separate courses.
-- ✅ **v2 scaffold**: parts 11–22, 46 module READMEs (310755b, a1c4f63, 0c75968). Separate-course folders in `/data/Education/new/` (not a git repo).
-- ✅ **v2 part 12, modules 04–06** (2026-10-27):
-  - 04 InterPro API + HMMER (mini Pfam DB from InterPro, `download.sh`): beta-lactamase classes A/C/D in clan CL0013, B in CL0381; class-A hits class-C HMM (E 1e-39) where BLAST sees nothing; hmmsearch on K-12 finds PBPs, not beta-lactamases; KPC-2 lacks PROSITE PS00146; GA misses PhnP/UlaG.
-  - 05 QuickGO (GR 147 annotations, evidence codes, 3-parent DAG, merged GO:0004882), KEGG (no GR pathway, 3/8 genes unmapped; rpoB K03043), Reactome ORA (isoform artifact: NR3C1 = 9 entities), WikiPathways WP2880/WP5503, MSigDB Hallmark overlap.
-  - 06 GTEx v11 (NR3C1 54 tissues), HPA 25.1 (corticotrophs), Expression Atlas E-GEOD-52778 (7 up, NR3C1 down; combined-treatment contrast disagrees with NCBI counts — unresolved, reported), GDC R46 (62% controlled), cBioPortal TP53 52% LUAD, G>T vs C>T signatures, KRAS G12C.
-- ✅ **v2 part 12, modules 01–03** (2026-10-27), env `envs/databases.yml` (ucsc-liftover 502, samtools/bcftools 1.24, hmmer 3.4, igv-reports 1.16.0):
-  - 01 Ensembl REST (release 116) + BioMart (jun2026 archive) + `ens_ids.py` (requests, retries): NR3C1 ENST00000394464 = NM_000176.3 (1 ENST ↔ 10 NM; 8 are the same mRNA with different start AUGs); release 114 vs 116 coordinate changes; Ensembl Bacteria rpoB/gyrA.
-  - 02 UCSC API (0-based) + hgRenderTracks images + liftOver (F508del 117199645→117559591; 3000 random windows: 315 Deleted all N, 9 Split, 12 to _random; wrong-direction chain gives no error).
-  - 03 IGV ✍️ + `samtools tview -d T`, mpileup AD/ADF/ADR (4 true variants vs 1451 single-read errors, 0.198% = wgsim 0.002), MAPQ: 224 reads moved to tufA/rRNA copies; igv-reports HTML.
-- ✅ **v2 part 11** (67f2196, 46270b3, 868cdc8), all run on 2026-10-27:
-  - 01 Entrez/E-utilities (curl) + EDirect/xtract/Biopython; rpoB Gene 948488, NP_418414.1 (1342 aa).
-  - 02 RefSeq prefixes, NR3C1 MANE NM_000176.3→NP_000167.1 (777 aa), 11 GR isoforms, IPG (WP_000263098.1, 402,479 records), CDD, Taxonomy, `datasets`.
-  - 03 BioProject PRJEB7774 (312 runs, 595 GB), BioSample, SRA Toolkit on ERR688359 (1,158,189 reads = ENA).
-  - 04 GEO GSE52778: series matrix has no expression; NCBI counts; FKBP5/TSC22D3/ZBTB16 up, NR3C1 down; GEO2R ✍️.
-  - 05 dbSNP/ClinVar/dbVar/MedGen/GTR on rs113993960 (F508del, VCV000007105, 4 stars); HGVS↔SPDI with the Variation API; 3′ rule.
-  - 06 PubMed ATM, MeSH D012293, spelling (83+33→115), citation exporter, PMC full text, PubTator3.
-  - 07 BLAST+: S450↔S531 mapping, tblastn, E-value vs dbsize, primers F1406/R1770 (365 bp), six-frame ORFs, CD-Search API; remote BLAST did not answer within 25 min (reported as is).
-  - 08 Pathogen Detection FTP (591,810 isolates; blaCTX-M-15 13%), SNP clusters, NCBI Virus/Datasets (CCHFV 5471 records, Iran 177).
+- v1 parts 00–09 ✅ (07 written, not run). v2 parts 11 ✅, 12 ✅ (details in SESSION_LOG).
+- Windows pilot 08/01 ✅ (`a86c5af`): `windows/README.md`, `windows/get_k12_genome.py`, `00_lesson_windows.md`, `check_qrdr.py`.
+- Part 13 (`b58e594`, `30462bf`, pushed):
+  - 01 design/QC, 02 alignment/quantification (shared simulated data, `envs/rnaseq.yml`).
+  - 03 DESeq2/edgeR/limma: simulated 8/8 genes, 0 FP; GSE52778 `~cell+dex` 4,743 genes, Atlas r = 0.893.
+  - 04 Snakemake reproduction of Himes 2014: 7/7 named genes, 4,743 vs 316; **likely label swap** Albuterol ↔ Alb+Dex in donors N052611, N080611 (combination 421 → 3,593 genes). ZBTB16 up 2.3–3.1 in the "Alb+Dex" samples of those donors → not pure albuterol; left open in lesson.
+  - 12/06 solution 2 now points to the 13/04 evidence.
+  - 05 ✅ (exercises + solutions 2026-11-05, real reruns; same MD5/output as lesson): `simulate_bacterial.py` (K-12 RefSeq GCF_000005845.2, 6 × 400k SE 75 bp, dUTP, seed 13, SOS up, S10 operon −1.5, rRNA 6–15%), `de_bacterial.R`, `data/make_data.sh`, `05_Bacterial_RNAseq/01_lesson.md`. Results: Bowtie2 100% (10.5% multi), `-s 2` correct (s=1: 1,161 assigned), DESeq2 21 genes, all 12 SOS genes, 18/25 known, 3 FP (yagP, cmoM, yiiS), 867 MB, 6 s.
 
-## 3. Files changed (part 12 session, 2026-10-27)
-- `12_V2_Global_Databases_Browsers/0[1-3]_*/` — README + `01_lesson.md` + `02_exercises.md` + `03_solutions.md`; part README (status), `99_scripts_data/01_Ensembl_BioMart/{scripts/ens_ids.py,data/*.xml}`, `02_UCSC_Genome_Browser/{data/*.bed,images/*.png}`, `03_IGV_Visualization/scripts/rpoB_snapshots.igv.txt`.
-- `envs/databases.yml` (new) + `envs/README.md`; `V2_ROADMAP.md`, `README.md`, `SESSION_LOG.md`, `PROGRESS.md`; memory `course-roadmap-2026-10.md` (restructure deferred).
-- Scratch: `scratchpad/p12/m01…m03`, helper `p12/ej.sh` (curl + retry until valid JSON).
-
-## 3b. Files changed (part 11 session)
-- `11_V2_NCBI_Databases/0[1-8]_*/` — README + `01_lesson*.md` + exercises + solutions (11/01 has `01_lesson_eutils.md`, `02_lesson_edirect.md`, `03_exercises.md`, `04_solutions.md`; the others have `01_lesson.md`, `02_exercises.md`, `03_solutions.md`).
-- `11_V2_NCBI_Databases/99_scripts_data/`: `01_Entrez_EDirect/scripts/gene_table.py`, `04_GEO/scripts/geo_counts.py`, `07_BLAST_Suite_Tools/scripts/{map_positions.py,six_frames.py}`, `08_Pathogen_Virus_Resources/scripts/amr_summary.py`.
-- `11_V2_NCBI_Databases/README.md` (all ✅), `V2_ROADMAP.md` (status), `README.md` (v2 paragraph + tree), `SESSION_LOG.md`, `PROGRESS.md`; memory `course-roadmap-2026-10.md` + `MEMORY.md`.
-- Scratch data (wiped between sessions): `/tmp/claude-1000/…/scratchpad/p11/m01…m08`, helper `r.sh` (EDirect with timeout + retries), `p11/videos_verified.txt`.
+## 3. Files changed (this session)
+- `13_V2_RNAseq_Transcriptomics/03_Differential_Expression/{README,01_lesson,02_exercises,03_solutions}.md`, `99_scripts_data/03_Differential_Expression/{scripts,data,images}`.
+- `13_V2_RNAseq_Transcriptomics/04_Reuse_Public_Data/{README,01_lesson,02_exercises,03_solutions}.md`, `99_scripts_data/04_Reuse_Public_Data/{workflow/Snakefile,scripts/check_labels.R,scripts/paper_check.py}`.
+- `13_V2_RNAseq_Transcriptomics/05_Bacterial_RNAseq/{README,01_lesson,02_exercises,03_solutions}.md`, `99_scripts_data/05_Bacterial_RNAseq/{scripts/simulate_bacterial.py,scripts/de_bacterial.R,data/make_data.sh}`.
+- `12_V2_Global_Databases_Browsers/06_Expression_Cancer_Portals/03_solutions.md` (solution 2).
+- Part 13 README status, `V2_ROADMAP.md`, main `README.md`, `SESSION_LOG.md`, memory updated for 03–05.
+- Scratch (may be wiped): `scratchpad/bact` (session 83497dd9); run helper `export PATH=~/miniforge3/envs/rnaseq/bin:~/miniforge3/envs/snakemake/bin:$PATH`.
 
 ## 4. Key decisions and rejected approaches
-- Modules 11/02–11/08 use **one lesson file** (not two) to keep parts readable; 11/01 needed two (curl vs EDirect).
-- Big NCBI files are **streamed** (`csv` line by line, ~270 MB RAM) instead of pandas (would exceed 1 GB).
-- Where a web tool has no API (GEO2R, Primer-BLAST, ORFfinder, Isolates Browser, MicroBIGG-E) the lesson gives ✍️ web steps **and** does the same analysis on the server (BLAST+, Biopython, FTP data). Rejected: describing outputs we did not see.
-- Failures and odd behaviour are taught as pitfalls (elink -name ignored, PubTator OR, remote BLAST queue, `xtract -mixed`), not hidden.
-- Unverifiable claims were softened or removed (GEO2R design, NBK3841, ClusteredNR default, ST131 inference).
-- Shell functions and awk `?:` are not taught in v1 → replaced with `for` loops / explained inline.
-- SRA Toolkit run from the conda package cache (`~/miniforge3/pkgs/sra-tools-3.4.1-2_linux_64/bin`) because `genomepipe_tools` is off limits and an offline env build failed.
-- Videos verified with `https://noembed.com/embed?url=…` (YouTube itself is blocked from the server).
+- DESeq2 GSE52778 script kept DESeq2-only (~1.0 GB; loading DESeq2 alone 590 MB); edgeR/limma and the combination contrast moved to separate scripts. Memory stated honestly.
+- Snakemake not installed into `rnaseq` (conda conflict) → `conda activate workflow && conda activate --stack rnaseq`.
+- Snakefile: explicit named inputs (rejected `input: rules.download.output` → `'InputFiles' object has no attribute 'matrix'`); `--cores 1` so two ~1 GB R jobs don't run together.
+- Teach deleting an output / `--forcerun` for reruns (rejected `touch`: Snakemake 9 still said "Nothing to be done").
+- GEO annotation file blocked (reCAPTCHA/404) → NCBI `gene_info` FTP for symbols.
+- Label swap reported as "likely", not proven; GEO title and characteristics agree, so swap (if any) predates submission. First guess (cAMP explains partial scores) rejected by per-gene data.
+- 13/05: first run at 150k reads gave lexA baseMean 1 → 400k reads and SOS genes at median baseline. Operons simulated as one transcript (shared noise → S10 genes all ≈ −1.1, only 6/11 significant; taught as "11 genes ≠ 11 independent evidence").
+- `make_data.sh` checks md5 of uncompressed reads (gzip header contains a date).
+- YouTube search from server returns nothing → WebSearch + noembed.
 
 ## 5. Known bugs and caveats (exact messages)
-- Part 12/04–06: InterPro returns HTTP 204 (empty body) when a protein has no match → `jq` prints nothing; KEGG `list/hsa04010` → 404 (use `list/pathway/hsa`); GTEx wrong-version gencodeId → `{"data":[]…}` with HTTP 200; GDC facets count a mutation once per transcript; MSigDB search needs login, data.broadinstitute.org unreachable; geneontology.org and igv.org unreachable from server; EBI Job Dispatcher submission (email) blocked by permission classifier.
-- Part 12 (2026-10-27): Ensembl REST often `HTTP 500`/`503` with an HTML page → `jq: parse error: Invalid numeric literal`, `requests.exceptions.JSONDecodeError`; use retries (`scratchpad/p12/ej.sh`, `ens_ids.py`). BioMart 116 (jun2026.archive) answers GET only (POST → `405 Not Allowed`), was "Service unavailable" ~15 min. `rest.ensemblgenomes.org` unreachable (main REST serves bacteria). Fly-side homology needs `compara=multi` (`Could not find a GenomeDB named 'homo_sapiens'`).
-- UCSC `hgTables` via curl → Cloudflare Turnstile page; `hgRenderTracks` ignores `hgt.customText`. Running a downloaded liftOver binary was blocked by the permission classifier → use Bioconda ucsc-liftover.
-- igv.org unreachable from server; headless Chrome screenshots of igv-reports stay blank (igv.js never finishes).
-- EDirect 24.0 stderr on most calls: `curl: (56) OpenSSL SSL_read: OpenSSL/3.6.4: error:0A000126:SSL routines::unexpected eof while reading, errno 0` (retries succeed; lines contain the API key and email). Some calls hang for hours → always `timeout 60–90` and retry.
-- EDirect: `elink -name gene_protein_refseq` ignored in a pipe → use `efilter -query "refseq[filter]"`.
-- Raw PubMed XML: `UNEXPECTED MIXED CONTENT <i> IN <Reference>` unless `xtract -mixed`.
-- PMC OA service `https://www.ncbi.nlm.nih.gov/pmc/utils/oa/oa.fcgi` → 404; ID converter moved to `https://pmc.ncbi.nlm.nih.gov/tools/idconv/api/v1/articles/`.
-- Remote BLAST (RID `E13YYMUD014`) stayed `Status=WAITING` 25+ min; `blastp -remote` timed out (rc=124). NCBI rules: ≤1 request/10 s, poll an RID ≤1/min.
-- GEO2R/GEO help pages: reCAPTCHA from the server. Coursera often returns 451.
-- Offline conda: `OfflineError: EnforceUnusedAdapter called with url …perl-importer…` (sra-tools); `Could not resolve host: conda.anaconda.org`.
-- `pkill -f`/`pgrep -f` whose pattern matches the calling shell kills it (exit 144) → `ps aux | grep '[x]yz'`.
-- Monitor tasks expire after 5 min and stop any loop inside them → long polls go in `run_in_background` Bash.
-- Pathogen Detection TSV: `scientific_name` is the strain name (use `species_taxid`); dates contain `missing`, `NULL`, `1900-01-01`.
-- v1 caveats (still open): AMRFinderPlus DB lacks nucleotide BLAST index (`The BLAST database for AMR_DNA-Escherichia.fa was not found.`); AlphaFold DB 403 from server; VFDB/ZINC time out; `envs/workflow.yml` needs `CONDA_CHANNEL_PRIORITY=flexible`; `grep` here is ugrep (use `/usr/bin/grep` for exact outputs).
+- 2026-11-05: NCBI (ftp/eutils/datasets) timed out from server ~1 h (`curl: (28) Failed to connect to ftp.ncbi.nlm.nih.gov:443`); a background retry loop worked.
+- Snakemake shell + `head`: `returned non-zero exit status 141` under `set -euo pipefail` → `awk 'NR <= 20'`.
+- Snakemake CLI: targets must come before `--config` (otherwise swallowed as config values).
+- `curl` PubMed search without `--data-urlencode`: `bad range in URL`.
+- Download script: SIGPIPE in `zcat | head` under pipefail → awk.
+- tximport needs jsonlite → `dropInfReps=TRUE`; `round()` on DESeq2 results fails → `as.data.frame` first.
+- FastQC 0.13: `-o` rejected → `--outdir`. Salmon 2.8: `expected_format IU` while fragments are ISR (reported in 13/02).
+- 41 significant GSE52778 genes have symbol NA (retired GeneIDs, e.g. 102724788 → replaced by 5625 PRODH).
+- GitHub: `remote: This repository moved. Please use the new location: https://github.com/raminabiri/course-bioinformatics.git` (push still works; update `origin` URL and README links when the user agrees).
+- Older caveats (Ensembl 500/503, BioMart GET only, UCSC Turnstile, EDirect SSL stderr with API key, remote BLAST queue, `pgrep -f` self-match, ugrep) → see SESSION_LOG.
 
 ## 6. Next steps (priority order, one session each)
-1. **Windows route roll-out** (after user feedback on the 08/01 pilot): 08/02–08/04, 07, 06, 09, 03, 04, 11, 12 — one `00_lesson_windows.md` each.
-2. **v2 part 13, modules 03–05**: 03 DESeq2/edgeR/limma on `gene_counts_salmon.tsv` (known answer) + GSE52778 real (PCA donor vs dex; Atlas comparison incl. albuterol+dex discrepancy); 04 reproduce Himes 2014 with Snakemake; 05 bacterial RNA-seq (simulated E. coli SOS response, Bowtie2). Then Windows route roll-out.
-3. (old) **v2 part 13 (RNA-seq)**: DESeq2 on GSE52778 counts (11/04); compare with Expression Atlas `e52778.tsv` (12/06), incl. the albuterol+dex contrast discrepancy. `deg_r` env has GEOquery 2.80.0, DESeq2 **not** installed → new env.
-3. Optional: if remote BLAST answers on a later day, add the real Swiss-Prot hits to 11/07 §10 (keep the queue story).
-4. v2 part 13 (RNA-seq; DESeq2 on GSE52778 counts from 11/04 — `deg_r` env has GEOquery 2.80.0, DESeq2 **not** installed).
-5. Real runs of v1 part 07 (needs genomepipe coordination and user approval).
-6. Plan the separate courses with the user (folders in `/data/Education/new/`).
-7. Course-end checks with the user's VPN: `_tools/check_links.sh`, every YouTube URL, book chapter numbers.
+1. Ask user about updating the git remote to `course-bioinformatics`.
+2. **Windows route roll-out:** 08/02–08/04, then 07, 06, 09, 03, 04, 11, 12, 13 — one `00_lesson_windows.md` each; add a Windows marker (🪟) wherever a module can be done on pure Windows (user agreed 2026-11-03; some steps still need a few PowerShell/Python lines).
+3. v2 part 14 (enrichment; input `de_dex_deseq2.tsv` from 13/03).
+4. Later: real runs of v1 part 07 (needs user approval); plan separate courses (`/data/Education/new/`); course-end link/video/book checks with the user's VPN; decide restructure.
