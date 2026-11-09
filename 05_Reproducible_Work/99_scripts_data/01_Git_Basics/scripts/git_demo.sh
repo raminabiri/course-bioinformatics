@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Reproduce the Git session of the lesson in a throw-away folder (does not touch your global git config).
-# Usage: bash git_demo.sh ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ecoli_k12.gff [workdir]
+# Usage: bash git_demo.sh ~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ecoli_k12.gff [workdir]
 # Commit dates/author are fixed so the commit hashes match the lesson exactly.
 set -euo pipefail
 GFF=$(realpath "${1:?Usage: git_demo.sh /path/to/ecoli_k12.gff [workdir]}")

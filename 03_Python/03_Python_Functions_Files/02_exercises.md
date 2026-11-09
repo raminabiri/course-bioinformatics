@@ -9,7 +9,7 @@
 >
 > ```bash
 > conda activate bioinfo_course
-> cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+> cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 > ```
 >
 > </div>

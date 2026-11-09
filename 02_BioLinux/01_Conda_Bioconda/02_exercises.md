@@ -47,7 +47,7 @@
 
 ## تمرین ۵: محیط دوره و جدول نسخه‌ها
 
-> **راهنمایی:** بخش ۶ درس برای ساختن محیط، و بخش ۵ برای `record_versions.sh`. اسکریپت در `~/Bioinformatics_Learning-main/02_BioLinux/99_scripts_data/01_Conda_Bioconda/scripts/` است. نام ابزارها: `seqkit samtools bcftools jq python biopython pandas`.
+> **راهنمایی:** بخش ۶ درس برای ساختن محیط، و بخش ۵ برای `record_versions.sh`. اسکریپت در `~/course-bioinformatics-main/02_BioLinux/99_scripts_data/01_Conda_Bioconda/scripts/` است. نام ابزارها: `seqkit samtools bcftools jq python biopython pandas`.
 
 1. محیط `bioinfo_course` را بسازید و فعال کنید.
 2. با `record_versions.sh` جدول نسخه‌ی این هفت ابزار را در `versions.tsv` بریزید.

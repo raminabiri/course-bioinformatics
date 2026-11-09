@@ -15,7 +15,7 @@
 4. مکمل معکوس (reverse complement) یک توالی DNA را بسازید (`tr` و `rev`).
 5. با `sed` یک تکه از متن را جایگزین کنید (`s/…/…/`)، خط‌هایی را چاپ یا پاک کنید، و دو اشتباه رایجش را بشناسید.
 
-همه‌ی دستورها را در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` اجرا کنید.
+همه‌ی دستورها را در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` اجرا کنید.
 
 ---
 

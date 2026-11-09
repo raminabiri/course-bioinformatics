@@ -216,7 +216,7 @@ cat host/logs/minigut.bowtie2.log
 <div dir="ltr">
 
 ```bash
-S=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/02_Host_Removal_Alignment/scripts
+S=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/02_Host_Removal_Alignment/scripts
 bash $S/make_spiked_sample.sh
 ```
 

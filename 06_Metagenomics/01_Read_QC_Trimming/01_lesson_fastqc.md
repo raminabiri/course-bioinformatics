@@ -19,7 +19,7 @@
 <div dir="ltr">
 
 ```bash
-C=~/Bioinformatics_Learning-main
+C=~/course-bioinformatics-main
 conda env create -f $C/envs/metagenomics.yml      # once
 conda activate metagenomics
 mkdir -p ~/meta && cd ~/meta

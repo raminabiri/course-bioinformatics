@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # run_qc.sh (part 06, module 01): read QC and trimming for every sample in raw/
 # Run inside the project folder of part 06 (it must contain raw/<sample>_R1.fastq.gz and _R2):
-#   cd ~/meta && bash ~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/run_qc.sh
+#   cd ~/meta && bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/run_qc.sh
 # Outputs: qc/{fastqc_raw,multiqc_raw,trimmed,fastp,fastqc_trimmed,multiqc_trimmed}
 #          qc/trimmed/<sample>_R1.fastq.gz and _R2 are the input of module 02
 set -euo pipefail

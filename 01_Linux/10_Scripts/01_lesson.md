@@ -15,7 +15,7 @@
 4. پیام‌های خطا را به stderr بفرستید (`>&2`) و با کد خروج درست بیرون بیایید (`exit 1`).
 5. کار طولانی را طوری اجرا کنید که با بستن ترمینال قطع نشود (`nohup`، `tmux`).
 
-همه‌ی دستورها را در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` اجرا کنید.
+همه‌ی دستورها را در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` اجرا کنید.
 
 ---
 
@@ -77,7 +77,7 @@ bash hello.sh
 ```text
 Hello from a script!
 Today is: 2026-10-20
-I am in: ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+I am in: ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 ```
 
 </div>

@@ -9,9 +9,9 @@
 >
 > ```bash
 > conda activate bioinfo_course
-> cd ~/Bioinformatics_Learning-main/03_Python/99_scripts_data/05_Biopython_GenBank/data
+> cd ~/course-bioinformatics-main/03_Python/99_scripts_data/05_Biopython_GenBank/data
 > P=../scripts
-> G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+> G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 > ```
 >
 > </div>

@@ -25,7 +25,7 @@
 mkdir -p ~/global/m01 && cd ~/global/m01
 R=https://rest.ensembl.org
 J="content-type=application/json"
-P=~/Bioinformatics_Learning-main/12_V2_Global_Databases_Browsers/99_scripts_data
+P=~/course-bioinformatics-main/12_V2_Global_Databases_Browsers/99_scripts_data
 ```
 
 </div>

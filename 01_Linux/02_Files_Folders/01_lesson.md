@@ -70,7 +70,7 @@ ls     -l     project
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main/01_Linux
+cd ~/course-bioinformatics-main/01_Linux
 pwd
 ```
 
@@ -86,7 +86,7 @@ pwd
 
 </div>
 
-روی کامپیوتر شما چیزی مانند `/home/sara/Bioinformatics_Learning-main/01_Linux` می‌بینید. `pwd` کوتاه‌شده‌ی *print working directory* است.
+روی کامپیوتر شما چیزی مانند `/home/sara/course-bioinformatics-main/01_Linux` می‌بینید. `pwd` کوتاه‌شده‌ی *print working directory* است.
 
 ### ‏`ls`: این‌جا چه هست؟
 
@@ -191,7 +191,7 @@ drwxrwxr-x  2  ubuntu  ubuntu  4096  Oct 20 07:04  01_Setup_Computer
 /
 └── home/
     └── sara/                          ← پوشه‌ی خانه (~)
-        └── Bioinformatics_Learning-main/
+        └── course-bioinformatics-main/
             └── 01_Linux/
                 └── 99_scripts_data/
                     └── data/
@@ -202,7 +202,7 @@ drwxrwxr-x  2  ubuntu  ubuntu  4096  Oct 20 07:04  01_Setup_Computer
 
 | گونه | از کجا شروع می‌شود | نمونه |
 | :--- | :--- | :--- |
-| **مطلق** | همیشه از ریشه `/` | `/home/sara/Bioinformatics_Learning-main/01_Linux` |
+| **مطلق** | همیشه از ریشه `/` | `/home/sara/course-bioinformatics-main/01_Linux` |
 | **نسبی** | از پوشه‌ی کنونی | اگر در `01_Linux` باشید: `99_scripts_data/data` |
 
 **تشبیه:** نشانی مطلق مانند نشانی کامل پستی است («تهران، خیابان…، پلاک ۵»)، که از هر جا درست است. نشانی نسبی مانند راهنمایی به رهگذر است («دو کوچه بالاتر»)، که تنها از جای کنونی درست است.
@@ -220,7 +220,7 @@ drwxrwxr-x  2  ubuntu  ubuntu  4096  Oct 20 07:04  01_Setup_Computer
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main/01_Linux
+cd ~/course-bioinformatics-main/01_Linux
 cd 99_scripts_data     # یک پله پایین (نسبی)
 pwd
 cd ..                  # یک پله بالا
@@ -319,7 +319,7 @@ mkdir: cannot create directory ‘project/data/raw’: No such file or directory
 <div dir="ltr">
 
 ```bash
-cp Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/sample.fasta project/data/
+cp course-bioinformatics-main/01_Linux/99_scripts_data/data/sample.fasta project/data/
 ls project/data
 ```
 
@@ -399,7 +399,7 @@ ls
 <div dir="ltr">
 
 ```text
-Bioinformatics_Learning-main
+course-bioinformatics-main
 ```
 
 </div>

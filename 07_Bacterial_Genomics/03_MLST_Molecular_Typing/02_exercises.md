@@ -9,7 +9,7 @@
 ```bash
 conda activate mlst
 cd ~/genomes
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 ```
 
 </div>

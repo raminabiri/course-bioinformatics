@@ -9,7 +9,7 @@
 ```bash
 conda activate metagenomics
 cd ~/meta
-S=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/03_Taxonomic_Functional_Profiling/scripts
+S=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/03_Taxonomic_Functional_Profiling/scripts
 bash $S/build_practice_db.sh          # once; about 130 MB download
 bash $S/run_profile.sh                # confidence 0
 CONF=0.1 bash $S/run_profile.sh       # confidence 0.1

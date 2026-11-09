@@ -9,8 +9,8 @@
 ```bash
 conda activate bioinfo_course
 cd ~/genomes
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data          # if empty: bash $G/download.sh
-S=~/Bioinformatics_Learning-main/07_Bacterial_Genomics/99_scripts_data/01_Assembly_Quality/scripts
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data          # if empty: bash $G/download.sh
+S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/01_Assembly_Quality/scripts
 ```
 
 </div>

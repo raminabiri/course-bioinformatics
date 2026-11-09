@@ -22,10 +22,10 @@
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main
+cd ~/course-bioinformatics-main
 conda env create -f envs/r_packages.yml     # once; downloads a few hundred MB
 conda activate r_packages
-P=~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data
+P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
 ```
 
 </div>

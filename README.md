@@ -55,7 +55,7 @@
 <div dir="ltr">
 
 ```text
-Bioinformatics_Learning/
+course-bioinformatics/
 ├── README.md              ← همین صفحه
 ├── STYLE_GUIDE.md         ← قالب ماژول‌ها و قاعده‌های نگارش و وارسی (برای نویسندگان)
 ├── PROGRESS.md            ← وضعیت ساخت دوره

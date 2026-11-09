@@ -15,7 +15,7 @@
 4. تنها بخش یافته‌شده را بیرون بکشید (`-o`).
 5. ‏`grep` را در لوله با `zcat` به کار ببرید، و دو خطای بی‌صدای رایج آن را بشناسید.
 
-همه‌ی دستورها را در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` اجرا کنید.
+همه‌ی دستورها را در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` اجرا کنید.
 
 ---
 

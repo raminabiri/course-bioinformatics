@@ -20,9 +20,9 @@
 
 ```bash
 conda activate bioinfo_course
-cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
-P3=~/Bioinformatics_Learning-main/03_Python/99_scripts_data/03_Python_Functions_Files/scripts
-P=~/Bioinformatics_Learning-main/03_Python/99_scripts_data/06_Pandas/scripts
+cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
+P3=~/course-bioinformatics-main/03_Python/99_scripts_data/03_Python_Functions_Files/scripts
+P=~/course-bioinformatics-main/03_Python/99_scripts_data/06_Pandas/scripts
 python3 $P3/gene_table.py ecoli_k12.gff genes.tsv
 ```
 

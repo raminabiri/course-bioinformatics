@@ -22,7 +22,7 @@
 ```bash
 conda activate structural
 cd ~/struct
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 ```
 
 </div>

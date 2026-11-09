@@ -8,7 +8,7 @@
 
 ```bash
 conda activate rnaseq && cd ~/rnaseq
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 ```
 
 </div>

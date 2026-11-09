@@ -24,7 +24,7 @@
 ```bash
 mkdir -p ~/global/m04 && cd ~/global/m04
 conda activate databases
-P=~/Bioinformatics_Learning-main/12_V2_Global_Databases_Browsers/99_scripts_data
+P=~/course-bioinformatics-main/12_V2_Global_Databases_Browsers/99_scripts_data
 bash $P/04_Protein_Families_Domains/data/download.sh      # query.faa, mini_pfam.hmm, ecoli.faa
 I=https://www.ebi.ac.uk/interpro/api
 ```

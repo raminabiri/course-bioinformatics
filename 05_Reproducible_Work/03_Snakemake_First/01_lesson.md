@@ -20,11 +20,11 @@
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main
+cd ~/course-bioinformatics-main
 CONDA_CHANNEL_PRIORITY=flexible conda env create -f envs/workflow.yml
 conda activate workflow
 mkdir -p ~/smk_practice && cd ~/smk_practice
-cp -r ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/fastq .
+cp -r ~/course-bioinformatics-main/01_Linux/99_scripts_data/data/fastq .
 ls fastq
 ```
 

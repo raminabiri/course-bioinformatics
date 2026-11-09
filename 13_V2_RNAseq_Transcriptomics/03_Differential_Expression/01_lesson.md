@@ -23,7 +23,7 @@
 
 ```bash
 conda activate rnaseq && cd ~/rnaseq
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 bash $P/03_Differential_Expression/data/download.sh ~/rnaseq/gse      # GSE52778, about 9 MB
 ```
 

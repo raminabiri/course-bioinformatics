@@ -40,13 +40,13 @@
 
 ## داده‌ی پایه: ژنوم *E. coli* K-12
 
-بسیاری از ماژول‌ها ژنوم K-12 بخش ۰۱ را می‌خواهند. در لینوکس آن را `download.sh` با `curl` و `gunzip` می‌گیرد. در ویندوز، اسکریپت پایتون [`get_k12_genome.py`](get_k12_genome.py) همان دو فایل را می‌گیرد و باز می‌کند. فرض این است که دوره را از GitHub (دکمه‌ی **Code ← Download ZIP**) گرفته و در پوشه‌ی خانه‌تان باز کرده‌اید، همانند `~/Bioinformatics_Learning-main` در درس‌های لینوکسی:
+بسیاری از ماژول‌ها ژنوم K-12 بخش ۰۱ را می‌خواهند. در لینوکس آن را `download.sh` با `curl` و `gunzip` می‌گیرد. در ویندوز، اسکریپت پایتون [`get_k12_genome.py`](get_k12_genome.py) همان دو فایل را می‌گیرد و باز می‌کند. فرض این است که دوره را از GitHub (دکمه‌ی **Code ← Download ZIP**) گرفته و در پوشه‌ی خانه‌تان باز کرده‌اید، همانند `~/course-bioinformatics-main` در درس‌های لینوکسی:
 
 <div dir="ltr">
 
 ```powershell
 mkdir $HOME\course; cd $HOME\course
-py $HOME\Bioinformatics_Learning-main\windows\get_k12_genome.py
+py $HOME\course-bioinformatics-main\windows\get_k12_genome.py
 ```
 
 </div>

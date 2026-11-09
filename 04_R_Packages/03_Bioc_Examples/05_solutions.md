@@ -67,7 +67,7 @@ b3357	crp	1.72
 <div dir="ltr">
 
 ```bash
-D=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+D=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 grep -w rpoB $D/ecoli_k12.gff | grep -o "locus_tag=b[0-9]*" | head -1
 grep -w b3987 deseq2_results.tsv | cut -f1,2,3,7
 grep -w b3987 truth.tsv

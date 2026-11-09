@@ -9,7 +9,7 @@
 ```bash
 conda activate structural
 cd ~/struct/dock
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 C="--center_x 114.680 --center_y 29.079 --center_z -8.026"
 ```
 

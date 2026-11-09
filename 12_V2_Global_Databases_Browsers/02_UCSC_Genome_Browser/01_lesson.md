@@ -24,7 +24,7 @@
 ```bash
 mkdir -p ~/global/m02 && cd ~/global/m02
 U=https://api.genome.ucsc.edu
-P=~/Bioinformatics_Learning-main/12_V2_Global_Databases_Browsers/99_scripts_data
+P=~/course-bioinformatics-main/12_V2_Global_Databases_Browsers/99_scripts_data
 conda activate databases          # liftOver (envs/databases.yml)
 ```
 

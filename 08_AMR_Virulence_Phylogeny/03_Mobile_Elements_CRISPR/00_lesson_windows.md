@@ -51,7 +51,7 @@
 
 ```powershell
 cd $HOME\amr
-$C = "$HOME\Bioinformatics_Learning-main"
+$C = "$HOME\course-bioinformatics-main"
 $S = "$C\08_AMR_Virulence_Phylogeny\99_scripts_data"
 ```
 

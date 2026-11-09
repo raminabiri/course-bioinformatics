@@ -194,7 +194,7 @@ curl 8.20.0 (x86_64-conda-linux-gnu) libcurl/8.20.0 OpenSSL/3.6.4 zlib/1.3.2 zst
 
 ```bash
 cd ~
-curl -sSL -o course.zip https://github.com/raminabiri/Bioinformatics_Learning/archive/refs/heads/main.zip
+curl -sSL -o course.zip https://github.com/raminabiri/course-bioinformatics/archive/refs/heads/main.zip
 unzip -q course.zip
 ls
 ```
@@ -212,7 +212,7 @@ ls
 <div dir="ltr">
 
 ```text
-Bioinformatics_Learning-main
+course-bioinformatics-main
 course.zip
 ```
 
@@ -223,7 +223,7 @@ course.zip
 <div dir="ltr">
 
 ```bash
-ls Bioinformatics_Learning-main
+ls course-bioinformatics-main
 ```
 
 </div>
@@ -254,7 +254,7 @@ _tools
 
 ‏(`ls` در ترمینال نام‌ها را در بسیاری از موارد کنار هم و در چند ستون نشان می‌دهد؛ این‌جا برای خوانایی زیر هم نوشته‌ایم.)
 
-پوشه‌ی `Bioinformatics_Learning-main` همان دوره است. هر پوشه‌ی شماره‌دار یک **بخش** دوره است، به همان ترتیبی که باید خواند. در هر بخش، پوشه‌ی `99_scripts_data` اسکریپت‌ها و داده‌ی آن بخش را دارد.
+پوشه‌ی `course-bioinformatics-main` همان دوره است. هر پوشه‌ی شماره‌دار یک **بخش** دوره است، به همان ترتیبی که باید خواند. در هر بخش، پوشه‌ی `99_scripts_data` اسکریپت‌ها و داده‌ی آن بخش را دارد.
 
 **به‌روزرسانی:** اگر بعداً درس‌های تازه‌ای افزوده شد، همین سه دستور را دوباره بزنید (پیش از آن پوشه‌ی کهنه را به نام دیگری تغییر دهید تا کارهای خودتان پاک نشود).
 

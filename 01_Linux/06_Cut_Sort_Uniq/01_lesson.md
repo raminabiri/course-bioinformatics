@@ -15,7 +15,7 @@
 4. با `uniq -c` خط‌های همانند را بشمارید.
 5. با «الگوی طلایی» `cut | sort | uniq -c | sort -rn` بشمارید «از هر چیز چندتا داریم».
 
-همه‌ی دستورها را در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` اجرا کنید.
+همه‌ی دستورها را در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` اجرا کنید.
 
 ---
 

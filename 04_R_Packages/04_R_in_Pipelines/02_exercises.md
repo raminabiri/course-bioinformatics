@@ -9,7 +9,7 @@
 ```bash
 conda activate r_packages
 cd ~/r_practice/pipeline
-P=~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data
+P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
 R02=$P/02_Run_Rscript/scripts
 ```
 

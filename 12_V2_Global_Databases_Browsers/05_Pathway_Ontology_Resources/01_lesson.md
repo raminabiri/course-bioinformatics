@@ -23,7 +23,7 @@
 
 ```bash
 mkdir -p ~/global/m05 && cd ~/global/m05
-P=~/Bioinformatics_Learning-main/12_V2_Global_Databases_Browsers/99_scripts_data
+P=~/course-bioinformatics-main/12_V2_Global_Databases_Browsers/99_scripts_data
 cp $P/05_Pathway_Ontology_Resources/data/* .        # dex8_symbols.txt, dex8_ids.tsv, hallmark_names.txt
 cat dex8_ids.tsv
 ```

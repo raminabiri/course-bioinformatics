@@ -24,7 +24,7 @@
 ```bash
 mkdir -p ~/global/m03 && cd ~/global/m03
 conda activate databases
-C=~/Bioinformatics_Learning-main
+C=~/course-bioinformatics-main
 ln -s $C/01_Linux/99_scripts_data/data/ecoli_k12.fna ref.fna
 ln -s $C/01_Linux/99_scripts_data/data/ecoli_k12.gff ecoli_k12.gff
 for f in resistant.bam resistant.bam.bai resistant.vcf.gz resistant.vcf.gz.tbi; do

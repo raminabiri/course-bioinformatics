@@ -221,7 +221,7 @@ head lengths/*
 <div dir="ltr">
 
 ```bash
-GT=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ground_truth.tsv
+GT=~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ground_truth.tsv
 diff <(awk 'BEGIN{OFS="\t"} {print $2, $1}' counts/minigut_sample2.tsv | sort) \
      <(awk -F'\t' 'BEGIN{OFS="\t"} $1=="minigut_sample2" {print $3, $2}' $GT | sort) && echo "identical"
 ```

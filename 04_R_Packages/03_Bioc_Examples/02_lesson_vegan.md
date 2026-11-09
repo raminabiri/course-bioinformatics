@@ -24,8 +24,8 @@
 ```bash
 conda activate r_packages
 mkdir -p ~/r_practice/vegan && cd ~/r_practice/vegan
-P=~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data
-cp ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ground_truth.tsv .
+P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
+cp ~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ground_truth.tsv .
 ```
 
 </div>

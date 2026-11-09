@@ -36,7 +36,7 @@
 ```bash
 conda activate metagenomics
 cd ~/meta
-C=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data
+C=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data
 S=$C/03_Taxonomic_Functional_Profiling/scripts
 cp $C/data/ground_truth_species.tsv .
 ls host/clean

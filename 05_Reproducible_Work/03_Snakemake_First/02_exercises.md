@@ -9,7 +9,7 @@
 ```bash
 conda activate workflow
 cd ~/smk_practice
-cp ~/Bioinformatics_Learning-main/05_Reproducible_Work/99_scripts_data/03_Snakemake_First/workflow/Snakefile .
+cp ~/course-bioinformatics-main/05_Reproducible_Work/99_scripts_data/03_Snakemake_First/workflow/Snakefile .
 rm -rf counts stats
 ```
 

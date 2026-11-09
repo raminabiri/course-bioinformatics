@@ -21,8 +21,8 @@
 ```bash
 conda activate amr
 cd ~/amr
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
-P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
+P=~/course-bioinformatics-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ```
 
 </div>

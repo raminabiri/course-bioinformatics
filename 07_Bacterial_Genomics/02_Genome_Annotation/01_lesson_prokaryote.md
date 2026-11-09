@@ -24,8 +24,8 @@
 ```bash
 conda activate bacterial_genomics
 cd ~/genomes
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
-S=~/Bioinformatics_Learning-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_Annotation/scripts
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
+S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_Annotation/scripts
 ```
 
 </div>

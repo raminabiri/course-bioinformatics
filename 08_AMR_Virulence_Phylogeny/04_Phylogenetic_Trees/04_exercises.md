@@ -8,7 +8,7 @@
 
 ```bash
 cd ~/phylo
-P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
+P=~/course-bioinformatics-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 conda activate r_packages
 ```
 

@@ -37,7 +37,7 @@
 ```bash
 conda activate structural
 mkdir -p ~/struct/dock && cd ~/struct/dock
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 cp ../5UAC.cif.gz ../5UAL.cif.gz .
 ```
 

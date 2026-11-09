@@ -9,8 +9,8 @@
 ```bash
 conda activate bacterial_genomics       # envs/bacterial_genomics.yml: pyrodigal, barrnap, aragorn, tRNAscan-SE
 cd ~/genomes
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data          # E. coli genome + GFF (part 01)
-S=~/Bioinformatics_Learning-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_Annotation/scripts
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data          # E. coli genome + GFF (part 01)
+S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_Annotation/scripts
 ```
 
 </div>

@@ -9,7 +9,7 @@
 ```bash
 conda activate metagenomics
 cd ~/meta
-S=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/02_Host_Removal_Alignment/scripts
+S=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/02_Host_Removal_Alignment/scripts
 # host/ref/*.fa must exist (the two curl commands at the top of the lesson)
 bash $S/make_spiked_sample.sh
 bash $S/run_host_removal.sh

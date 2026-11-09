@@ -22,10 +22,10 @@
 <div dir="ltr">
 
 ```bash
-conda env create -f ~/Bioinformatics_Learning-main/envs/structural.yml
+conda env create -f ~/course-bioinformatics-main/envs/structural.yml
 conda activate structural
 mkdir -p ~/struct && cd ~/struct
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 ```
 
 </div>

@@ -22,7 +22,7 @@
 
 ```bash
 mkdir -p ~/ncbi/m08 && cd ~/ncbi/m08
-P=~/Bioinformatics_Learning-main/11_V2_NCBI_Databases/99_scripts_data
+P=~/course-bioinformatics-main/11_V2_NCBI_Databases/99_scripts_data
 F=https://ftp.ncbi.nlm.nih.gov/pathogen/Results/Escherichia_coli_Shigella/latest_snps
 df -h .
 ```

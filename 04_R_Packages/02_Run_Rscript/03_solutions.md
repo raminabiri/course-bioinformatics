@@ -193,7 +193,7 @@ big.png: PNG image data, 1200 x 720, 8-bit/color RGB, non-interlaced
 <div dir="ltr">
 
 ```bash
-python3 ~/Bioinformatics_Learning-main/03_Python/99_scripts_data/06_Pandas/scripts/composition.py \
+python3 ~/course-bioinformatics-main/03_Python/99_scripts_data/06_Pandas/scripts/composition.py \
     ground_truth.tsv minigut_sample2 py.png
 diff minigut_sample2_genus_R.tsv minigut_sample2_genus.tsv
 ```

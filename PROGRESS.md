@@ -54,11 +54,10 @@ Write course **v2** (parts 11–22, `NN_V2_…`, plan in `V2_ROADMAP.md`) in STY
 - tximport needs jsonlite → `dropInfReps=TRUE`; `round()` on DESeq2 results fails → `as.data.frame` first.
 - FastQC 0.13: `-o` rejected → `--outdir`. Salmon 2.8: `expected_format IU` while fragments are ISR (reported in 13/02).
 - 41 significant GSE52778 genes have symbol NA (retired GeneIDs, e.g. 102724788 → replaced by 5625 PRODH).
-- GitHub: `remote: This repository moved. Please use the new location: https://github.com/raminabiri/course-bioinformatics.git` (push still works; update `origin` URL and README links when the user agrees).
+- 2026-11-09: repo renamed to `raminabiri/course-bioinformatics`; `origin` updated and all paths changed to `~/course-bioinformatics-main` (zip top folder verified).
 - Older caveats (Ensembl 500/503, BioMart GET only, UCSC Turnstile, EDirect SSL stderr with API key, remote BLAST queue, `pgrep -f` self-match, ugrep) → see SESSION_LOG.
 
 ## 6. Next steps (priority order, one session each)
-1. Ask user about updating the git remote to `course-bioinformatics`.
-2. **Windows route roll-out:** 08/04 (next), then 07, 06, 09, 03, 04, 11, 12, 13 — one `00_lesson_windows.md` each; add a Windows marker (🪟) wherever a module can be done on pure Windows (user agreed 2026-11-03; some steps still need a few PowerShell/Python lines).
-3. v2 part 14 (enrichment; input `de_dex_deseq2.tsv` from 13/03).
-4. Later: real runs of v1 part 07 (needs user approval); plan separate courses (`/data/Education/new/`); course-end link/video/book checks with the user's VPN; decide restructure; interactive installable app (see memory `interactive-app-idea`, only when user asks).
+1. **Windows route roll-out:** 08/04 (next), then 07, 06, 09, 03, 04, 11, 12, 13 — one `00_lesson_windows.md` each; add a Windows marker (🪟) wherever a module can be done on pure Windows (user agreed 2026-11-03; some steps still need a few PowerShell/Python lines).
+2. v2 part 14 (enrichment; input `de_dex_deseq2.tsv` from 13/03).
+3. Later: real runs of v1 part 07 (needs user approval); plan separate courses (`/data/Education/new/`); course-end link/video/book checks with the user's VPN; decide restructure; interactive installable app (see memory `interactive-app-idea`, only when user asks).

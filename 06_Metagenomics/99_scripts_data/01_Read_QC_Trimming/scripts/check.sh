@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # check.sh (part 06, module 01): self-check of the QC outputs
 # Run inside the project folder after run_qc.sh (or after your own commands):
-#   cd ~/meta && bash ~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/check.sh
+#   cd ~/meta && bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/check.sh
 set -uo pipefail
 ok=0
 bad=0

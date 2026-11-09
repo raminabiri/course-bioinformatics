@@ -7,8 +7,8 @@
 <div dir="ltr">
 
 ```bash
-GFF=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
-bash ~/Bioinformatics_Learning-main/05_Reproducible_Work/99_scripts_data/01_Git_Basics/scripts/git_demo.sh $GFF ~/git_ex02
+GFF=~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
+bash ~/course-bioinformatics-main/05_Reproducible_Work/99_scripts_data/01_Git_Basics/scripts/git_demo.sh $GFF ~/git_ex02
 cd ~/git_ex02/ecoli_project
 git log --oneline -1          # ae3f591 Revert "Add usage note"
 ```

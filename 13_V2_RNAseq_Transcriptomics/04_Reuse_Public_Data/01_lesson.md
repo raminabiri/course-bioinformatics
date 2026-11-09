@@ -23,7 +23,7 @@
 ```bash
 conda activate workflow && conda activate --stack rnaseq
 mkdir -p ~/rnaseq/himes && cd ~/rnaseq/himes
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 which snakemake Rscript
 ```
 

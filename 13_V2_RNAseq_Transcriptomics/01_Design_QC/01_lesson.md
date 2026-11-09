@@ -134,7 +134,7 @@ same treatment, different donor: n=12 mean r=0.9769
 
 ```bash
 conda activate rnaseq            # envs/rnaseq.yml
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 column -t $P/shared/data/genes.tsv | head -9
 bash $P/shared/data/make_data.sh ~/rnaseq
 ```

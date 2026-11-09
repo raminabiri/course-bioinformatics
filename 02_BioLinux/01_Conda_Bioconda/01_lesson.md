@@ -313,7 +313,7 @@ prefix: /home/ubuntu/miniforge3/envs/course_demo
 <div dir="ltr">
 
 ```bash
-bash ~/Bioinformatics_Learning-main/02_BioLinux/99_scripts_data/01_Conda_Bioconda/scripts/record_versions.sh course_demo seqkit jq samtools
+bash ~/course-bioinformatics-main/02_BioLinux/99_scripts_data/01_Conda_Bioconda/scripts/record_versions.sh course_demo seqkit jq samtools
 ```
 
 </div>
@@ -341,7 +341,7 @@ samtools	NOT_INSTALLED	-
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main
+cd ~/course-bioinformatics-main
 conda env create -f envs/bioinfo_course.yml
 conda activate bioinfo_course
 ```

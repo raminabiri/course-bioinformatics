@@ -26,8 +26,8 @@
 ```bash
 conda activate r_packages          # R, DESeq2
 mkdir -p ~/r_practice/deseq2 && cd ~/r_practice/deseq2
-P=~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data
-D=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
+D=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 ```
 
 </div>

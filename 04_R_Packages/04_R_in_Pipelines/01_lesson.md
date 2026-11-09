@@ -22,8 +22,8 @@
 ```bash
 conda activate r_packages
 mkdir -p ~/r_practice/pipeline && cd ~/r_practice/pipeline
-cp ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ground_truth.tsv .
-P=~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data
+cp ~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ground_truth.tsv .
+P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
 R02=$P/02_Run_Rscript/scripts
 ```
 

@@ -22,7 +22,7 @@
 
 ```bash
 conda activate rnaseq
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 bash $P/05_Bacterial_RNAseq/data/make_data.sh ~/rnaseq/ecoli
 cd ~/rnaseq/ecoli
 ```

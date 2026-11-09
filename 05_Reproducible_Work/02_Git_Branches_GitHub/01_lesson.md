@@ -20,8 +20,8 @@
 <div dir="ltr">
 
 ```bash
-GFF=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
-bash ~/Bioinformatics_Learning-main/05_Reproducible_Work/99_scripts_data/01_Git_Basics/scripts/git_demo.sh $GFF ~/git_demo
+GFF=~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
+bash ~/course-bioinformatics-main/05_Reproducible_Work/99_scripts_data/01_Git_Basics/scripts/git_demo.sh $GFF ~/git_demo
 ```
 
 </div>
@@ -454,8 +454,8 @@ ed406c5 Add usage note
 
 ```bash
 cd ~/git_practice
-git clone https://github.com/raminabiri/Bioinformatics_Learning.git
-cd Bioinformatics_Learning
+git clone https://github.com/raminabiri/course-bioinformatics.git
+cd course-bioinformatics
 git remote -v
 git log --oneline | head -3
 ```
@@ -465,9 +465,9 @@ git log --oneline | head -3
 <div dir="ltr">
 
 ```text
-Cloning into 'Bioinformatics_Learning'...
-origin	https://github.com/raminabiri/Bioinformatics_Learning.git (fetch)
-origin	https://github.com/raminabiri/Bioinformatics_Learning.git (push)
+Cloning into 'course-bioinformatics'...
+origin	https://github.com/raminabiri/course-bioinformatics.git (fetch)
+origin	https://github.com/raminabiri/course-bioinformatics.git (push)
 87c221b Rebuild part 04 as R Packages: install, run with Rscript, DESeq2/vegan/ggtree examples, pipelines
 b5afb1b Rewrite BioLinux and Python parts in the new step-by-step format
 1152a4a Complete the Linux part: variables/loops and scripts modules

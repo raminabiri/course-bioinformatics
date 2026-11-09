@@ -24,7 +24,7 @@
 ```bash
 conda activate structural
 mkdir -p ~/struct/md && cd ~/struct/md
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 export OPENMM_CPU_THREADS=2      # keep two cores free for other work
 ```
 

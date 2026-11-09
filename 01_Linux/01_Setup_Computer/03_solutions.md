@@ -70,10 +70,10 @@ UnZip 6.00 of 20 April 2009, by Debian. Original by Info-ZIP.
 
 ```bash
 cd ~
-curl -sSL -o course.zip https://github.com/raminabiri/Bioinformatics_Learning/archive/refs/heads/main.zip
+curl -sSL -o course.zip https://github.com/raminabiri/course-bioinformatics/archive/refs/heads/main.zip
 unzip -q course.zip
-ls -1 Bioinformatics_Learning-main
-ls -1 Bioinformatics_Learning-main/01_Linux
+ls -1 course-bioinformatics-main
+ls -1 course-bioinformatics-main/01_Linux
 ```
 
 </div>
@@ -116,7 +116,7 @@ README.md
 
 ‏(`ls -1` هر نام را در یک خط جدا نشان می‌دهد.)
 
-1. دو فایل یا پوشه در پوشه‌ی خانه پیدا می‌شود: `course.zip` و پوشه‌ی `Bioinformatics_Learning-main`.
+1. دو فایل یا پوشه در پوشه‌ی خانه پیدا می‌شود: `course.zip` و پوشه‌ی `course-bioinformatics-main`.
 2. **۱۱ بخش**، از `00_Orientation` تا `10_Advanced`. (`envs`، `_templates` و `_tools` بخش درسی نیستند؛ ابزارهای نویسندگان دوره‌اند.)
 3. در `01_Linux` ده ماژول (`01_Setup_Computer` تا `10_Scripts`)، یک `README.md` و پوشه‌ی **`99_scripts_data`** هست که اسکریپت‌ها و داده‌ی این بخش را دارد.
 

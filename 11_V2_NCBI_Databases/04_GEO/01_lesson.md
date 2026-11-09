@@ -24,7 +24,7 @@
 ```bash
 mkdir -p ~/ncbi/m04 && cd ~/ncbi/m04
 B=https://eutils.ncbi.nlm.nih.gov/entrez/eutils
-P=~/Bioinformatics_Learning-main/11_V2_NCBI_Databases/99_scripts_data
+P=~/course-bioinformatics-main/11_V2_NCBI_Databases/99_scripts_data
 ```
 
 </div>

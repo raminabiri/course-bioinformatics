@@ -9,7 +9,7 @@
 ```bash
 conda activate qiime2-amplicon-2026.7
 cd ~/amplicon
-C=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/04_16S_Amplicon
+C=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/04_16S_Amplicon
 M=data/sample_metadata.tsv
 export UNIFRAC_USE_GPU=N
 bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8 minutes, 5.5 GB memory)

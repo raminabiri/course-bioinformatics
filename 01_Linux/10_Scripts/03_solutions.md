@@ -138,7 +138,7 @@ minigut_R1	50000	126.0
 
 ```text
 cleanup.sh: line 3: cd: tmp_tset: No such file or directory
-Cleaning in: ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+Cleaning in: ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 cleanup.sh
 download.sh
 ecoli_k12.fna

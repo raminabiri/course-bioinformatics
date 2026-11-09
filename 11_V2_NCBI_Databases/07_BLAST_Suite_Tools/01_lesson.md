@@ -24,7 +24,7 @@
 ```bash
 mkdir -p ~/ncbi/m07 && cd ~/ncbi/m07
 B=https://eutils.ncbi.nlm.nih.gov/entrez/eutils
-P=~/Bioinformatics_Learning-main/11_V2_NCBI_Databases/99_scripts_data
+P=~/course-bioinformatics-main/11_V2_NCBI_Databases/99_scripts_data
 cp ~/ncbi/m01/prot5.faa .                                   # five E. coli resistance proteins (11/01)
 curl -sS "$B/efetch.fcgi?db=nuccore&id=NC_000913.3&rettype=fasta&retmode=text" > ecoli.fna
 curl -sS "$B/efetch.fcgi?db=protein&id=NP_215181.1&rettype=fasta&retmode=text" > mtb_rpoB.faa

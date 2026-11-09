@@ -21,8 +21,8 @@
 
 ```bash
 conda activate bioinfo_course
-cd ~/Bioinformatics_Learning-main/02_BioLinux/99_scripts_data/04_Align_Variant_Formats/data
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data      # ژنوم و GFF بخش ۰۱
+cd ~/course-bioinformatics-main/02_BioLinux/99_scripts_data/04_Align_Variant_Formats/data
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data      # ژنوم و GFF بخش ۰۱
 ls
 ```
 

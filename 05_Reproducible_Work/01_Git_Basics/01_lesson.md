@@ -187,7 +187,7 @@ cat > scripts/count_genes.sh << 'EOF'
 set -euo pipefail
 awk -F'\t' '$3=="gene"' "$1" | wc -l
 EOF
-GFF=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
+GFF=~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
 bash scripts/count_genes.sh $GFF
 ```
 

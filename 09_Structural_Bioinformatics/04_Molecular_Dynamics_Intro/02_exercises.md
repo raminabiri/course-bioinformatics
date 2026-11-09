@@ -9,7 +9,7 @@
 ```bash
 conda activate structural
 cd ~/struct/md
-P=~/Bioinformatics_Learning-main/09_Structural_Bioinformatics/99_scripts_data
+P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 export OPENMM_CPU_THREADS=2
 ```
 

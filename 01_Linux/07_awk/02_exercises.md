@@ -3,7 +3,7 @@
 # تمرین‌ها: حساب کردن روی ستون‌ها با awk
 
 > **روش کار:** هر تمرین را خودتان در ترمینال انجام دهید و پاسخ را یادداشت کنید، سپس با [03_solutions.md](03_solutions.md) بسنجید. زیر عنوان هر تمرین یک **راهنمایی** آمده است.
-> همه‌ی تمرین‌ها بر پایه‌ی [درس](01_lesson.md)‌اند و در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` انجام می‌شوند. اگر `small.gff` را ندارید: `grep -v '^#' ecoli_k12.gff | head -n 8 > small.gff`.
+> همه‌ی تمرین‌ها بر پایه‌ی [درس](01_lesson.md)‌اند و در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` انجام می‌شوند. اگر `small.gff` را ندارید: `grep -v '^#' ecoli_k12.gff | head -n 8 > small.gff`.
 
 ---
 

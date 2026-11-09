@@ -112,7 +112,7 @@ prefix: /home/ubuntu/miniforge3/envs/course_demo
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main
+cd ~/course-bioinformatics-main
 conda env create -f envs/bioinfo_course.yml
 conda activate bioinfo_course
 bash 02_BioLinux/99_scripts_data/01_Conda_Bioconda/scripts/record_versions.sh bioinfo_course seqkit samtools bcftools jq python biopython pandas > versions.tsv

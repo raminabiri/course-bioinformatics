@@ -23,7 +23,7 @@
 ```bash
 conda activate workflow
 mkdir -p ~/smk_pipeline && cd ~/smk_pipeline
-C=~/Bioinformatics_Learning-main
+C=~/course-bioinformatics-main
 cp -r $C/05_Reproducible_Work/99_scripts_data/04_Snakemake_Pipeline/workflow/. .
 cp -r $C/01_Linux/99_scripts_data/data/fastq .
 cp $C/01_Linux/99_scripts_data/data/ground_truth.tsv .

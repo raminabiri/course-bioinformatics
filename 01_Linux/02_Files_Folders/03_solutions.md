@@ -11,7 +11,7 @@
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 pwd
 ls -l
 cd ../..
@@ -21,7 +21,7 @@ cd ~
 
 </div>
 
-1. نشانی مطلق پوشه‌ی داده، برای نمونه `/home/sara/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data`.
+1. نشانی مطلق پوشه‌ی داده، برای نمونه `/home/sara/course-bioinformatics-main/01_Linux/99_scripts_data/data`.
 2. **۳۳ بایت.** (در ستون پنجم `ls -l`.) اگر فایل‌های ماژول بعد را دانلود کرده باشید، فایل‌های دیگری هم می‌بینید.
 3. ‏`cd ../..`: یک پله به `99_scripts_data` و یک پله به `01_Linux`.
 4. ‏`cd ~` (یا تنها `cd`، که بی ورودی هم به خانه می‌رود).
@@ -38,7 +38,7 @@ cd ~
 cd ~
 mkdir -p ecoli_project/{data,results,scripts}
 ls ecoli_project
-cp Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/sample.fasta ecoli_project/data/my_protein.fasta
+cp course-bioinformatics-main/01_Linux/99_scripts_data/data/sample.fasta ecoli_project/data/my_protein.fasta
 ls -lh ecoli_project/data/my_protein.fasta
 cat ecoli_project/data/my_protein.fasta
 ```
@@ -67,14 +67,14 @@ MKTAYIAKQRQISF
 
 ## تمرین ۳: مطلق یا نسبی؟
 
-1. برای نمونه `/home/sara/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/sample.fasta`.
+1. برای نمونه `/home/sara/course-bioinformatics-main/01_Linux/99_scripts_data/data/sample.fasta`.
 2. از `~/ecoli_project/data` دو پله بالا به `~` می‌رسیم، سپس پایین به پوشه‌ی دوره:
 
    <div dir="ltr">
 
    ```bash
    cd ~/ecoli_project/data
-   ls ../../Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/
+   ls ../../course-bioinformatics-main/01_Linux/99_scripts_data/data/
    ```
 
    </div>
@@ -87,8 +87,8 @@ MKTAYIAKQRQISF
 
    </div>
 
-   پس نشانی نسبی: `../../Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/sample.fasta`.
-3. **نشانی مطلق.** نشانی نسبی تنها از همان پوشه‌ی کنونی درست است. راه میانبر: `~/Bioinformatics_Learning-main/…` هم از هر جا درست است، چون `~` همیشه همان پوشه‌ی خانه است.
+   پس نشانی نسبی: `../../course-bioinformatics-main/01_Linux/99_scripts_data/data/sample.fasta`.
+3. **نشانی مطلق.** نشانی نسبی تنها از همان پوشه‌ی کنونی درست است. راه میانبر: `~/course-bioinformatics-main/…` هم از هر جا درست است، چون `~` همیشه همان پوشه‌ی خانه است.
 
 ---
 

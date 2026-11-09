@@ -21,7 +21,7 @@
 <div dir="ltr">
 
 ```bash
-cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
+cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data
 grep -v '^#' ecoli_k12.gff | head -n 8 > small.gff      # همان فایل کوچک ماژول ۰۶
 ```
 

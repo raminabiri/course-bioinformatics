@@ -28,7 +28,7 @@ conda install -c conda-forge -c bioconda entrez-direct     # or the official ins
 esearch -version
 xtract -version
 cd ~/ncbi/m01
-P=~/Bioinformatics_Learning-main/11_V2_NCBI_Databases/99_scripts_data
+P=~/course-bioinformatics-main/11_V2_NCBI_Databases/99_scripts_data
 ```
 
 </div>

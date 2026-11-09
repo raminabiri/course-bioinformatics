@@ -9,7 +9,7 @@
 ```bash
 conda activate workflow && conda activate --stack rnaseq
 cd ~/rnaseq/himes
-P=~/Bioinformatics_Learning-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
+P=~/course-bioinformatics-main/13_V2_RNAseq_Transcriptomics/99_scripts_data
 ```
 
 </div>

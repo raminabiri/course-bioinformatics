@@ -27,8 +27,8 @@
 ```bash
 conda activate bioinfo_course                 # Python + Biopython (parts 02-03)
 mkdir -p ~/genomes && cd ~/genomes
-G=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data
-S=~/Bioinformatics_Learning-main/07_Bacterial_Genomics/99_scripts_data/01_Assembly_Quality/scripts
+G=~/course-bioinformatics-main/01_Linux/99_scripts_data/data
+S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/01_Assembly_Quality/scripts
 ls $G/ecoli_k12.fna $G/ecoli_k12.gff
 ```
 

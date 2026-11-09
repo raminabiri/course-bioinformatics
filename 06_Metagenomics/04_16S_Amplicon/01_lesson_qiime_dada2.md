@@ -24,7 +24,7 @@
 ```bash
 conda activate qiime2-amplicon-2026.7
 mkdir -p ~/amplicon && cd ~/amplicon
-C=~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/04_16S_Amplicon
+C=~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/04_16S_Amplicon
 bash $C/data/download.sh                 # about 53 MB, checked with md5
 M=data/sample_metadata.tsv
 qiime --version | head -n 1

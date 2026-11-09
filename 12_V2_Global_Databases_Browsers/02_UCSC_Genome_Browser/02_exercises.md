@@ -9,7 +9,7 @@
 ```bash
 cd ~/global/m02 && conda activate databases
 U=https://api.genome.ucsc.edu
-P=~/Bioinformatics_Learning-main/12_V2_Global_Databases_Browsers/99_scripts_data
+P=~/course-bioinformatics-main/12_V2_Global_Databases_Browsers/99_scripts_data
 ```
 
 </div>

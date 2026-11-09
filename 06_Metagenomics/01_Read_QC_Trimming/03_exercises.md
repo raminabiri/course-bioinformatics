@@ -19,7 +19,7 @@ ls raw qc
 <div dir="ltr">
 
 ```bash
-bash ~/Bioinformatics_Learning-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/run_qc.sh
+bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/run_qc.sh
 ```
 
 </div>

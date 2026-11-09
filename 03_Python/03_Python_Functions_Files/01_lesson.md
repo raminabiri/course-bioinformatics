@@ -21,8 +21,8 @@
 
 ```bash
 conda activate bioinfo_course
-cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data       # داده‌ی بخش ۰۱
-P=~/Bioinformatics_Learning-main/03_Python/99_scripts_data/03_Python_Functions_Files/scripts
+cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data       # داده‌ی بخش ۰۱
+P=~/course-bioinformatics-main/03_Python/99_scripts_data/03_Python_Functions_Files/scripts
 ```
 
 </div>

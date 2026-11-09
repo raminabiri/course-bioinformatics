@@ -8,7 +8,7 @@
 
 ```bash
 cd ~/ncbi/m08
-P=~/Bioinformatics_Learning-main/11_V2_NCBI_Databases/99_scripts_data
+P=~/course-bioinformatics-main/11_V2_NCBI_Databases/99_scripts_data
 S=$P/08_Pathogen_Virus_Resources/scripts/amr_summary.py
 ```
 

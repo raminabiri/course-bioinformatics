@@ -15,7 +15,7 @@
 4. با `*` فهرستی از فایل‌ها بسازید و با `basename` نام نمونه را از نام فایل بیرون بکشید.
 5. با حلقه یک جدول خلاصه برای همه‌ی نمونه‌ها بسازید.
 
-همه‌ی دستورها را در پوشه‌ی `~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data` اجرا کنید.
+همه‌ی دستورها را در پوشه‌ی `~/course-bioinformatics-main/01_Linux/99_scripts_data/data` اجرا کنید.
 
 ---
 

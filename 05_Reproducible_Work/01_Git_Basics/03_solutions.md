@@ -14,8 +14,8 @@
 cd ~/git_practice
 git init -b main my_scripts
 cd my_scripts
-cp ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/scripts/count_reads.sh .
-cp ~/Bioinformatics_Learning-main/04_R_Packages/99_scripts_data/02_Run_Rscript/scripts/composition.R .
+cp ~/course-bioinformatics-main/01_Linux/99_scripts_data/scripts/count_reads.sh .
+cp ~/course-bioinformatics-main/04_R_Packages/99_scripts_data/02_Run_Rscript/scripts/composition.R .
 git add count_reads.sh composition.R
 git commit -m "Add read counting and composition scripts"
 ```

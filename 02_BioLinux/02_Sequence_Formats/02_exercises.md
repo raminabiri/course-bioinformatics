@@ -3,7 +3,7 @@
 # تمرین‌ها: فرمت‌های توالی
 
 > **روش کار:** هر تمرین را خودتان در ترمینال انجام دهید و پاسخ را یادداشت کنید، سپس با [03_solutions.md](03_solutions.md) بسنجید. زیر عنوان هر تمرین یک **راهنمایی** آمده است.
-> همه‌ی تمرین‌ها بر پایه‌ی [درس](01_lesson.md)‌اند. پیش از آغاز: `conda activate bioinfo_course` و `cd ~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data`.
+> همه‌ی تمرین‌ها بر پایه‌ی [درس](01_lesson.md)‌اند. پیش از آغاز: `conda activate bioinfo_course` و `cd ~/course-bioinformatics-main/01_Linux/99_scripts_data/data`.
 
 ---
 

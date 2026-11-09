@@ -8,7 +8,7 @@
 
 ```bash
 cd ~/git_practice/ecoli_project
-GFF=~/Bioinformatics_Learning-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
+GFF=~/course-bioinformatics-main/01_Linux/99_scripts_data/data/ecoli_k12.gff
 ```
 
 </div>

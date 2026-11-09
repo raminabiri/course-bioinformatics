@@ -32,13 +32,13 @@
 
 ## ۱. گام ۰: پوشه و داده (PowerShell)
 
-‏✍️ PowerShell را باز کنید (منوی Start ← PowerShell). فرض: دوره را از GitHub گرفته و در `$HOME\Bioinformatics_Learning-main` باز کرده‌اید ([آماده کردن ویندوز](../../windows/README.md)).
+‏✍️ PowerShell را باز کنید (منوی Start ← PowerShell). فرض: دوره را از GitHub گرفته و در `$HOME\course-bioinformatics-main` باز کرده‌اید ([آماده کردن ویندوز](../../windows/README.md)).
 
 <div dir="ltr">
 
 ```powershell
 mkdir $HOME\amr; cd $HOME\amr
-$C = "$HOME\Bioinformatics_Learning-main"
+$C = "$HOME\course-bioinformatics-main"
 py $C\windows\get_k12_genome.py
 copy $C\08_AMR_Virulence_Phylogeny\99_scripts_data\data\acquired_genes.fna .
 ```
