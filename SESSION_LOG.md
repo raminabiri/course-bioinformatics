@@ -421,4 +421,12 @@
 - راهنمایی ویندوز زیر هر ۸ تمرین و بخش «پاسخ‌های مسیر ویندوز»؛ طول اپرون stx با BLAST ‏۱۲۴۱ (AMRFinderPlus ‏۱۲۳۸ بی کدون پایان)؛ hlyA ‏VFDB همان جای ehxA ‏(2001–4997، ۹۸٫۴٪).
 - برای VirulenceFinder فیلمی در YouTube یافت نشد؛ دو مقاله (Joensen 2014، Malberg Tetzschner 2020) با Crossref وارسی شدند.
 
+## جلسه‌ی 2026-11-09 — مسیر ویندوز، ماژول 08/03
+
+- ‏`08_AMR_Virulence_Phylogeny/03_Mobile_Elements_CRISPR/00_lesson_windows.md`: ‏pEK499 با یک سطر پایتون (urllib، efetch؛ همان MD5 دانلود `curl`؛ یک بار `Network is unreachable` و بار دوم درست)؛ BLAST ‏`acquired_genes.fna` روی pEK499: ‏blaCTX-M-15 ‏۱۰۰٪ (62953–63828) و tet(A) ‏۹۸٪؛ ResFinder وب ✍️ با فهرست ۱۲ ژن درس ۱ به‌عنوان انتظار.
+- ‏PlasmidFinder از jsDelivr (۴۴۶٬۸۴۶ بایت، ۴۸۸ توالی، ۷ ثانیه)؛ blastn روی `pEK499.fna` (بی ساختن isoF): ‏۱۴ سطر؛ فیلتر ۹۰/۶۰ شش سطر → IncFIA و IncFII، همان درس ۱. فیلتر Excel و PlasmidFinder وب ✍️.
+- ‏`gb_context.py` (Biopython) روی GenBank از NCBI: همان ۱۱ IS؛ ژن‌ها با نام‌های 2008 (bla، aacA4، oxa1، catB4، dhfrVII، aadA، sulI، mrx)؛ catB4 ‏59054–59602 و TEM تا 40676 روی IS (فاصله ۰) در برابر AMRFinderPlus (PARTIALX ۷۰٪ / ۹۴٪) → نکته‌ی آموزشی «مرز آنوتیشن کهنه». ‏int و dhfrVII در رکورد ۴۴ باز هم‌پوشانی دارند؛ qacEdelta1 در رکورد CDS ندارد.
+- ژن‌های cas با یک سطر پایتون (csv) روی GFF: همان ۸ ژن. ‏`find_crispr.py`: همان ۲ آرایه و ۱۸ spacer (۱٫۶ ثانیه، ۲۲ مگابایت). تمرین ۶ با Counter: ‏۵۰ / ۴۸، IS5 ۱۲، IS1 ۸، IS2 ۷، IS26 صفر.
+- راهنمایی ویندوز زیر هر ۸ تمرین و «پاسخ‌های مسیر ویندوز». ‏genepi.dk (ResFinder، PlasmidFinder، VirulenceFinder) از سرور پاسخ نداد (timeout ۳۰ ثانیه) → در وارسی پایان دوره.
+
 </div>

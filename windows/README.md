@@ -72,6 +72,7 @@ downloading ecoli_k12.gff ...
 | :--- | :--- | :--- |
 | ‏08/01 ژن‌ها و جهش‌های مقاومت | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/01_AMR_Resistance_Genes/00_lesson_windows.md) | پایتون (Biopython)، BLAST+، ResFinder و CARD RGI (وب) |
 | ‏08/02 عامل‌های بیماری‌زایی | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/02_Virulence_Factors/00_lesson_windows.md) | پایتون، BLAST+ و VFDB، Excel، VirulenceFinder (وب) |
+| ‏08/03 عنصرهای متحرک و CRISPR | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/03_Mobile_Elements_CRISPR/00_lesson_windows.md) | پایتون (Biopython)، BLAST+ و PlasmidFinder، Excel، ResFinder و CRISPRCasFinder (وب) |
 
 ماژول‌های دیگر (بخش‌های ۰۳، ۰۴، ۰۶ تا ۰۹، ۱۱، ۱۲ و بخش‌های تازه‌تر) به‌تدریج افزوده می‌شوند. بخش‌های ۰۱ (لینوکس)، ۰۲ (بایولینوکس)، Snakemake و بخش ۲۰ (خط لوله و HPC) مسیر ویندوز ندارند.
 

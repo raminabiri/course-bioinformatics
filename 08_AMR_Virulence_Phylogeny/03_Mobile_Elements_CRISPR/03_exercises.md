@@ -15,10 +15,14 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 
 </div>
 
+**مسیر ویندوز:** اگر بی لینوکس کار می‌کنید، [مسیر ویندوز](00_lesson_windows.md) را بخوانید؛ زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
+
 ---
 
 ## تمرین ۱: کروموزوم یا پلاسمید؟
-> **راهنمایی:** درس ۱، بخش ۴. ستون ۳ نام contig و ستون ۹ Scope است؛ `awk` برای فیلتر و `sort | uniq -c` برای شمردن.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۴. ستون ۳ نام contig و ستون ۹ Scope است؛ `awk` برای فیلتر و `sort | uniq -c` برای شمردن.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): جدول AMRFinderPlus ندارید. جای ژن‌های ResFinder (گام ۲) را ببینید: روی کدام contig‌اند؟ و کروموزوم K-12 در ماژول ۰۱ (isoC، کنترل منفی) چند ژن اکتسابی داشت؟
 
 (الف) در `isoF.amr.tsv` چند ژن core روی هر contig هست؟
 (ب) از این، درباره‌ی خطر انتقال مقاومت از isoF به سویه‌های دیگر چه می‌گویید؟
@@ -26,7 +30,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۲: رپلیکون در ایزوله‌های شبیه‌سازی‌شده
-> **راهنمایی:** درس ۱، بخش ۵ و کادر «امتحان کن» آن. همان دستور `blastn` را در یک حلقه‌ی `for` روی `isoA` تا `isoE` اجرا کنید و سطرهای با پوشش ≥ ۶۰٪ را بشمارید.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۵ و کادر «امتحان کن» آن. همان دستور `blastn` را در یک حلقه‌ی `for` روی `isoA` تا `isoE` اجرا کنید و سطرهای با پوشش ≥ ۶۰٪ را بشمارید.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): ‏`pEK499.pf.tsv` گام ۳ مسیر ویندوز را ببینید، سپس همان `blastn` را در `foreach ($i in "isoA", "isoB", "isoC") { … -out "$i.pf.tsv" }` روی ژنوم‌های ماژول ۰۱ اجرا کنید (isoD و isoE از ماژول ۰۲، اگر دارید) و سطرها را با `(Get-Content isoA.pf.tsv).Count` بشمارید.
 
 (الف) برای هر ایزوله چند هم‌ردیفی رپلیکون (با پوشش ≥ ۶۰٪) پیدا می‌شود؟
 (ب) در یک ایزوله‌ی **واقعی** با همین نتیجه، آیا می‌توان گفت «پلاسمید ندارد»؟ دو دلیل بیاورید.
@@ -34,7 +40,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۳: ژن‌هایی که چسبیده به IS‌اند
-> **راهنمایی:** درس ۱، بخش ۶. آرگومان چهارم `gene_context.py` فاصله است.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۶. آرگومان چهارم `gene_context.py` فاصله است.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): ‏`gb_context.py` (گام ۴) را با فاصله‌ی **۱۰۰** و همان نام‌های رکورد اجرا کنید. برای (ج)، ‏`bla` (TEM) و `catB4` را با جدول ژن‌های درس ۱ (پوشش ۹۴٪ و ۷۰٪) بسنجید.
 
 (الف) ‏`gene_context.py` را با فاصله‌ی **۱۰۰** باز اجرا کنید. کدام ژن‌ها یک IS در کمتر از ۱۰۰ باز دارند؟
 (ب) کدام IS بیشترین تکرار را در این فهرست دارد؟
@@ -43,7 +51,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۴: نقشه‌ی اینتگرون
-> **راهنمایی:** درس ۱، بخش ۶ (اینتگرون). جای `int` را با `grep -B1 '/gene="int"'` و ژن‌های پس از آن را از `isoF.amr.tsv` (ستون‌های ۴، ۵، ۶ و ۷) بگیرید.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۶ (اینتگرون). جای `int` را با `grep -B1 '/gene="int"'` و ژن‌های پس از آن را از `isoF.amr.tsv` (ستون‌های ۴، ۵، ۶ و ۷) بگیرید.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): ‏`Select-String` گام ۴ (بخش ۵.۳) جای `int` را می‌دهد. برای چهار ژن با هم: `Select-String -Path pEK499.gb -Pattern '/gene="(int|dhfrVII|aadA|sulI)"' -Context 1,0` (هر ژن دو بار می‌آید: ویژگی `gene` و `CDS`). نام‌ها و مرزها کهنه‌اند؛ پاسخ را با جای‌های AMRFinderPlus در درس ۱ هم بسنجید.
 
 (الف) جای اینتگراز و چهار ژن پس از آن را به ترتیب، با آغاز و پایان و رشته، بنویسید.
 (ب) فاصله‌ی پایان اینتگراز تا آغاز `dfrA17` چند باز است؟ این فاصله جای چه بخشی از اینتگرون است؟
@@ -52,7 +62,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۵: ناهمسانی در جست‌وجوی CRISPR
-> **راهنمایی:** درس ۲، بخش ۴. آرگومان سوم `find_crispr.py` بیشینه‌ی ناهمسانی است.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۴. آرگومان سوم `find_crispr.py` بیشینه‌ی ناهمسانی است.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): همان دستور گام ۶ با `0` به جای `3`، و `| Set-Content k12_sp0.fna`.
 
 (الف) ‏`find_crispr.py` را روی isoC با **۰** ناهمسانی اجرا کنید. چند آرایه و چند spacer؟
 (ب) با ۳ ناهمسانی چه بود (درس ۲)؟ فرق را توضیح دهید.
@@ -61,7 +73,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۶: خانواده‌های IS در کروموزوم K-12
-> **راهنمایی:** درس ۲، بخش ۳ (`awk` روی GFF). ستون ۳ نوع `mobile_genetic_element` است و نام در ویژگی `mobile_element_type=insertion sequence:…` آمده؛ با `grep -oE "insertion sequence:IS[0-9]+"` خانواده را جدا کنید.
+> **راهنمایی (لینوکس):** درس ۲، بخش ۳ (`awk` روی GFF). ستون ۳ نوع `mobile_genetic_element` است و نام در ویژگی `mobile_element_type=insertion sequence:…` آمده؛ با `grep -oE "insertion sequence:IS[0-9]+"` خانواده را جدا کنید.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): یک سطر پایتون: `py -c "import re, collections; L = [l for l in open('ecoli_k12.gff') if '\tmobile_genetic_element\t' in l]; c = collections.Counter(m for l in L for m in re.findall(r'insertion sequence:(IS\d+)', l)); print(len(L), sum(c.values()), c.most_common(3), 'IS26:', c['IS26'])"`
 
 (الف) ‏K-12 چند ویژگی `mobile_genetic_element` دارد؟
 (ب) سه خانواده‌ی IS پرشمار با شمارشان؟
@@ -70,7 +84,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۷ (اختیاری): ‏MOB-suite
-> **راهنمایی:** درس ۱، بخش ۷. فایل `contig_report.txt` نسبت هر contig را می‌گوید.
+> **راهنمایی (لینوکس):** درس ۱، بخش ۷. فایل `contig_report.txt` نسبت هر contig را می‌گوید.
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): ‏MOB-suite نسخه‌ی ویندوزی ندارد. به جایش `pEK499.fna` را به **PlasmidFinder** وب بدهید (گام ۳، ✍️) و رپلیکون‌ها را با فیلتر Excel بسنجید. (`predicted_mobility` را در وب نمی‌گیرید.)
 
 (الف) ‏`mob_recon` را روی `genomes/isoF.fna` اجرا کنید. contig `isoF_pEK499` به چه چیزی نسبت داده شد؟
 (ب) ‏`mob_typer` را روی `pEK499.fna` اجرا کنید. ستون‌های رپلیکون و `predicted_mobility` چه می‌گویند؟ رپلیکون‌ها را با نتیجه‌ی بخش ۵ درس ۱ بسنجید.
@@ -78,7 +94,9 @@ P=~/Bioinformatics_Learning-main/08_AMR_Virulence_Phylogeny/99_scripts_data
 ---
 
 ## تمرین ۸: فکری — شیوع کلونال یا پلاسمیدی؟
-> **راهنمایی:** درس ۱، داستان و بخش ۲؛ درس ۲، بخش «CRISPR برای تایپ سویه‌ها».
+> **راهنمایی (لینوکس):** درس ۱، داستان و بخش ۲؛ درس ۲، بخش «CRISPR برای تایپ سویه‌ها».
+>
+> **ویندوز** ([مسیر ویندوز](00_lesson_windows.md)): همانند لینوکس؛ فکری است.
 
 در یک بخش بیمارستان، سه *E. coli* مقاوم به سفالوسپورین پیدا شده‌اند. همه `blaCTX-M-15` دارند.
 (الف) چه نتیجه‌ای (از MLST/فیلوژنی و از تحلیل پلاسمید) نشان می‌دهد **یک سویه** پخش شده؟
