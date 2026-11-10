@@ -10,6 +10,7 @@
 | **ابزار** | ‏FastQC 0.12.1، fastp 0.23.4، MultiQC 1.25.1؛ محیط [`envs/metagenomics.yml`](../../envs/metagenomics.yml) |
 | **داده** | ریدهای بخش ۰۱ (`01_Linux/99_scripts_data/data/fastq`)، در پوشه‌ی پروژه‌ی `~/meta/raw` |
 | **وضعیت** | ✅ قالب تازه (2026-10-21)؛ خروجی‌ها از اجرای 2026-10-12؛ ساختن محیط conda به‌صورت آنلاین هنوز آزموده نشده |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 ## اهداف یادگیری
 پس از این ماژول می‌توانید:
@@ -19,6 +20,7 @@
 4. جفت ماندن R1 و R2 را بسنجید و عددهای گزارش JSON را با پایتون جدول کنید.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ FastQC با پنجره، `fastq_stats.py` و `fastqc_zip.py`، MultiQC با pip، fastp در Galaxy. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson_fastqc.md](01_lesson_fastqc.md): آیا ریدها سالم‌اند؟ FastQC و MultiQC.
 2. ‏[02_lesson_trimming.md](02_lesson_trimming.md): بریدن و پالایش با fastp.
 3. ‏[03_exercises.md](03_exercises.md): تمرین‌ها؛ زیر عنوان هر تمرین راهنمایی آمده است.

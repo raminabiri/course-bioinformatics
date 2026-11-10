@@ -503,4 +503,16 @@ done
 - Lin H, Peddada SD (2020). Analysis of compositions of microbiomes with bias correction (ANCOM-BC). *Nature Communications* 11:3514. https://doi.org/10.1038/s41467-020-17041-7
 - سایر منابع: پایان [درس ۱](01_lesson_qiime_dada2.md) و [درس ۲](02_lesson_taxonomy_diversity.md).
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+پاسخ‌های بالا از QIIME 2 روی لینوکس است. در مسیر ویندوز QIIME 2 در Galaxy اجرا می‌شود (✍️)؛ اگر نسخه‌ی QIIME 2 در Galaxy با درس (2026.7) فرق کند، عددها شاید کمی فرق کنند.
+
+**پاسخ‌های ۳ و ۴ (واقعی، سرور).** ‏`qza_peek.py` و سطرهای پایتون روی خروجی‌های درس اصلی: **۴۱۴ ASV** (۳۷۲ با طول ۲۲۷)، شاخه‌ها Actinobacteriota ۱۷۰، Proteobacteria ۶۵، Chloroflexi ۳۹، Acidobacteriota ۲۸، Gemmatimonadota ۲۵، و ۱۳ ASV آرکی؛ همان پاسخ‌های بالا.
+
+**پاسخ ۱.** ‏`details.tsv` درون `demux-details.qza` همان جدول export است؛ شمارش با pandas یا PivotTable در Excel همان عددهای پاسخ بالا را می‌دهد.
+
+**پاسخ ۲ (✍️).** vsearch ویندوزی همان الگوریتم است؛ همان شمار جفت‌های یکی‌شده و همان پراکنش طول (۲۵۳ باز) را انتظار داشته باشید.
+
 </div>

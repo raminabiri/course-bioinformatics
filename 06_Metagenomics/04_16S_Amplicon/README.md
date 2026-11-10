@@ -10,6 +10,7 @@
 | **ابزار** | ‏QIIME 2 amplicon 2026.7 (q2-dada2، q2-feature-classifier با scikit-learn 1.7.1، q2-diversity)، vsearch، MAFFT، FastTree؛ محیط رسمی QIIME 2 (نصب: https://library.qiime2.org/quickstart/amplicon) |
 | **داده** | آموزش رسمی QIIME 2 «Atacama soils»، زیرنمونه‌ی ۱٪ (EMP paired-end، V4، 2×151) + مرجع SILVA 138 برای ناحیه‌ی V4؛ کمابیش ۵۳ مگابایت با `download.sh` |
 | **وضعیت** | ✅ قالب تازه (2026-10-21)؛ خروجی‌ها از اجرای 2026-10-14/15 |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 > ⚠️ **تنها برای تمرین.** داده یک زیرنمونه‌ی ۱٪ است (میانه‌ی ۲۴۳ رید در هر نمونه پس از DADA2) و طبقه‌بند تنها تا سطح **جنس** و تنها برای ناحیه‌ی V4 آموزش دیده است. در پژوهش واقعی: داده‌ی کامل (ده‌ها هزار رید در هر نمونه)، مرجع کامل SILVA 138.2 / GTDB / Greengenes2 که با RESCRIPt برای پرایمرهای خودتان آماده شده، و کنترل منفی و mock community در همان ران.
 
@@ -22,6 +23,7 @@
 5. تنوع آلفا و بتا را حساب کنید، با آزمون درست (Kruskal–Wallis، PERMANOVA، PERMDISP، مدل چندمتغیره) گزارش کنید و **درهم‌آمیختگی** را بشناسید.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ QIIME 2 در Galaxy، `.qzv` در QIIME 2 View، `.qza` با `qza_peek.py`. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson_qiime_dada2.md](01_lesson_qiime_dada2.md): از ریدها تا جدول ASV.
 2. ‏[02_lesson_taxonomy_diversity.md](02_lesson_taxonomy_diversity.md): نام‌گذاری، تنوع و یک دام آماری.
 3. ‏[03_exercises.md](03_exercises.md): تمرین‌ها؛ زیر عنوان هر تمرین راهنمایی آمده است.

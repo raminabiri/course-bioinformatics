@@ -26,6 +26,10 @@
 
 وضعیت ✅ یعنی درس در قالب تازه است و همه‌ی خروجی‌های نشان‌داده‌شده از اجرای واقعی (2026-10-12 تا 2026-10-15) آمده‌اند. بخش MetaPhlAn/HUMAnN ماژول ۰۳ تنها نوشته شده و اجرا نشده است.
 
+## مسیر ویندوز
+
+هر چهار ماژول فایل `00_lesson_windows.md` دارند. FastQC و MultiQC روی ویندوز اجرا می‌شوند؛ fastp، Bowtie2، samtools، Kraken2، Bracken و QIIME 2 نسخه‌ی ویندوزی ندارند و در **Galaxy** اجرا می‌شوند (✍️). شمارش‌ها و ارزیابی‌ها با اسکریپت‌های پایتون پوشه‌ی [windows](../windows/) (`fastq_stats.py`، `fastqc_zip.py`، `spike_human.py`، `read_origins.py`، `qza_peek.py`) و همان `evaluate_profile.py` است. پایگاه Kraken2 در Galaxy با پایگاه تمرینی فرق دارد، پس عددهای ماژول ۰۳ فرق می‌کنند.
+
 ## پیش‌نیاز بخش
 بخش‌های ۰۱ تا ۰۵: لینوکس، Conda و فرمت‌ها (به‌ویژه FASTQ و SAM/BAM)، پایتون، بسته‌های R (vegan) و Snakemake.
 

@@ -19,10 +19,13 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 > یادآوری: پایگاه **تمرینی** است. عددها درباره‌ی رفتار ابزارند، نه دقت Kraken2 در کار واقعی.
 
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید. Kraken2 و Bracken را در Galaxy اجرا کنید (پایگاه Galaxy با پایگاه تمرینی فرق دارد؛ عددهای شما فرق می‌کنند، الگوها نه). زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
+
 ---
 
 ## تمرین ۱: ریدهای *B. fragilis* کجا رفتند؟
 > **راهنمایی:** درس ۱، بخش ۵ (همان awk برای *E. coli*، با `NC_006347`). برای نام هر taxid، ستون ۵ `.kreport` را بجویید: `awk -F'\t' '$5 == 817'`.
+> **ویندوز:** سطر `Counter` گام ۳ [مسیر ویندوز](00_lesson_windows.md) را با `NC_006347` بزنید. نام هر taxid: `Select-String -Path profile\kraken\minigut_c0.kreport -Pattern "\t817\t"`.
 
 (الف) جدول «مقصد، شمار جفت، درصد» را برای ریدهای *B. fragilis* در `minigut` (confidence 0) بسازید.
 (ب) چرا ۵٫۷٪ آن‌ها طبقه‌بندی نشدند، با آنکه *B. fragilis* در پایگاه هست؟
@@ -32,6 +35,7 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 ## تمرین ۲: ریدهای طبقه‌بندی‌نشده چه هستند؟
 > **راهنمایی:** در `.kraken`، ستون ۱ برای ریدهای بی‌برچسب `U` است و ستون ۲ نام رید. با `sed -E` تنها accession را از نام نگه دارید (ماژول ۰۲، بخش ۷).
+> **ویندوز:** ‏`py -c "import re; from collections import Counter; c = Counter(re.match(r'(N[CZ]_[0-9.]+)', l.split('\t')[1]).group(1) for l in open('profile/kraken/minigut_c0.kraken') if l.startswith('U')); print(c.most_common())"`.
 
 در `minigut_sample2`، ۱۴٫۵٪ ریدها طبقه‌بندی نشدند.
 (الف) مبدأ واقعی ریدهای `U` را بشمارید.
@@ -42,6 +46,7 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 ## تمرین ۳: جاروب confidence
 > **راهنمایی:** درس ۲، بخش ۴. یک حلقه‌ی `for c in …` روی `CONF=$c bash $S/run_profile.sh minigut_sample2`، سپس حلقه‌ای دیگر روی `evaluate_profile.py … | tail -n 1`. درصد طبقه‌بندی‌شده در `profile/kraken/minigut_sample2_c$c.log` است.
+> **ویندوز:** در Galaxy، Kraken2 را با Confidence ‏0، 0.05، 0.1، 0.2 و 0.5 اجرا کنید (یا تنها 0 و 0.1)، Bracken روی هر کدام، و `evaluate_profile.py` روی هر خروجی. درصد طبقه‌بندی‌شده در سطر `unclassified` بالای هر `.kreport` است.
 
 ‏Kraken2 و Bracken را روی `minigut_sample2` با `--confidence` برابر 0، 0.05، 0.1، 0.2 و 0.5 اجرا کنید و این جدول را پر کنید:
 
@@ -54,6 +59,7 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 ## تمرین ۴: سطح جنس
 > **راهنمایی:** درس ۱، بخش ۷ (گزینه‌ی `-l`). برای `minigut` طول رید ۱۲۵ است.
+> **ویندوز:** Bracken در Galaxy با **Level** ← Genus.
 
 (الف) Bracken را برای `minigut` (confidence 0.1) در سطح **جنس** اجرا کنید.
 (ب) آیا گزارش در سطح جنس مشکل *E. coli/Shigella* را درست می‌کند؟ چرا؟
@@ -63,6 +69,7 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 ## تمرین ۵ (فکری): رید در برابر سلول
 > **راهنمایی:** با پوشش یکنواخت، شمار ریدهای یک گونه ∝ شمار سلول × اندازه‌ی ژنوم. پس سهم سلول ∝ رید ÷ اندازه‌ی ژنوم.
+> **ویندوز:** فکری؛ حساب را در Excel یا پایتون بکنید.
 
 پاسخ درست `minigut` بر پایه‌ی **رید** است: *B. fragilis* ۲۸٬۸۲۷ جفت (۵۷٫۸٪) و *E. coli* ۲۱٬۰۱۸ جفت (۴۲٫۲٪). اندازه‌ی ژنوم *B. fragilis* YCH46 ‏۵٬۲۷۷٬۲۷۴ باز و *E. coli* K-12 ‏۴٬۶۴۱٬۶۵۲ باز است.
 (الف) سهم **سلول‌ها** را حساب کنید.
@@ -73,6 +80,7 @@ CONF=0.1 bash $S/run_profile.sh       # confidence 0.1
 
 ## تمرین ۶ (چالشی): *Acinetobacter pittii*
 > **راهنمایی:** درس ۱، بخش ۶ (ستون‌های `.kreport` و رتبه‌های میانی مانند `G1`). `awk -F'\t' '$6 ~ /Acinetobacter/'`.
+> **ویندوز:** ‏`Select-String -Path profile\kraken\minigut_sample2_c0.kreport -Pattern "Acinetobacter"`؛ با پایگاه Galaxy ردیف‌های بیشتری می‌بینید.
 
 در `minigut_sample2`، Bracken کمابیش ۵٪ *A. pittii* گزارش می‌کند، با آنکه این گونه در نمونه نیست.
 (الف) با `.kreport` (confidence 0.1) نشان دهید ریدهای *Acinetobacter* در کدام سطح‌ها ماندند.

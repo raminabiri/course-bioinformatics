@@ -10,6 +10,7 @@
 | **ابزار** | ‏Kraken2 2.17.1، Bracken 3.0.1؛ MetaPhlAn 4 و HUMAnN 3 تنها معرفی (اجرا نشده)؛ محیط [`envs/metagenomics.yml`](../../envs/metagenomics.yml) |
 | **داده** | ‏`~/meta/host/clean/` + `ground_truth_species.tsv` + **پایگاه داده‌ی تمرینی** (کمابیش ۱۳۰ مگابایت دانلود) |
 | **وضعیت** | ✅ قالب تازه (2026-10-21)؛ خروجی‌های Kraken2/Bracken از اجرای 2026-10-13؛ بخش MetaPhlAn/HUMAnN ✍️ تنها نوشته‌شده |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 > ⚠️ **پایگاه داده‌ی این ماژول تنها برای تمرین است** (۴۵ ژنوم، ۲۶۳ مگابایت). برای کار پژوهشی پایگاه کامل لازم است، برای نمونه Kraken2 Standard (۷۹٫۶ گیگابایت) یا PlusPF (۸۴٫۸ گیگابایت) از https://benlangmead.github.io/aws-indexes/k2.
 
@@ -22,6 +23,7 @@
 5. محدودیت‌های بنیادی را بشناسید: گونه‌ی غایب از پایگاه، گروه‌های گونه‌ای، رید در برابر سلول.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ Kraken2 و Bracken در Galaxy، یک‌سطری‌های پایتون به جای `awk`، `evaluate_profile.py`، Pavian. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson_kraken.md](01_lesson_kraken.md): چه کسانی در نمونه‌اند؟ Kraken2 و Bracken.
 2. ‏[02_lesson_evaluation.md](02_lesson_evaluation.md): پروفایل چقدر درست است؟ و معرفی پروفایل عملکردی.
 3. ‏[03_exercises.md](03_exercises.md): تمرین‌ها؛ زیر عنوان هر تمرین راهنمایی آمده است.

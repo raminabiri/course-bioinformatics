@@ -77,6 +77,21 @@ py $HOME\course-bioinformatics-main\windows\get_part01_data.py
 
 </div>
 
+## اسکریپت‌های کمکی این پوشه
+
+همه با کتابخانه‌ی استاندارد پایتون (جز آن‌جا که گفته شده) و روی سرور دوره آزموده شده‌اند:
+
+| اسکریپت | کار | ماژول |
+| :--- | :--- | :--- |
+| [`get_k12_genome.py`](get_k12_genome.py) | ژنوم و GFF ‏E. coli K-12 | همه |
+| [`get_part01_data.py`](get_part01_data.py) | ریدهای بخش ۰۱، ناحیه‌ی chr21، `ground_truth.tsv` | ۰۳، ۰۴، ۰۶ |
+| [`fastq_stats.py`](fastq_stats.py) | آمار FASTQ (همانند `seqkit stats -a`) | ۰۶ |
+| [`fastqc_zip.py`](fastqc_zip.py) | خواندن گزارش‌های zip ‏FastQC | ۰۶ |
+| [`spike_human.py`](spike_human.py) | نمونه‌ی آزمایشی با ریدهای انسانی (به جای wgsim) | ۰۶ |
+| [`read_origins.py`](read_origins.py) | شمارش ریدها بر پایه‌ی مبدأ (داده‌ی شبیه‌سازی‌شده) | ۰۶ |
+| [`get_16s_data.py`](get_16s_data.py) | داده‌ی 16S با وارسی MD5 | ۰۶ |
+| [`qza_peek.py`](qza_peek.py) | درون فایل‌های `.qza` و `.qzv` ‏QIIME 2 | ۰۶ |
+
 ## ماژول‌هایی که مسیر ویندوز دارند
 
 | ماژول | فایل ویندوزی | ابزارها |
@@ -91,6 +106,10 @@ py $HOME\course-bioinformatics-main\windows\get_part01_data.py
 | ‏04/02 اجرای اسکریپت آماده‌ی R | [00_lesson_windows.md](../04_R_Packages/02_Run_Rscript/00_lesson_windows.md) | R، PowerShell (`$LASTEXITCODE`، `Start-Process`، `-replace`، `Compare-Object`) |
 | ‏04/03 ‏DESeq2، vegan و ggtree | [00_lesson_windows.md](../04_R_Packages/03_Bioc_Examples/00_lesson_windows.md) | ‏R (DESeq2، vegan، ggtree)، پایتون (pandas)، Excel، PowerShell |
 | ‏04/04 اسکریپت‌های R در خط لوله | [00_lesson_windows.md](../04_R_Packages/04_R_in_Pipelines/00_lesson_windows.md) | ‏R، PowerShell (`run_all.ps1`؛ ✍️ آزموده‌نشده) |
+| ‏06/01 کنترل کیفیت و بریدن ریدها | [00_lesson_windows.md](../06_Metagenomics/01_Read_QC_Trimming/00_lesson_windows.md) | ‏FastQC (ویندوز)، MultiQC (pip)، پایتون (`fastq_stats.py`، `fastqc_zip.py`)، fastp در Galaxy |
+| ‏06/02 برداشتن DNA میزبان | [00_lesson_windows.md](../06_Metagenomics/02_Host_Removal_Alignment/00_lesson_windows.md) | پایتون (`spike_human.py`، `read_origins.py`)، Bowtie2 و samtools در Galaxy |
+| ‏06/03 پروفایل تاکسونومیک | [00_lesson_windows.md](../06_Metagenomics/03_Taxonomic_Functional_Profiling/00_lesson_windows.md) | ‏Kraken2 و Bracken در Galaxy، پایتون (`evaluate_profile.py`)، Pavian (وب) |
+| ‏06/04 آمپلیکون 16S | [00_lesson_windows.md](../06_Metagenomics/04_16S_Amplicon/00_lesson_windows.md) | ‏QIIME 2 در Galaxy، QIIME 2 View (وب)، پایتون (`get_16s_data.py`، `qza_peek.py`) |
 | ‏07/01 اسمبلی و کیفیت ژنوم | [00_lesson_windows.md](../07_Bacterial_Genomics/01_Assembly_Quality/00_lesson_windows.md) | پایتون (`debruijn_toy.py`، `repeat_report.py`، `asm_stats.py`)، Galaxy (Shovill، QUAST، CheckM2)، WebQUAST |
 | ‏08/01 ژن‌ها و جهش‌های مقاومت | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/01_AMR_Resistance_Genes/00_lesson_windows.md) | پایتون (Biopython)، BLAST+، ResFinder و CARD RGI (وب) |
 | ‏08/02 عامل‌های بیماری‌زایی | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/02_Virulence_Factors/00_lesson_windows.md) | پایتون، BLAST+ و VFDB، Excel، VirulenceFinder (وب) |

@@ -20,6 +20,8 @@ ls raw qc
 
 ```bash
 bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Trimming/scripts/run_qc.sh
+
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید؛ پوشه `$HOME\meta` و `$W` همان گام ۰ آن. `run_qc.sh` در ویندوز اجرا نمی‌شود: گزارش‌های FastQC را با پنجره‌ی FastQC و بریدن را با fastp در Galaxy بسازید. زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
 ```
 
 </div>
@@ -28,6 +30,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۱: کارت شناسایی داده
 > **راهنمایی:** ‏`seqkit stats -a -T` (بخش ۰۲، ماژول ۰۲) برای شمار، طول، Q30 و GC. برای کیفیت جایگاه نخست و آخر: درس ۱، بخش ۶ (`grep -A` روی `fastqc_data.txt`؛ آخرین خط داده پیش از `>>END_MODULE` است).
+> **ویندوز:** ‏`py $W\fastq_stats.py` (همان ستون‌های seqkit: شمار، طول، Q20، Q30، GC) و `py $W\fastqc_zip.py module qc\fastqc_raw\minigut_R1_fastqc.zip "Per base sequence quality"` (آخرین سطر = آخرین جایگاه).
 
 این جدول را برای هر چهار فایل `raw/*.fastq.gz` پر کنید:
 
@@ -40,6 +43,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۲: دو ژنوم، یک قله؟
 > **راهنمایی:** درس ۱، بخش ۷ (دستور `grep -A 102 '>>Per sequence GC'` و awk). همان دستور را برای `minigut_R1` اجرا کنید.
+> **ویندوز:** ‏`py $W\fastqc_zip.py module qc\fastqc_raw\minigut_R1_fastqc.zip "Per sequence GC content"`؛ یا نمودار همان بخش را در پنجره‌ی FastQC ببینید.
 
 نمونه‌ی `minigut` از **دو** ژنوم ساخته شده است: *B. fragilis* (GC کمابیش ۴۳٫۳٪) و *E. coli* (۵۰٫۸٪). با این حال FastQC برای GC آن PASS می‌دهد.
 (الف) پراکنش GC آن را چاپ کنید؛ قله کجاست؟
@@ -50,6 +54,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۳: سه راهبرد روی نمونه‌ی ۲
 > **راهنمایی:** درس ۲، بخش ۴. همان سه دستور را با `s=minigut_sample2` و نام‌های خروجی تازه (`s2A`، `s2B`، `s2C`) اجرا کنید؛ سپس `grep -H`.
+> **ویندوز:** سه بار fastp در Galaxy روی `minigut_sample2` با سه تنظیم (A: تنها quality filter ۲۰ و length ۳۶؛ B: cut right / sliding window؛ C: cut front و tail). شمارها را از بخش Filtering result هر گزارش HTML بخوانید.
 
 این جدول را پر کنید (ورودی: ۴۹٬۹۸۶ رید تکی):
 
@@ -62,6 +67,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۴: پهنای پنجره
 > **راهنمایی:** گزینه‌ی `--cut_window_size` (پیش‌فرض ۴). کادر «امتحان کن» درس ۲، بخش ۴، حساب میانگین پنجره را نشان می‌دهد.
+> **ویندوز:** در فرم fastp در Galaxy، **Cut window size** را ۱ و ۱۰ بگذارید.
 
 راهبرد B را روی `minigut` با `--cut_window_size 10` اجرا کنید.
 (الف) چند رید ماند؟ چند تا به‌خاطر کوتاهی رفتند؟
@@ -71,6 +77,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۵: جفت‌ها
 > **راهنمایی:** درس ۲، بخش ۵. برای نام نخستین و آخرین رید: `zcat … | awk 'NR%4==1'` و سپس `head -n 1` و `tail -n 1`.
+> **ویندوز:** نام نخستین و آخرین رید: `py -c "import gzip; n = [l for i, l in enumerate(gzip.open('qc/trimmed/minigut_R1.fastq.gz', 'rt')) if i % 4 == 0]; print(n[0].strip(), n[-1].strip(), len(n))"` (و همین برای R2؛ نام فایل‌های Galaxy را بگذارید).
 
 (الف) شمار ریدهای R1 و R2 **هر دو** نمونه را در `qc/trimmed/` بشمارید.
 (ب) نام نخستین و آخرین رید R1 و R2 نمونه‌ی `minigut` را کنار هم بگذارید. چه چیزی باید یکسان باشد و چه چیزی نه؟
@@ -79,6 +86,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۶: جدول QC برای مقاله
 > **راهنمایی:** درس ۲، بخش ۶ (`json.load`). برای همه‌ی فایل‌ها: `glob` (بخش ۰۳). ‏`q30_rate` در JSON کسری است (۰٫۹۱)، نه درصد.
+> **ویندوز:** همان کد پایتون (`json` و `glob`) روی JSONهایی که از Galaxy دانلود کرده‌اید؛ در IDLE.
 
 (الف) یک اسکریپت پایتون به نام `fastp_table.py` بنویسید که برای هر فایل `qc/fastp/*.json` یک سطر TSV چاپ کند با ستون‌های: `sample`، `reads_before`، `reads_after`، `pct_kept`، `q30_before`، `q30_after`، `low_quality`، `too_short`، `too_many_N`، `adapter_trimmed`.
 (ب) بر پایه‌ی جدول، یک بند **Methods** و یک جمله‌ی **Results** (به انگلیسی) بنویسید: نسخه‌ی ابزارها، پارامترها و دلیل برگزیدنشان.
@@ -87,6 +95,7 @@ bash ~/course-bioinformatics-main/06_Metagenomics/99_scripts_data/01_Read_QC_Tri
 
 ## تمرین ۷ (فکری): Snakemake
 > **راهنمایی:** درس ۲، بخش ۷.۳ و ماژول 05/04، بخش ۶ («چه چیزی دوباره اجرا می‌شود؟»).
+> **ویندوز:** فکری؛ Snakemake در ویندوز پشتیبانی کامل ندارد. Galaxy خودش «Workflow» دارد: گام‌های تاریخچه را با Extract Workflow به یک گردش کار تبدیل می‌کند.
 
 در گردش کار این ماژول (۱۲ کار برای ۲ نمونه):
 (الف) با **سه** نمونه، `snakemake -n` چند کار از هر قاعده نشان می‌دهد؟

@@ -19,10 +19,13 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 تمرین‌ها را با دستورهای خودتان حل کنید. `bash $C/scripts/run_16s.sh` پاسخ مرجع کل ماژول است؛ پس از تمرین‌ها اجرایش کنید و با `bash $C/scripts/check.sh` بسنجید. برای خواندن یک `.qza` با Bash یا پایتون: `qiime tools export --input-path X.qza --output-path پوشه` (فایل‌های TSV، FASTA یا BIOM).
 
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید. QIIME 2 را در Galaxy اجرا کنید و به جای `qiime tools export`، فایل‌های درون `.qza` را با `qza_peek.py` بیرون بکشید (`$W` همان گام ۰). زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
+
 ---
 
 ## تمرین ۱: ریدها کجا رفتند؟
 > **راهنمایی:** درس ۱، بخش ۴. در `details.tsv` (خروجی export شده‌ی `demux-details.qza`)، ستون ۲ نام نمونه است (`None` اگر نرسید)، ستون ۴ بارکد خوانده‌شده و ستون ۶ شمار خطای تصحیح‌شده. نخست با `head` ستون‌ها را ببینید.
+> **ویندوز:** ‏`py $W\qza_peek.py demux-details.qza details.tsv 5`؛ سپس `py $W\qza_peek.py demux-details.qza details.tsv 0 details.tsv` و در Excel یا pandas بشمارید (`df.iloc[:, 1].value_counts()`).
 
 (الف) demultiplex را یک بار **بی** `--p-rev-comp-mapping-barcodes` اجرا کنید. چه پیامی می‌گیرید و درباره‌ی کتابخانه چه می‌گوید؟
 (ب) با گزینه‌ی درست اجرا کنید و ریدها را در چهار گروه بشمارید: به نمونه رسید (بی خطا / با خطای تصحیح‌شده)، به نمونه نرسید (بارکد بی‌خطا / با خطا).
@@ -33,6 +36,7 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 ## تمرین ۲: هم‌پوشانی و طول آمپلیکون
 > **راهنمایی:** درس ۱، بخش ۵.۲ (فرمول هم‌پوشانی). `qiime tools export` روی `demux.qza` یک FASTQ برای هر نمونه و هر رید می‌دهد (`*_R1_001.fastq.gz`)؛ `cat` آن‌ها را یکی می‌کند. vsearch در محیط QIIME 2 هست: `vsearch --fastq_mergepairs R1 --reverse R2 --fastqout out.fq`.
+> **ویندوز:** vsearch نسخه‌ی ویندوزی دارد (https://github.com/torognes/vsearch/releases، فایل `win-x86_64`). FASTQ هر نمونه را در Galaxy با **qiime2 tools export** روی `demux.qza` بگیرید؛ سپس `vsearch.exe --fastq_mergepairs R1 --reverse R2 --fastqout out.fq` (✍️).
 
 (الف) همه‌ی R1ها و R2ها را با vsearch یکی کنید. چند درصد یکی می‌شوند و میانگین طول قطعه چقدر است؟
 (ب) برای این `trunc-len`ها هم‌پوشانی را حساب کنید و پیش‌بینی کنید DADA2 کار می‌کند یا نه: (150, 150)، (150, 130)، (130, 120)، (120, 120)، (0, 0).
@@ -43,6 +47,7 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 ## تمرین ۳: پارامترهای DADA2
 > **راهنمایی:** درس ۱، بخش ۶ و کادر کنجکاوها (`--p-pooling-method pseudo`). جمع ستون‌های `stats.tsv` (export شده‌ی `denoising-stats.qza`) را با awk بگیرید؛ دو خط نخست سرآیندند. شمار ASV = شمار `>` در `dna-sequences.fasta`.
+> **ویندوز:** ‏`py $W\qza_peek.py denoising-stats.qza stats.tsv 0 stats.tsv` و جمع ستون‌ها با pandas (`pd.read_csv('stats.tsv', sep='\t', skiprows=[1]).sum(numeric_only=True)`)؛ شمار ASV: سطر `Counter` گام ۴ مسیر ویندوز. DADA2 با pooling را در Galaxy اجرا کنید.
 
 ‏DADA2 را با این تنظیم‌ها اجرا کنید (همه با `trim-left 13`) و جدولی از ریدهای merged، non-chimeric و شمار ASV بسازید:
 
@@ -64,6 +69,7 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 ## تمرین ۴: نام‌گذاری
 > **راهنمایی:** درس ۲، بخش ۳. در `taxonomy.tsv`، ستون ۲ رشته‌ی تاکسونومی است با جداکننده‌ی `"; "` (برای نمونه `d__Bacteria; p__Actinobacteriota; …`). برای (ج): `qiime taxa collapse --p-level 6` و سپس `biom convert --to-tsv`.
+> **ویندوز:** ‏`taxonomy.tsv` با `qza_peek.py`؛ شمارش با سطر پایتون گام ۴ مسیر ویندوز. برای (ج): **qiime2 taxa collapse** در Galaxy.
 
 (الف) چند ASV تا جنس رفتند؟ پنج شاخه‌ی پرشمار؟ چند ASV آرکی‌اند و چرا آرکی در داده‌ی «16S» دیده می‌شود؟
 (ب) طبقه‌بندی vsearch را هم بسازید. یک ASV با ناهمخوانی در سطح جنس پیدا کنید و Confidence هر روش را برای آن ببینید.
@@ -74,6 +80,7 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 ## تمرین ۵: پوشش گیاهی یا ارتفاع؟
 > **راهنمایی:** درس ۲، بخش‌های ۴.۲، ۶ و ۷. ستون ۳ جدول نمونه‌ها ارتفاع و ستون ۲۰ پوشش گیاهی است. برای ژرفاهای دیگر، `core-metrics-phylogenetic` را با `--output-dir` تازه اجرا کنید.
+> **ویندوز:** ‏`core-metrics-phylogenetic` با ژرفاهای دیگر در Galaxy؛ ستون‌های جدول نمونه‌ها را در Excel ببینید.
 
 (الف) ‏`adonis` را یک بار با `elevation+vegetation` و یک بار با `vegetation+elevation` اجرا کنید و جدول‌ها را کنار هم بگذارید. چرا p هر متغیر به ترتیب وابسته است؟
 (ب) ارتفاع سایت‌های هر گروه پوشش گیاهی را از جدول نمونه‌ها درآورید. در کدام بازه‌ی ارتفاع هر دو گروه هستند؟
@@ -85,6 +92,7 @@ bash $C/scripts/train_classifier.sh     # once, if you skipped lesson 2 (about 8
 
 ## تمرین ۶ (فکری): طراحی یک پژوهش واقعی
 > **راهنمایی:** درس ۲، بخش ۷ و کادر کنجکاوها؛ پاسخ تمرین‌های ۳ و ۵.
+> **ویندوز:** فکری؛ وابسته به سیستم‌عامل نیست.
 
 می‌خواهید پرسش «آیا پوشش گیاهی جامعه‌ی میکروبی خاک بیابان را عوض می‌کند؟» را درست پاسخ دهید.
 (الف) طرح نمونه‌برداری‌ای پیشنهاد کنید که درهم‌آمیختگی تمرین ۵ را از میان ببرد.
