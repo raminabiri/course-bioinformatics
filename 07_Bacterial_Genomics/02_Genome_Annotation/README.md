@@ -11,6 +11,7 @@
 | **ابزار (از مستندات)** | Bakta 1.12.1، Prokka 1.15.6، Pharokka 1.10، Phold، geNomad، CheckV، VADR، RepeatModeler2/RepeatMasker، BRAKER4، Funannotate 1.9، BUSCO |
 | **داده** | ‏*E. coli* K-12 بخش ۰۱؛ SARS-CoV-2 `NC_045512.2` و کروموزوم I مخمر `NC_001133.9` (اسکریپت‌ها با `curl` دانلود می‌کنند؛ کمتر از ۵۰۰ کیلوبایت) |
 | **وضعیت** | ✍️ نوشته‌شده (قالب تازه، 2026-10-21). بخش‌های سبک اجراشده (2026-10-15) و خروجی‌ها واقعی‌اند؛ Bakta، Prokka و ابزارهای فاژ، ویروس و یوکاریوت اجرا نشده‌اند |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 تأکید ماژول بر **باکتری** است (درس ۱). فاژ و ویروس (درس ۲) و یوکاریوت (درس ۳) نشان می‌دهند **چه چیزی فرق می‌کند** و چه ابزاری لازم است.
 
@@ -23,6 +24,7 @@
 5. بگویید چرا ویروس‌های یوکاریوتی و ژنوم‌های یوکاریوتی ابزار ویژه می‌خواهند (VADR؛ BRAKER4، Funannotate، BUSCO).
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ Pyrodigal با pip، `compare_genecalls.py`، Bakta و tRNAscan-SE وب، یک‌سطری‌های پایتون. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson_prokaryote.md](01_lesson_prokaryote.md): باکتری و آرکی.
 2. ‏[02_lesson_phage_virus.md](02_lesson_phage_virus.md): فاژ، پروفاژ و ویروس.
 3. ‏[03_lesson_eukaryote.md](03_lesson_eukaryote.md): یوکاریوت (قارچ و مخمر).

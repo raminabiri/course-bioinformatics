@@ -17,10 +17,13 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 تمرین ۶ روی داده‌ی **فرضی** است (برچسب خورده). تمرین ۷ طراحی است.
 
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید (Pyrodigal با `py -m pyrodigal`؛ پوشه `$HOME\genomes`، `$S` همان گام ۰). زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](06_solutions.md) هستند.
+
 ---
 
 ## تمرین ۱ (اجرایی): پیش‌بینی ژن در برابر RefSeq
 > **راهنمایی:** درس ۱، بخش ۳ (ستون ۹ GFF Pyrodigal و جدول مقایسه). برای (۴): در GFF مرجع، سطرهای CDS این سه ژن را با `grep` بجویید و `transl_except` را ببینید.
+> **ویندوز:** گام ۱ [مسیر ویندوز](00_lesson_windows.md). برای (۴): `Select-String -Path ecoli_k12.gff -Pattern "transl_except"`.
 
 1. ‏`bash $S/light_annotation.sh` را اجرا کنید. ستون‌های یک سطر از `annotation/pyrodigal.gff` را توضیح دهید: `partial`، `start_type`، `rbs_motif`، `conf`.
 2. در اجرای پیش‌فرض، یک ژن `partial=10` دارد. چرا؟ Pyrodigal را با `-c` (closed ends) هم اجرا کنید و تعداد ژن‌ها و ژن‌های partial را مقایسه کنید. این گزینه برای کدام نوع اسمبلی درست است و برای کدام غلط؟
@@ -32,6 +35,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۲ (اجرایی): RNAها
 > **راهنمایی:** درس ۱، بخش ۴. ستون‌های `annotation/trnascan.txt`: ۱ نام توالی، ۳ و ۴ آغاز و پایان، ۵ نوع اسیدآمینه، ۶ آنتی‌کدون، ۹ امتیاز؛ سه خط نخست سرآیندند.
+> **ویندوز:** ‏tRNAscan-SE وب (گام ۲)؛ جدول خروجی را در Excel باز کنید. سطرهای `sequence_feature` و ژن ssrA: `Select-String -Path ecoli_k12.gff -Pattern "ssrA|sequence_feature"`.
 
 1. تعداد tRNAها در ARAGORN، tRNAscan-SE و RefSeq را گزارش کنید.
 2. ‏tRNAهایی از tRNAscan-SE را که در RefSeq نیستند پیدا کنید (موقعیت، نوع، امتیاز). برای هر کدام توضیح دهید چیست. (راهنمایی: `sequence_feature` در GFF مرجع، و ژن *ssrA*.)
@@ -42,6 +46,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۳ (محاسباتی): پروفاژهای خفته‌ی K-12
 > **راهنمایی:** درس ۲، بخش ۳. سطرهای `sequence_feature` با `Note=cryptic prophage`؛ برای GC هر ناحیه، Biopython (بخش ۰۳): برش توالی با `seq[start-1:end]`.
+> **ویندوز:** ناحیه‌ها با سطر پایتون گام ۳؛ GC با Biopython (بخش ۰۳) در یک فایل IDLE.
 
 1. ۱۲ ناحیه‌ی `cryptic prophage` را از GFF مرجع استخراج کنید. مجموع طول و درصد ژنوم؟
 2. برای این نواحی در مقایسه با بقیه‌ی ژنوم حساب کنید: (الف) GC، (ب) درصد CDSهایی که محصولشان `uncharacterized` یا `hypothetical` است، (ج) سهم از کل ژن‌های کاذب (`pseudogene`).
@@ -52,6 +57,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۴ (اجرایی): ویروس با ابزار ORF
 > **راهنمایی:** درس ۲، بخش ۴.۴ (مکانیسم‌های ویروسی و VADR).
+> **ویندوز:** گام ۴ مسیر ویندوز (SARS-CoV-2 با `-p meta -g 1`).
 
 1. ‏`bash $S/virus_demo.sh` را اجرا کنید. چند CDS در مرجع SARS-CoV-2 هست و Pyrodigal چند تا پیدا کرد؟
 2. پروتئین pp1ab در مرجع چند اسیدآمینه است و چطور ساخته می‌شود؟ Pyrodigal به‌جای آن چه گزارش کرد؟ چند نوکلئوتید از ژنوم در هیچ پروتئین پیش‌بینی‌شده‌ای نیست، و این ناحیه بخشی از کدام پروتئین بالغ (nsp) است؟
@@ -62,6 +68,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۵ (اجرایی): ابزار باکتریایی روی مخمر
 > **راهنمایی:** درس ۳، بخش ۲.
+> **ویندوز:** گام ۴ مسیر ویندوز (کروموزوم I مخمر با `-g 1`).
 
 1. ‏`bash $S/yeast_demo.sh` را اجرا کنید. چند ژن پروتئین‌ساز در کروموزوم I هست، چند تا intron دارند، و Pyrodigal چند ژن پیش‌بینی کرد؟
 2. برای سه ژن دارای intron توضیح دهید Pyrodigal دقیقاً چه اشتباهی کرد (هر سه متفاوت‌اند).
@@ -72,6 +79,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۶ (تفسیری): BUSCO و آنوتیشن یک قارچ
 > **راهنمایی:** درس ۳، بخش ۳.۵ (خواندن خط خلاصه‌ی BUSCO).
+> **ویندوز:** تفسیری؛ وابسته به سیستم‌عامل نیست.
 
 یک گروه ژنوم یک *Aspergillus* جدید را اسمبل و آنوتیت کرده است. خروجی **فرضی** BUSCO با دودمان `fungi`:
 
@@ -91,6 +99,7 @@ S=~/course-bioinformatics-main/07_Bacterial_Genomics/99_scripts_data/02_Genome_A
 
 ## تمرین ۷ (چالشی/طراحی)
 > **راهنمایی:** سه درس این ماژول؛ برای فاژدرمانی، درس ۲، بخش ۴.۳ (CARD و VFDB در Pharokka).
+> **ویندوز:** طراحی؛ در ویندوز Bakta وب، Pharokka در Galaxy و CARD وب جای ابزارهای خط فرمان را می‌گیرند.
 
 برای هر پروژه، مسیر آنوتیشن (ابزارها، دیتابیس‌ها، کنترل کیفیت) و **یک دام خاص** آن را بنویسید:
 1. ۴۰ ایزوله‌ی *K. pneumoniae* برای پن‌ژنوم (ماژول ۰۴) و شناسایی ژن‌های مقاومت.

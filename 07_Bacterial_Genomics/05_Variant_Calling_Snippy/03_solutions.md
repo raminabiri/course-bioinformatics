@@ -67,4 +67,14 @@
 
 برای پرسش انتقال، **۳ SNP** (پس از Gubbins) را گزارش کنید: ساعت جهش تنها برای جهش‌های نقطه‌ای معنا دارد، نه برای واردات بازترکیبی. در Methods: «Core SNP alignment with snippy-core (Snippy vX, reference …); recombinant regions removed with Gubbins vX; pairwise SNP distances with snp-dists. Distances before and after recombination removal are given in Table S…». گزارش هر دو عدد، داور را قانع می‌کند که نتیجه وابسته به یک گام پنهان نیست.
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+تمرین‌های این ماژول روی جدول‌های فرضی‌اند و پاسخ‌هایشان به سیستم‌عامل بستگی ندارد.
+
+**پاسخ ۳ (واقعی، سرور).** ‏`snp_dists.py` روی هم‌ردیفی شیوع 08/04 همان فاصله‌های `dist.dna(model = "N")` ape را داد (H1-01 ↔ H2-05 = ۱۵۱۲)؛ پس ماتریسی که در ویندوز می‌سازید همان ماتریس `snp-dists` لینوکسی است.
+
+**پاسخ ۶ (✍️).** Gubbins در Galaxy همان خروجی‌های درس را دارد (`*.recombination_predictions.gff`، `*.filtered_polymorphic_sites.fasta`).
+
 </div>

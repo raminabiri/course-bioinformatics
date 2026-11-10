@@ -352,4 +352,14 @@ same stop: 84 (89.4%)   missed: 10   predicted only: 75
 - Hockenberry AJ, Wilke CO (2021). BACPHLIP: predicting bacteriophage lifestyle from conserved protein domains. *PeerJ* 9:e11396. https://doi.org/10.7717/peerj.11396
 - Feldgarden M, et al. (2021). AMRFinderPlus and the Reference Gene Catalog facilitate examination of the genomic links among antimicrobial resistance, stress response, and virulence. *Scientific Reports* 11:12728. https://doi.org/10.1038/s41598-021-91456-0
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+‏Pyrodigal و `compare_genecalls.py` در ویندوز همان‌اند. روی سرور با `py -m pyrodigal` (Pyrodigal 3.7.1) همان خروجی‌های بالا به دست آمد (واقعی، 2026-11-10): ‏E. coli ‏۴٬۳۱۹ ژن، same stop ‏۴٬۱۱۹؛ SARS-CoV-2 ‏۹ از ۱۲؛ مخمر ۱۵۹ پیش‌بینی، ۸۴ با همان پایان.
+
+**پاسخ ۲ (✍️).** نسخه‌ی وب tRNAscan-SE شاید نسخه‌ی دیگری از درس (2.0.13) باشد؛ همان ۸۹ و همان سه tRNA افزوده در مرز پروفاژها را انتظار داشته باشید.
+
+**پاسخ ۳.** سطر پایتون گام ۳ همان ۱۲ ناحیه را داد (واقعی). GC را Biopython در ویندوز همان حساب می‌کند.
+
 </div>

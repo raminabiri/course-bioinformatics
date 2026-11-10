@@ -19,6 +19,10 @@
 - ابزارهای سبک: [`envs/bacterial_genomics.yml`](../envs/bacterial_genomics.yml). ابزارهای سنگین هر کدام در یک محیط جدا از Bioconda، طبق مستندات خودشان.
 - اسکریپت‌ها: [`99_scripts_data/`](99_scripts_data/).
 
+## مسیر ویندوز
+
+هر پنج ماژول فایل `00_lesson_windows.md` دارند. اسمبلرها، Snippy، Panaroo و Gubbins نسخه‌ی ویندوزی ندارند و در **Galaxy** (یا وب‌سرورهایی مانند Bakta و PubMLST) اجرا می‌شوند (✍️). بخش‌های سبک با پایتون روی ویندوز خودتان: `asm_stats.py`، Pyrodigal (pip)، `compare_genecalls.py`، `pubmlst_type.py`، `snp_dists.py` و pandas. فهرست در [مسیر ویندوز](../windows/README.md).
+
 ## پیش‌نیاز بخش
 بخش‌های ۰۱ تا ۰۶؛ به‌ویژه فرمت‌های FASTA/GFF/SAM/VCF (بخش ۰۲)، Biopython و pandas (بخش ۰۳)، و کنترل کیفیت ریدها و Bowtie2 (بخش ۰۶).
 
