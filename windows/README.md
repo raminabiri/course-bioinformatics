@@ -93,6 +93,9 @@ py $HOME\course-bioinformatics-main\windows\get_part01_data.py
 | [`qza_peek.py`](qza_peek.py) | درون فایل‌های `.qza` و `.qzv` ‏QIIME 2 | ۰۶ |
 | [`pubmlst_type.py`](pubmlst_type.py) | ‏MLST از راه REST API ‏PubMLST (اینترنت) | ۰۷ |
 | [`snp_dists.py`](snp_dists.py) | ماتریس فاصله‌ی SNP از هم‌ردیفی (همانند `snp-dists`) | ۰۷، ۰۸ |
+| [`zgrep.py`](zgrep.py) | جستجو در فایل‌های ساده و `.gz` (همانند `zcat \| grep`) | ۰۹ |
+| [`pubchem_csv.py`](pubchem_csv.py) | ‏CID، SMILES و فرمول از PubChem | ۰۹ |
+| [`chembl_info.py`](chembl_info.py) | رکورد و سازوکار یک دارو در ChEMBL | ۰۹ |
 
 ## ماژول‌هایی که مسیر ویندوز دارند
 
@@ -116,6 +119,10 @@ py $HOME\course-bioinformatics-main\windows\get_part01_data.py
 | ‏07/03 ‏MLST | [00_lesson_windows.md](../07_Bacterial_Genomics/03_MLST_Molecular_Typing/00_lesson_windows.md) | ‏PubMLST (وب و REST)، پایتون (`pubmlst_type.py`) |
 | ‏07/04 پن‌ژنوم | [00_lesson_windows.md](../07_Bacterial_Genomics/04_Comparative_Pan_Genome/00_lesson_windows.md) | ‏Panaroo در Galaxy، پایتون (pandas)، Excel |
 | ‏07/05 فراخوانی واریانت با Snippy | [00_lesson_windows.md](../07_Bacterial_Genomics/05_Variant_Calling_Snippy/00_lesson_windows.md) | ‏Snippy و Gubbins در Galaxy، پایتون (`snp_dists.py`)، Excel، IQ-TREE |
+| ‏09/01 ساختار پروتئین | [00_lesson_windows.md](../09_Structural_Bioinformatics/01_Protein_Structure/00_lesson_windows.md) | ‏Miniforge (conda ویندوزی)، gemmi، PyMOL، پایتون (`zgrep.py`) |
+| ‏09/02 مولکول‌های کوچک | [00_lesson_windows.md](../09_Structural_Bioinformatics/02_Small_Molecules/00_lesson_windows.md) | ‏RDKit (conda)، پایتون (`pubchem_csv.py`، `chembl_info.py`) |
+| ‏09/03 داکینگ مولکولی | [00_lesson_windows.md](../09_Structural_Bioinformatics/03_Molecular_Docking/00_lesson_windows.md) | ‏AutoDock Vina (exe)، Open Babel، pdbfixer، PyMOL (conda) |
+| ‏09/04 دینامیک مولکولی | [00_lesson_windows.md](../09_Structural_Bioinformatics/04_Molecular_Dynamics_Intro/00_lesson_windows.md) | ‏OpenMM، mdtraj (conda)، PowerShell، Excel |
 | ‏07/01 اسمبلی و کیفیت ژنوم | [00_lesson_windows.md](../07_Bacterial_Genomics/01_Assembly_Quality/00_lesson_windows.md) | پایتون (`debruijn_toy.py`، `repeat_report.py`، `asm_stats.py`)، Galaxy (Shovill، QUAST، CheckM2)، WebQUAST |
 | ‏08/01 ژن‌ها و جهش‌های مقاومت | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/01_AMR_Resistance_Genes/00_lesson_windows.md) | پایتون (Biopython)، BLAST+، ResFinder و CARD RGI (وب) |
 | ‏08/02 عامل‌های بیماری‌زایی | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/02_Virulence_Factors/00_lesson_windows.md) | پایتون، BLAST+ و VFDB، Excel، VirulenceFinder (وب) |

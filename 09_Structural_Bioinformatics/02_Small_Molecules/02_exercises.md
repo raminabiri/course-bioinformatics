@@ -11,6 +11,8 @@ conda activate structural
 cd ~/struct
 P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
+
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید (`conda activate structural`؛ `pubchem_csv.py`، `chembl_info.py`). زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](03_solutions.md) هستند.
 ```
 
 </div>
@@ -19,6 +21,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۱: داروهای دیگر سل
 > **راهنمایی:** درس، گام ۱ (حلقه‌ی `for`) و گام ۳. نخست `rif.csv` را در `tb.csv` کپی کنید و سه سطر به آن بیفزایید.
+> **ویندوز:** ‏`python $W\pubchem_csv.py tb.csv rifampicin isoniazid pyrazinamide ethambutol` (هر نامی که خواستید)، سپس `mol_props.py` روی `tb.csv`.
 
 (الف) ایزونیازید، پیرازینامید و اتامبوتول را از PubChem به `tb.csv` بیفزایید و `mol_props.py` را روی آن اجرا کنید.
 (ب) وزن، تخلف‌های قاعده‌ی پنج و شباهت این سه به ریفامپیسین چیست؟
@@ -28,6 +31,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۲: مرجع دیگر
 > **راهنمایی:** درس، گام ۳. آرگومان دوم `mol_props.py` مرجع شباهت است؛ با `cut -f1,9` تنها نام و ستون شباهت را نگه دارید.
+> **ویندوز:** ‏``python $P\02_Small_Molecules\scripts\mol_props.py rif.csv ciprofloxacin x.sdf | ConvertFrom-Csv -Delimiter "`t" | Select-Object name, Tanimoto_to_ciprofloxacin``.
 
 (الف) شباهت همه را نسبت به **ریفابوتین** حساب کنید.
 (ب) آیا شباهت ریفامپیسین–ریفابوتین همان عدد درس است؟ چرا باید چنین باشد؟
@@ -37,6 +41,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۳: خواندن یک SMILES
 > **راهنمایی:** درس، بخش ۲.۱. در پایتون: `Chem.MolFromSmiles(...)`، `GetNumAtoms()`، `Descriptors.MolWt` و `Chem.rdMolDescriptors.CalcMolFormula`.
+> **ویندوز:** کد RDKit را در یک فایل `.py` بنویسید و با `python ex3.py` (در محیط `structural`) اجرا کنید. IDLE پایتون جدای ویندوز را باز می‌کند که RDKit ندارد.
 
 ‏SMILES آسپرین `CC(=O)Oc1ccccc1C(=O)O` است. (الف) پیش از اجرا با دست بشمارید: چند اتم سنگین؟ (ب) با RDKit شمار اتم‌ها، وزن و فرمول را به دست آورید و با شمارش خود بسنجید.
 
@@ -44,6 +49,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۴: فضاآرایی ریفامپیسین
 > **راهنمایی:** درس، اشتباه رایج ۲. ‏`Chem.FindMolChiralCenters(m, includeUnassigned=True, useLegacyImplementation=False)` مرکزهای کایرال را می‌دهد و `Chem.MolToSmiles(m, isomericSmiles=False)` همان SMILES را بی نشانه‌های فضاآرایی می‌نویسد.
+> **ویندوز:** همان کد RDKit؛ مانند تمرین ۳ اجرا کنید.
 
 (الف) ریفامپیسین چند مرکز کایرال دارد؟
 (ب) طول SMILES با و بی فضاآرایی چند نویسه است؟ چه اطلاعاتی از دست رفت؟
@@ -52,6 +58,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۵: سازوکار سیپروفلوکساسین در ChEMBL
 > **راهنمایی:** درس، گام ۲. نخست شناسه‌ی ChEMBL سیپروفلوکساسین را بگیرید، سپس `mechanism.json` را برای آن بخوانید.
+> **ویندوز:** ‏`python $W\chembl_info.py ciprofloxacin`.
 
 (الف) شناسه‌ی ChEMBL، سال نخستین تأیید و کدهای ATC سیپروفلوکساسین چیست؟
 (ب) دو هدف آن کدام‌اند؟ آن‌ها را به دو ژنی پیوند دهید که در ماژول 08/01 جهش‌هایشان را دیدید.
@@ -60,6 +67,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۶: ساختارهای سه‌بعدی
 > **راهنمایی:** درس، گام ۳ (فایل `rif3d.sdf`). در پایتون با `Chem.SDMolSupplier('rif3d.sdf', removeHs=False)` روی مولکول‌ها بچرخید؛ `GetNumAtoms()` و `GetNumHeavyAtoms()`.
+> **ویندوز:** همان کد RDKit؛ `rif3d.sdf` گام ۳ را بخوانید.
 
 (الف) هر مولکول در `rif3d.sdf` چند اتم (با هیدروژن) و چند اتم سنگین دارد؟
 (ب) شمار اتم‌های سنگین ریفامپیسین را با شمار اتم‌های RFP در بلور (ماژول ۰۱) بسنجید.
@@ -68,6 +76,7 @@ PUG=https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name
 
 ## تمرین ۷: فکری — فیلتر کتابخانه
 > **راهنمایی:** درس، بخش ۲.۳ و نکته‌ی ۱ گام ۳.
+> **ویندوز:** فکری؛ وابسته به سیستم‌عامل نیست.
 
 شما یک کتابخانه‌ی یک میلیونی از ZINC برای یافتن مهارکننده‌ی تازه‌ی RNAP دارید و همکارتان می‌گوید «پیش از داکینگ، هر چه قاعده‌ی پنج را می‌شکند حذف کن». (الف) با این کار، کدام داروی شناخته‌شده‌ی این درس حذف می‌شد؟ (ب) یک دلیل موافق و یک دلیل مخالف این فیلتر بیاورید.
 

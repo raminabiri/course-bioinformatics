@@ -10,6 +10,8 @@
 conda activate structural
 cd ~/struct
 P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
+
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید (Miniforge، `conda activate structural`، `$P` و `$W` گام ۱ آن؛ پایتون با `python`). زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](04_solutions.md) هستند.
 ```
 
 </div>
@@ -18,6 +20,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۱: جهش D516V
 > **راهنمایی:** درس ۱، بخش ۴. ساختار **5UAH** همان RNAP با جهش D516V از همان مقاله است؛ آن را مانند 5UAC دانلود کنید و `struct_info.py` را با `RFP 4` اجرا کنید.
+> **ویندوز:** دانلود با سطر پایتون گام ۱ (با `5UAH`)، سپس `python $P\01_Protein_Structure\scripts\struct_info.py 5UAH.cif.gz RFP 4`.
 
 (الف) وضوح 5UAH چند است؟
 (ب) باقی‌مانده‌ی ۵۱۶ در این ساختار چیست و هنوز در فاصله‌ی ۴ Å ریفامپیسین هست؟
@@ -27,6 +30,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۲: کیفیت سه ساختار
 > **راهنمایی:** درس ۱، بخش ۳ (`zcat … | grep -E`). یک حلقه‌ی `for` (بخش 01/09) روی سه شناسه بزنید.
+> **ویندوز:** ‏`foreach ($i in "5UAC", "5UAL", "5UAH") { $i; python $W\zgrep.py "^_refine.ls_d_res_high|_refine.ls_R_factor_R_free " "$i.cif.gz" }`.
 
 (الف) وضوح و R-free سه ساختار 5UAC، 5UAL و 5UAH را در یک جدول بنویسید.
 (ب) کدام برای اندازه‌گیری فاصله‌های دقیق در جایگاه مناسب‌تر است؟ آیا هیچ‌کدام برای گفتن «این پیوند هیدروژنی ۲٫۹ Å است» بس است؟
@@ -35,6 +39,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۳: یک ساختار NMR
 > **راهنمایی:** درس ۱، بخش ۲.۱. ساختار **1L2Y** (مینی‌پروتئین Trp-cage، که در ماژول ۰۴ شبیه‌سازی می‌شود) را دانلود کنید و `struct_info.py` را بی نام لیگاند اجرا کنید.
+> **ویندوز:** دانلود `1L2Y.cif.gz` با سطر پایتون گام ۱، سپس `struct_info.py` بی نام لیگاند.
 
 (الف) روش تعیین ساختار و شمار مدل‌ها چیست؟ وضوح چه عددی نشان داده می‌شود؟
 (ب) چرا یک ساختار NMR چند «مدل» دارد و وضوح ندارد؟
@@ -43,6 +48,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۴: نسخه‌ی دوم آنزیم
 > **راهنمایی:** درس ۲، بخش ۴. آرگومان سوم `af_compare.py` زنجیره است؛ نسخه‌ی دوم زیرواحد β در 5UAC زنجیره‌ی `I` است (درس ۱، بخش ۴).
+> **ویندوز:** همان `af_compare.py` با زنجیره‌ی `I`.
 
 (الف) مدل AlphaFold را با زنجیره‌ی I بسنجید. چند باقی‌مانده‌ی مشترک و چه RMSD؟
 (ب) برای جایگاه‌های ۵۱۶، ۵۲۶ و ۵۳۱، فاصله‌ی کربن آلفا پس از هم‌پوشانی را با زنجیره‌ی C (درس ۲) بسنجید.
@@ -51,6 +57,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۵: باقی‌مانده‌های با pLDDT بسیار کم — و یک دام
 > **راهنمایی:** درس ۲، بخش ۳. در یک سطر ATOM، ستون ۱۱ (با جداکننده‌ی فاصله) B-factor/pLDDT است. نخست با `awk '$1=="ATOM" && $3=="CA" && $11<50'` بشمارید؛ سپس خروجی را با خروجی `af_compare.py` (۲ باقی‌مانده‌ی «very low») بسنجید.
+> **ویندوز:** جای `awk` (با همان دام ستون‌ها): `python -c "print(sum(1 for l in open('AF-P0A8V2-F1.pdb') if l.startswith('ATOM') and l.split()[2] == 'CA' and float(l.split()[10]) < 50))"`؛ اگر خطای `could not convert string to float` گرفتید، همین دام است. راه درست، ستون‌های ثابت PDB: `l[12:16].strip() == 'CA' and float(l[60:66]) < 50`.
 
 (الف) دستور `awk` بالا چند باقی‌مانده با pLDDT کمتر از ۵۰ می‌یابد؟ با `af_compare.py` همخوان است؟
 (ب) آخرین سطر CA فایل را ببینید (`grep " CA " AF-P0A8V2-F1.pdb | tail -1`). دلیل ناهمخوانی چیست؟
@@ -60,6 +67,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۶: تصویر جایگاه در جهش‌یافته
 > **راهنمایی:** درس ۱، بخش ۵. با `sed` (بخش 01/08) در اسکریپت `rif_pocket.pml`، ‏`5UAC` را به `5UAL` و نام فایل خروجی را تغییر دهید و اسکریپت تازه را اجرا کنید.
+> **ویندوز:** ‏`(Get-Content $P\01_Protein_Structure\scripts\rif_pocket.pml) -replace '5UAC', '5UAL' -replace 'rif_pocket.png', 'rif_pocket_5UAL.png' | Set-Content rif_pocket_5UAL.pml` و سپس `pymol -cq rif_pocket_5UAL.pml`.
 
 (الف) اسکریپت `rif_pocket_S531L.pml` را بسازید و اجرا کنید تا `rif_pocket_S531L.png` ساخته شود.
 (ب) برچسب جایگاه ۵۳۱ در تصویر چیست؟ زنجیره‌ی جانبی آن را با تصویر درس ۱ بسنجید.
@@ -68,6 +76,7 @@ P=~/course-bioinformatics-main/09_Structural_Bioinformatics/99_scripts_data
 
 ## تمرین ۷: فکری — مدل یا آزمایش؟
 > **راهنمایی:** درس ۲، بخش ۴ (نکته‌ی ۴) و اشتباه‌های رایج.
+> **ویندوز:** فکری؛ وابسته به سیستم‌عامل نیست.
 
 پژوهشگری می‌خواهد اثر جهش S531L را با داکینگ روی **مدل AlphaFold** پروتئین جهش‌یافته بسنجد (مدلی که خودش با ColabFold می‌سازد). (الف) دو دلیل بیاورید که چرا این کار پرخطر است. (ب) چه داده‌ای بهتر است؟
 

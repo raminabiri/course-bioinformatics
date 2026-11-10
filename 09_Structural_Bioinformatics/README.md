@@ -36,6 +36,10 @@
 | شبیه‌سازی ۱۰۰ پیکوثانیه با OpenMM | ۳۳۶ مگابایت | ۱۹۰ ثانیه (دو نخ) |
 | تحلیل مسیر با mdtraj | ۱۹۱ مگابایت | یک ثانیه |
 
+## مسیر ویندوز
+
+هر چهار ماژول فایل `00_lesson_windows.md` دارند. همه‌ی ابزارهای این بخش جز Vina در conda-forge نسخه‌ی ویندوزی دارند: با **Miniforge برای ویندوز** محیط [`structural_windows.yml`](../envs/structural_windows.yml) را بسازید و همان اسکریپت‌ها را اجرا کنید؛ Vina را از GitHub بگیرید (`vina.exe`). جزئیات در [مسیر ویندوز 09/01](01_Protein_Structure/00_lesson_windows.md).
+
 ## محیط نرم‌افزاری
 یک محیط برای کل بخش: [`envs/structural.yml`](../envs/structural.yml).
 

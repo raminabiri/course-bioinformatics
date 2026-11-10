@@ -1,0 +1,21 @@
+# Environment for part 09 on Windows (Miniforge for Windows; no WSL needed).
+# Same as structural.yml but without vina: conda-forge has no win-64 build of vina (checked 2026-11-10).
+# Get vina.exe from https://github.com/ccsb-scripps/AutoDock-Vina/releases (the Windows file) instead.
+# Create once (in "Miniforge Prompt"):   conda env create -f envs\structural_windows.yml
+# Then:                                  conda activate structural
+# Win-64 builds checked on anaconda.org 2026-11-10: gemmi 0.7.5, pymol-open-source 3.1.0, rdkit 2026.09.2,
+# openbabel 3.2.1, openmm 8.6.1, mdtraj 1.11.2, matplotlib-base 3.11.2; pdbfixer is noarch. Not yet installed on Windows.
+name: structural
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.11
+  - gemmi>=0.7
+  - pymol-open-source>=3.0
+  - rdkit>=2024.03
+  - openbabel>=3.1
+  - pdbfixer>=1.9
+  - openmm>=8.1
+  - mdtraj>=1.10
+  - matplotlib-base>=3.8
+  - numpy
