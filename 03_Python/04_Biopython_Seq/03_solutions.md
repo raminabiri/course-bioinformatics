@@ -232,4 +232,18 @@ AAATTACCATAACTATTAGACCTCTTGCGAA
 
 **نکته:** این حلقه همه‌ی ۲۴٬۹۹۳ رید را می‌خواند، هرچند تنها سه تا لازم بود. برای فایل‌های بزرگ، دستور `break` (بیرون پریدن از حلقه) کار را زودتر تمام می‌کند؛ با کمی جستجو درباره‌ی آن بخوانید.
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+پایتون و Biopython در ویندوز و لینوکس یکسان‌اند و داده‌ی `get_part01_data.py` همان MD5های بخش ۰۱ را دارد. پس **کد و عددهای همه‌ی پاسخ‌های بالا** برای مسیر ویندوز هم درست‌اند. فرق‌ها (✍️، از مستندات):
+
+**تمرین ۳.** ‏`Get-Content rpoA.faa -TotalCount 2` همان دو سطر `head -n 2` را نشان می‌دهد.
+
+**تمرین ۴.** ‏`Select-String -Path ground_truth.tsv -Pattern "^minigut\t"` همان سطرهای `grep -P` را با پیشوند `ground_truth.tsv:` و شماره‌ی سطر می‌دهد. همان ۲۸٬۹۱۲ و ۲۱٬۰۸۸.
+
+**تمرین ۶.** ‏`Select-String -Path first3.fasta -Pattern "^>"` سه عنوان را و `Get-Content first3.fasta -TotalCount 4` چهار سطر نخست را نشان می‌دهد. `first3.fasta` شما در ویندوز `\r\n` دارد؛ محتوا یکی است.
+
+**اشتباه رایج ویندوز:** خواندن `.fastq.gz` بی `gzip.open` و گرفتن `UnicodeDecodeError: 'charmap' codec can't decode byte …` ([مسیر ویندوز، بخش ۴](00_lesson_windows.md)).
+
 </div>

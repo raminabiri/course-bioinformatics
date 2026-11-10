@@ -429,4 +429,47 @@
 - ژن‌های cas با یک سطر پایتون (csv) روی GFF: همان ۸ ژن. ‏`find_crispr.py`: همان ۲ آرایه و ۱۸ spacer (۱٫۶ ثانیه، ۲۲ مگابایت). تمرین ۶ با Counter: ‏۵۰ / ۴۸، IS5 ۱۲، IS1 ۸، IS2 ۷، IS26 صفر.
 - راهنمایی ویندوز زیر هر ۸ تمرین و «پاسخ‌های مسیر ویندوز». ‏genepi.dk (ResFinder، PlasmidFinder، VirulenceFinder) از سرور پاسخ نداد (timeout ۳۰ ثانیه) → در وارسی پایان دوره.
 
+## جلسه‌ی 2026-11-09 (۲) — مسیر ویندوز، ماژول 08/04
+
+- ‏`08_AMR_Virulence_Phylogeny/04_Phylogenetic_Trees/00_lesson_windows.md` کامل شد (بخش‌های ۶ تا ۸، جمع‌بندی، منابع). همه‌ی اجراها روی سرور، روی ویندوز آزموده نشده (✍️).
+- بخش ۶ (درخت شیوع): ‏`simulate_outbreak.py` همان سه MD5 (core_full.aln ‏10e36244…)؛ ‏`outbreak_tree.R` ‏۱٫۴ ثانیه، ۲۳۷ مگابایت؛ STa ≤ ۷ SNP، نزدیک‌ترین غیر STa ‏۸۵۲، جدول ≤ ۱۰ SNP: ‏۹ جفت H1–H2؛ هر سه گروه monophyletic، RF ‏۴؛ H1-01↔H2-05 ‏۱۵۱۲.
+- بخش ۷ (IQ-TREE 3.1.3 روی داده‌ی شیوع): هم‌ردیفی کامل → JC، ۲٫۷ ثانیه، ۳۰ مگابایت، ۴ شاخه‌ی نزدیک به صفر؛ پس از ریشه (edgelabel=TRUE) و × ۱۰۰٬۰۰۰: ‏STa ‏۳۵۲٫۳ (درست ۳۵۰)، STb ‏۴۲۱٫۳ (۴۲۰)، H2 ‏89.3/92، طول کل ۸۹۴۲ (۸۸۹۰)، RF ‏۴.
+- ‏SNP-تنها: بی تصحیح (JC) × ۸۸۹۰ = ۳۸۲٫۴؛ ‏`MFP+ASC` → F81+ASC+R2، ۰٫۴ (مقیاس فروریخت، ۱۸ شاخه‌ی نزدیک به صفر)؛ **`-fconst 22896,22692,22752,22770`** → همان ۳۵۲٫۳ و 89.6/92. شمار جایگاه‌های ثابت با `table(as.character(a[1, -seg.sites(a)]))`.
+- ناهمخوانی اصلاح شد: درس ۲ بخش ۴ (پیش‌تر «SNP-تنها `+ASC` می‌خواهد») با جدول چهار راه بازنویسی شد؛ هدف، اشتباه رایج، جمع‌بندی، کارت دستور، واژه‌نامه (`-fconst`)؛ تمرین ۶(ب)، پاسخ ۶ (الف و ب با عددهای واقعی)، کارت دستور درس ۳.
+- راهنمایی ویندوز زیر تمرین‌های ۱ تا ۶، «پاسخ‌های مسیر ویندوز» (همان عددها)، README ماژول (وضعیت، ابزار IQ-TREE 3.1.3، سطر ویندوز، گام ۰) و سطر 08/04 در `windows/README.md`.
+- جست‌وجوی YouTube از سرور چیزی نداد؛ فیلم Galaxy/Microreact (jQVNsyAnDMo، با noembed) برگزیده شد. DOIهای Lewis 2001 و Robinson–Foulds با Crossref وارسی شدند.
+
+## جلسه‌ی 2026-11-10 — مسیر ویندوز، ماژول 07/01
+
+- ‏`07_Bacterial_Genomics/01_Assembly_Quality/00_lesson_windows.md`: گراف de Bruijn کوچک با اسکریپت تازه‌ی `debruijn_toy.py` (همان جدول درس ۱؛ نمونه‌ی ✋ با `ACGTC`: k = 7، و دوشاخه‌ی `AAA` از homopolymer)؛ `repeat_report.py` با گزینه‌ی تازه‌ی `--out` → `ideal_contigs.fna` (MD5 ‏3b57dbb1…، ‏۵۰ کانتیگ، N50 ‏۱۷۳٬۸۱۰؛ ۷٫۸ ثانیه، ۵۳۳ مگابایت)؛ پوشش با یک سطر پایتون (روی `minigut` همان ۲٫۲۹× seqkit).
+- اسمبلی: SPAdes/Shovill ویندوزی ندارند → Shovill در Galaxy با آموزش GTN MRSA (✍️؛ انتظار از GTN: ‏۳۰ کانتیگ، ۲٬۹۱۱٬۳۴۹، GC ‏۳۲٫۷۷٪).
+- اسکریپت تازه‌ی `asm_stats.py` (کتابخانه‌ی استاندارد؛ N50/L50/NG50/GC و جدول هر کانتیگ با cov از سرآیند Shovill/SPAdes): روی ideal همان عددهای `seqkit stats -a` 2.13.0؛ با `--minlen 20000` ‏N50 ‏۱۷۸٬۱۲۹ ولی NG50 همان ۱۷۳٬۸۱۰ (دام N50).
+- ‏WebQUAST اکنون http://cab.cc.spbu.ru/quast/ (ریدایرکت از ccb.uni-saarland.de)؛ از سرور DNS نداشت → وارسی پایان دوره. CheckM2، Bowtie2/samtools در Galaxy (✍️).
+- راهنمایی ویندوز زیر تمرین‌های ۱ تا ۶ (GFF با یک سطر پایتون: ‏rrna ۲۲ و is ‏۵۰ سطر، همان عددهای ۲.۲)، «پاسخ‌های مسیر ویندوز»، README ماژول و سطر 07/01 در `windows/README.md`. DOIهای Hiltemann 2023 و Mikheenko 2023 با Crossref وارسی شدند.
+
+## جلسه‌ی 2026-11-10 (۲) — ترتیب تازه‌ی مسیر ویندوز؛ ماژول 03/01
+
+- کاربر خواست مسیر ویندوز از **نخستین بخش نیمه‌تمام** و به ترتیب شماره پیش برود: ۰۳ ← ۰۴ ← ۰۶ ← ۰۷ (۰۲ تا ۰۵) ← ۰۹ ← ۱۱ ← ۱۲ ← ۱۳، و سپس بخش ۱۴. هنوز commit نشده (08/04 و 07/01 هم نه).
+- تصمیم: بخش ۰۳ پایتون خالص است؛ پس فایل ویندوزی هر ماژول **کوتاه** است و تنها فرق‌ها را می‌گوید (`py`، `exit()`/`Ctrl+Z`، PowerShell در برابر `>>>`، IDLE و F5، دام `first.py.txt` در Notepad، App execution aliases) و برای آموزش به درس اصلی پیوند می‌دهد.
+- ‏`03_Python/01_Python_Start/00_lesson_windows.md`: ‏`first.py` روی سرور (Python 3.12.13، env bio) همان سه سطر درس؛ خطای `can't open file … [Errno 2]` با نام `first.py.txt` واقعاً ساخته شد. گام‌های ویژه‌ی ویندوز ✍️. فیلم Corey Schafer ‏YYXdXT2l-Gg با noembed وارسی شد.
+- راهنمایی ویندوز زیر ۵ تمرین، «پاسخ‌های مسیر ویندوز»، README ماژول و بخش ۰۳، و سطر 03/01 در `windows/README.md`. ابزارهای rtl_wrap، persian_words و check_internal_links (۰ پیوند شکسته) اجرا شدند.
+- ‏`03_Python/02_Python_Lists_Loops/00_lesson_windows.md`: کد چندخطی در `>>>` و IDLE، فایل IDLE با F5، ‏Indent/Dedent Region، دام Tab در Notepad: ‏`TabError: inconsistent use of tabs and spaces in indentation` واقعاً روی سرور ساخته شد؛ ترجمه‌ی ۶۰ باز rpoB ‏`MVYSYTEKKRIRKDFGKRPQ` با Biopython وارسی شد.
+- ‏`03_Python/03_Python_Functions_Files/00_lesson_windows.md`: داده در `$HOME\course`؛ `host_chr21_region.fa` با یک سطر urllib (همان MD5 ‏68b50cfb…)؛ سه اسکریپت درس روی سرور همان خروجی درس (4506 ژن، 897.4، GC ‏50.79 و 40.05)؛ `Get-Content -TotalCount` و `Select-String` به جای head/grep (gyrA سطر ۲۲۸۹)؛ F5 در IDLE پوشه‌ی کار را پوشه‌ی اسکریپت می‌کند و ورودی نمی‌دهد → Run… Customized؛ دام `"C:\Users\…"` با پیام واقعی `SyntaxError: (unicode error) 'unicodeescape' … truncated \UXXXXXXXX escape`؛ `\r\n` در فایل‌های نوشته‌شده (MD5 فرق دارد). حلقه‌ی تمرین ۶ با `foreach` در PowerShell.
+- برای هر دو ماژول: راهنمایی ویندوز زیر همه‌ی تمرین‌ها، «پاسخ‌های مسیر ویندوز»، README ماژول و سطر `windows/README.md`. ابزارهای بررسی: ۰ پیوند شکسته.
+
+## جلسه‌ی 2026-11-10 (۳) — مسیر ویندوز: پایان بخش‌های ۰۳ و ۰۴
+
+- کاربر: «اول ۳ و ۴ را کامل تمام کن، هر چه مانده commit و push کن، بعد گزارش بده».
+- ‏`windows/get_part01_data.py` (تازه): چهار FASTQ ‏minigut، ‏host_chr21 و کپی `ground_truth.tsv`؛ آینه‌ی jsDelivr اگر GitHub کند بود؛ روی سرور ۲۷ ثانیه، **همه‌ی ۵ MD5 همان `download.sh`**. ‏03/03 گام ۰ و `windows/README.md` («داده‌ی پایه») به آن پیوند دارند.
+- ‏03/04: ‏`fastq_quality.py` (۰٫۶ ثانیه، ۱۰۶ مگابایت) و `extract_gene.py` همان خروجی درس؛ یک سطر SeqIO جای `seqkit stats` (24820 / 3747820 / 151)؛ خطای `.gz` بی gzip در ویندوز با cp1252 شبیه‌سازی شد: `'charmap' codec can't decode byte 0x9d in position 152`.
+- ‏03/05: ‏`fetch_region.py` با Entrez از سرور کار کرد (44417 نویسه، محتوا برابر `rpo_region.gb`)؛ نسخه‌ی `\r\n` همان فایل MD5 دیگری دارد (9253adf7… در برابر 25b9dcf6…) ولی مقایسه‌ی متنی پایتون `True` → درس «MD5 برای فایل نوشته‌شده در ویندوز نه». ‏`cds_check.py` ۰٫۳ ثانیه؛ `transl_except` با `re.findall`.
+- ‏03/06: ‏pandas 3.0.5 / matplotlib 3.11.1؛ `gene_lengths.py` و `composition.py` زیر ۱ ثانیه، ~۱۵۰ مگابایت؛ `to_csv` ← تنها yeeJ (7020) > 5000؛ کادر دام تاریخ Excel با Ziemann 2016 (DOI با Crossref وارسی شد).
+- ‏04/01: نصب R از CRAN و بسته‌ها با BiocManager (bioconda ویندوز ندارد)؛ `$env:Path`؛ **دام PowerShell 5.1**: دوکوتیشن درونی `Rscript -e '…"…"…'` دور ریخته می‌شود ← پیام واقعی `Error: object 'DESeq2' not found`؛ قاعده‌ی ویندوز «بیرون دوکوتیشن، درون تک‌کوتیشن» (`[1] ‘1.52.0’` واقعی).
+- ‏04/02: ‏`$LASTEXITCODE` (کد ۲ برای اسکریپت ناپیدا، ۱ برای minigut3؛ واقعی)، `Start-Process -Redirect…` به جای `> 2>`، `-replace` به جای `sed -i`، اندازه‌ی PNG با سطر پایتون (840×720 = `file`)، `Compare-Object` (همان یک ناهمسانی `2` / `2.0`).
+- ‏04/03: ‏DESeq2 ۴٫۶ ثانیه، **۸۸۹ مگابایت**؛ یک سطر pandas → `93 47 29 2` (همان awk)؛ سطر پایتون جای awk تمرین ۶ بایت‌به‌بایت همان `three.tsv` (Bray 0.000 / 0.969)؛ Newick خراب با `\r\n` همان پیام `argument "X" is missing`.
+- ‏04/04: ‏`run_all.ps1` (تازه، کنار `run_all.sh`)؛ `run_all.sh` روی سرور: سه گام و `diversity.log`. **دانلود PowerShell 7 برای آزمودن `run_all.ps1` را طبقه‌بند ایمنی رد کرد** (کد بیرونی) → اسکریپت و همه‌ی فرمان‌های PowerShell ✍️ «آزموده‌نشده»؛ انتظارها از روی اجرای Bash.
+- یک هشدار نادرست خودم: خروجی `run_all.sh` درس را ناقص پنداشتم؛ علت `grep -v 'div'` بود که سطرهای «diversity» را پنهان کرد. درس درست بود و چیزی عوض نشد.
+- ابزار کمکی scratchpad (`winmod.py`) سطر «0.» README را در 04/01 و 04/02 در فهرست اهداف گذاشت؛ دیده و جابه‌جا شد.
+- برای هر ۷ ماژول: راهنمایی ویندوز زیر همه‌ی تمرین‌ها، «پاسخ‌های مسیر ویندوز»، README ماژول، سطر `windows/README.md`؛ README بخش ۰۴ بند «مسیر ویندوز». ابزارهای بررسی: ۰ پیوند شکسته.
+
 </div>

@@ -221,4 +221,32 @@ Execution halted
 - ‏`>=`: تا conda نسخه‌ای بسیار کهنه را برنگزیند، همان‌گونه که بی‌محدودیت برای ggtree نسخه‌ی 1.2.12 را برگزید. اسکریپت‌ها و راهنماهای امروز برای نسخه‌های تازه نوشته شده‌اند.
 - پیش از ساختن: `conda env create --dry-run -f envs/r_packages.yml` (یا برای محیط موجود: `conda install --dry-run …`). در فهرستی که چاپ می‌کند، نسخه‌ی برگزیده‌ی هر بسته را ببینید.
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+پاسخ‌های بالا با R 4.6.1 روی سرور لینوکس است. در ویندوز با R همان نسخه، **نسخه‌های بسته‌ها و پیام‌های R یکی‌اند**؛ فرق در PowerShell و نصب است (✍️، از مستندات):
+
+**پاسخ ۱.** ‏`Rscript $P\01_Install_Packages\scripts\check_packages.R vegan edgeR ape phyloseq dada2`. اگر تنها بسته‌های گام ۳ را نصب کرده‌اید، edgeR هم `NOT installed` است.
+
+**پاسخ ۲.** شکل درست ویندوزی سه دستور:
+
+<div dir="ltr">
+
+```powershell
+Rscript -e "packageVersion('vegan')"
+Rscript -e "packageVersion('ggplot2')"
+Rscript -e "BiocManager::install('DESeq2', update = FALSE, ask = FALSE)"
+```
+
+</div>
+
+در PowerShell 5.1 دستور دوم تمرین (`'packageVersion("Ggplot2")'`) پیش از رسیدن به خطای املای نام، کوتیشن‌هایش را از دست می‌دهد و `Error: object 'Ggplot2' not found` می‌دهد؛ پس در ویندوز دو اشکال دارد.
+
+**پاسخ ۴.** در ویندوز گزارش کوتاه‌تر است: `package 'permute' successfully unpacked and MD5 sums checked`. نشانه‌ی موفقیت همین خط است (به جای `* DONE (permute)`).
+
+**پاسخ ۶.** ‏`Get-Command Rscript` نشان می‌دهد کدام `Rscript.exe` اجرا می‌شود و `Rscript -e ".libPaths()"` کتابخانه‌هایش را. اگر نسخه‌ی پوشه‌ی `win-library` (برای نمونه `4.5`) با نسخه‌ی R (`4.6`) جور نیست، بسته‌ها برای R دیگری نصب شده‌اند.
+
+**پاسخ ۷.** در ویندوز به جای افزودن به `r_packages.yml`، نام بسته را به دستور نصب گام ۳ بیفزایید؛ bioconda ویندوز ندارد.
+
 </div>

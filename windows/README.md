@@ -66,13 +66,36 @@ downloading ecoli_k12.gff ...
 
 دو عدد MD5 درست همان فایل‌های بخش ۰۱ لینوکسی است: داده یکی است.
 
+**ریدهای بخش ۰۱** (دو نمونه‌ی شبیه‌سازی‌شده‌ی روده، ۴ فایل `fastq\*.fastq.gz`)، ناحیه‌ی کروموزوم ۲۱ انسان و `ground_truth.tsv` را اسکریپت [`get_part01_data.py`](get_part01_data.py) در همان پوشه می‌گیرد (حدود ۱۰ مگابایت؛ روی سرور دوره ۲۷ ثانیه، همان MD5های `download.sh`):
+
+<div dir="ltr">
+
+```powershell
+cd $HOME\course
+py $HOME\course-bioinformatics-main\windows\get_part01_data.py
+```
+
+</div>
+
 ## ماژول‌هایی که مسیر ویندوز دارند
 
 | ماژول | فایل ویندوزی | ابزارها |
 | :--- | :--- | :--- |
+| ‏03/01 آغاز پایتون | [00_lesson_windows.md](../03_Python/01_Python_Start/00_lesson_windows.md) | پایتون (`py`)، PowerShell، IDLE |
+| ‏03/02 فهرست، حلقه و دیکشنری | [00_lesson_windows.md](../03_Python/02_Python_Lists_Loops/00_lesson_windows.md) | پایتون (`py`)، IDLE |
+| ‏03/03 تابع و فایل؛ GFF و FASTA | [00_lesson_windows.md](../03_Python/03_Python_Functions_Files/00_lesson_windows.md) | پایتون (`py`)، PowerShell (`Get-Content`، `Select-String`)، IDLE، Excel |
+| ‏03/04 ‏Biopython (۱)؛ توالی، FASTA و FASTQ | [00_lesson_windows.md](../03_Python/04_Biopython_Seq/00_lesson_windows.md) | پایتون (Biopython)، `get_part01_data.py`، PowerShell |
+| ‏03/05 ‏Biopython (۲)؛ GenBank و Entrez | [00_lesson_windows.md](../03_Python/05_Biopython_GenBank/00_lesson_windows.md) | پایتون (Biopython، `Bio.Entrez`)، PowerShell |
+| ‏03/06 جدول و نمودار با pandas | [00_lesson_windows.md](../03_Python/06_Pandas/00_lesson_windows.md) | پایتون (pandas، matplotlib، openpyxl)، Excel |
+| ‏04/01 نصب و وارسی بسته‌های R | [00_lesson_windows.md](../04_R_Packages/01_Install_Packages/00_lesson_windows.md) | R (CRAN)، `install.packages`، BiocManager، PowerShell |
+| ‏04/02 اجرای اسکریپت آماده‌ی R | [00_lesson_windows.md](../04_R_Packages/02_Run_Rscript/00_lesson_windows.md) | R، PowerShell (`$LASTEXITCODE`، `Start-Process`، `-replace`، `Compare-Object`) |
+| ‏04/03 ‏DESeq2، vegan و ggtree | [00_lesson_windows.md](../04_R_Packages/03_Bioc_Examples/00_lesson_windows.md) | ‏R (DESeq2، vegan، ggtree)، پایتون (pandas)، Excel، PowerShell |
+| ‏04/04 اسکریپت‌های R در خط لوله | [00_lesson_windows.md](../04_R_Packages/04_R_in_Pipelines/00_lesson_windows.md) | ‏R، PowerShell (`run_all.ps1`؛ ✍️ آزموده‌نشده) |
+| ‏07/01 اسمبلی و کیفیت ژنوم | [00_lesson_windows.md](../07_Bacterial_Genomics/01_Assembly_Quality/00_lesson_windows.md) | پایتون (`debruijn_toy.py`، `repeat_report.py`، `asm_stats.py`)، Galaxy (Shovill، QUAST، CheckM2)، WebQUAST |
 | ‏08/01 ژن‌ها و جهش‌های مقاومت | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/01_AMR_Resistance_Genes/00_lesson_windows.md) | پایتون (Biopython)، BLAST+، ResFinder و CARD RGI (وب) |
 | ‏08/02 عامل‌های بیماری‌زایی | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/02_Virulence_Factors/00_lesson_windows.md) | پایتون، BLAST+ و VFDB، Excel، VirulenceFinder (وب) |
 | ‏08/03 عنصرهای متحرک و CRISPR | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/03_Mobile_Elements_CRISPR/00_lesson_windows.md) | پایتون (Biopython)، BLAST+ و PlasmidFinder، Excel، ResFinder و CRISPRCasFinder (وب) |
+| ‏08/04 درخت‌های فیلوژنتیک | [00_lesson_windows.md](../08_AMR_Virulence_Phylogeny/04_Phylogenetic_Trees/00_lesson_windows.md) | ‏MAFFT، IQ-TREE، R در RStudio (ape، ggtree)، پایتون؛ iTOL و MEGA (اختیاری) |
 
 ماژول‌های دیگر (بخش‌های ۰۳، ۰۴، ۰۶ تا ۰۹، ۱۱، ۱۲ و بخش‌های تازه‌تر) به‌تدریج افزوده می‌شوند. بخش‌های ۰۱ (لینوکس)، ۰۲ (بایولینوکس)، Snakemake و بخش ۲۰ (خط لوله و HPC) مسیر ویندوز ندارند.
 

@@ -10,6 +10,7 @@
 | **ابزار** | R 4.6.1، DESeq2 1.52.0، vegan 2.7.6، ape 5.8.1، ggtree 4.2.0؛ Python 3.13 + pandas |
 | **داده** | شمارش RNA-seq **شبیه‌سازی‌شده** برای ژن‌های E. coli (با پاسخ معلوم)؛ `ground_truth.tsv` بخش ۰۱؛ داده‌ی woodmouse بسته‌ی ape |
 | **وضعیت** | ✅ قالب تازه (2026-10-20) |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 > این ماژول **اجرا و خواندن خروجی** بسته‌ها را یاد می‌دهد، نه آمار پشت آن‌ها را (دوره‌ی جداگانه‌ی آمار و R).
 
@@ -20,6 +21,7 @@
 3. یک درخت Newick را بخوانید و با ggtree رسم کنید.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ pandas و Excel به جای `awk` و `cut`، `Select-String`، `2>$null`. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson_deseq2.md](01_lesson_deseq2.md): بیان افتراقی با DESeq2.
 2. ‏[02_lesson_vegan.md](02_lesson_vegan.md): تنوع میکروبی با vegan.
 3. ‏[03_lesson_ggtree.md](03_lesson_ggtree.md): رسم درخت با ggtree.

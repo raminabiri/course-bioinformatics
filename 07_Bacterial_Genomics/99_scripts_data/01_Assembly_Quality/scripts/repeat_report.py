@@ -7,7 +7,8 @@
    and report the contigs an ideal short-read assembler would produce (count, N50, L50, largest).
 
 Usage:
-  python3 repeat_report.py genome.fna annotation.gff [--k 21 55 77 127]
+  python3 repeat_report.py genome.fna annotation.gff [--k 21 55 77 127] [--out ideal_contigs.fna]
+  --out writes the ideal contigs as FASTA (a known-answer "assembly" for asm_stats.py / QUAST).
 """
 import argparse
 from Bio import SeqIO
@@ -54,6 +55,7 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("fasta"); ap.add_argument("gff")
     ap.add_argument("--k", type=int, nargs="+", default=[21, 55, 77, 127])
+    ap.add_argument("--out", help="write the ideal contigs to this FASTA file")
     args = ap.parse_args()
     seq = next(SeqIO.parse(args.fasta, "fasta")).seq.upper()
 
@@ -64,15 +66,24 @@ def main():
 
     print("== annotation view (cut at rRNA operons + IS elements; genome treated as linear)")
     blocks = repeat_intervals(args.gff)
-    contigs, prev = [], 1
+    contigs, spans, prev = [], [], 1
     for s, e in blocks:
         if s > prev:
             contigs.append(s - prev)
+            spans.append((prev, s - 1))
         prev = e + 1
     contigs.append(len(seq) - prev + 1)
+    spans.append((prev, len(seq)))
     n50, l50 = n50_l50(contigs)
     print(f"repeat blocks: {len(blocks)}  ({sum(e - s + 1 for s, e in blocks)} bp)")
     print(f"contigs: {len(contigs)}  total: {sum(contigs)}  largest: {max(contigs)}  N50: {n50}  L50: {l50}")
+    if args.out:
+        with open(args.out, "w", newline="\n") as out:  # same bytes on Windows
+            for i, (s, e) in enumerate(spans, 1):
+                out.write(f">ideal{i:02d} pos={s}-{e} len={e - s + 1}\n")
+                for j in range(s - 1, e, 80):
+                    out.write(str(seq[j:min(j + 80, e)]) + "\n")
+        print(f"written: {args.out}")
 
 
 if __name__ == "__main__":

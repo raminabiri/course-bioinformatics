@@ -361,4 +361,41 @@ IndexError: list index out of range
 - بی نام ژن، `sys.argv[2]` نیست (آخرین خط پیام بالا). برای پیام روشن‌تر، کادر کنجکاوهای درس (`sys.exit`) را ببینید.
 - ‏`found` یک **پرچم** است: متغیری `True`/`False` که پس از حلقه می‌گوید چیزی دیده شد یا نه.
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+پایتون در ویندوز و لینوکس یکسان است. پس **کد و خروجی همه‌ی پاسخ‌های بالا** برای مسیر ویندوز هم درست‌اند. اسکریپت‌ها کنار داده در `$HOME\course` و اجرا با `py` در PowerShell. فرق‌ها (✍️، از مستندات):
+
+**تمرین ۲.** خروجی پایتون همان جدول بالاست. فرمان `grep … | cut | sort | uniq -c` بخش ۰۱ در ویندوز نیست؛ همان جدول پاسخ معیار سنجش است.
+
+**تمرین ۴.** به جای `head` و `grep`:
+
+<div dir="ltr">
+
+```powershell
+py to_bed.py ecoli_k12.gff genes_py.bed
+Get-Content genes_py.bed -TotalCount 3
+Select-String -Path genes_py.bed -Pattern "\trpoB\t"
+```
+
+</div>
+
+همان سه سطر thrL، thrA و thrB، و سطر rpoB با پیشوند `genes_py.bed:` و شماره‌ی سطر. فایل شما در ویندوز `\r\n` دارد ([مسیر ویندوز، بخش ۵](00_lesson_windows.md)): محتوا یکی، اندازه چند هزار بایت بیشتر.
+
+**تمرین ۶.** حلقه‌ی Bash در PowerShell این است:
+
+<div dir="ltr">
+
+```powershell
+foreach ($g in "rpoB", "gyrA", "rpoC", "RPOB") { py find_gene.py ecoli_k12.gff $g }
+py find_gene.py ecoli_k12.gff
+```
+
+</div>
+
+همان چهار سطر و همان `IndexError` پاسخ بالا. ‏`foreach ($g in …) { … }` همان `for g in …; do …; done` است.
+
+**اشتباه رایج ویندوز:** اجرای تمرین‌های ۲، ۴ و ۶ با F5 در IDLE و گرفتن `IndexError: list index out of range`؛ این اسکریپت‌ها ورودی خط فرمان می‌خواهند (Run… Customized یا PowerShell).
+
 </div>

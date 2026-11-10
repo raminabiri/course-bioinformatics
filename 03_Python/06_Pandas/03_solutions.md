@@ -225,4 +225,16 @@ rpoE	576	191
 
 **نگاه زیستی:** هسته‌ی RNA پلیمراز α₂ββ′ω است (rpoA، rpoB، rpoC، rpoZ). پنج ژن دیگر (rpoD، rpoS، rpoN، rpoH، rpoE) **فاکتورهای سیگما**ی گوناگون‌اند که پلیمراز را به پروموترهای گروه‌های گوناگون ژن می‌برند: σ⁷⁰ (rpoD) برای ژن‌های روزمره، σˢ (rpoS) برای فاز ایستا و تنش، σ³² (rpoH) برای شوک گرمایی، و … .
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+‏pandas و matplotlib در ویندوز و لینوکس یکسان‌اند. پس **کد، عددها و نمودارهای همه‌ی پاسخ‌های بالا** برای مسیر ویندوز هم درست‌اند. فرق‌ها (✍️، از مستندات):
+
+**تمرین ۴.** ‏`py $P\composition.py ground_truth.tsv minigut minigut.png` و `Get-Content minigut_genus.tsv` همان جدول `cat` را نشان می‌دهد.
+
+**تمرین ۵.** ‏`Get-Content rpo_genes.tsv -TotalCount 3` همان سه سطر `head -n 3`. اگر `rpo_genes.tsv` را با دوبار کلیک در Excel باز کنید، Excel آن را یک ستون می‌بیند (جداکننده Tab است)؛ Data ← From Text/CSV را به کار ببرید.
+
+**اشتباه رایج ویندوز:** اجرای دوباره‌ی یک اسکریپت وقتی خروجی‌اش (`.xlsx` یا `.csv`) هنوز در Excel باز است: `PermissionError: [Errno 13] Permission denied`. فایل را ببندید.
+
 </div>

@@ -241,4 +241,20 @@ other attached packages:
 
 چرا مهم است: بسته‌ها با هر نسخه کمی عوض می‌شوند (پیش‌فرض‌ها، الگوریتم‌ها). در ماژول ۰۱ دیدید DESeq2 در conda (1.50.2) و در Bioconductor (1.52.0) نسخه‌ی یکسان ندارد. بی ثبت نسخه، کسی که می‌خواهد کار شما را تکرار کند (حتی خود شما شش ماه بعد) نمی‌داند چرا رقم‌ها کمی فرق دارند.
 
+---
+
+## پاسخ‌های مسیر ویندوز
+
+پیام‌ها و خروجی‌های R در ویندوز همان پاسخ‌های بالاست (R همان نسخه). فرق‌ها در PowerShell است (✍️، از مستندات):
+
+**پاسخ ۳.** به جای `cut -f1 ground_truth.tsv | sort | uniq -c`، نام نمونه‌ها را در Excel (ستون یکم، فیلتر) یا با `Import-Csv ground_truth.tsv -Delimiter "`t" | Group-Object sample | Select-Object Count, Name` ببینید: همان دو نام `minigut` و `minigut_sample2`.
+
+**پاسخ ۴.** با `Start-Process … -RedirectStandardOutput e.out -RedirectStandardError e.err -NoNewWindow -Wait`، سپس `"exit=$LASTEXITCODE"` (پس از `Start-Process` کد خروج در `$LASTEXITCODE` نیست؛ گزینه‌ی `-PassThru` و `.ExitCode` را به کار ببرید: `$p = Start-Process … -PassThru -Wait; $p.ExitCode`) و `(Get-Item e.out).Length; (Get-Item e.err).Length`. نتیجه همان: `e.out` خالی (۰ بایت) و پیام در `e.err`.
+
+**پاسخ ۵.** اندازه‌ی `composition_R.png` با سطر پایتون: `(840, 720)` (خروجی واقعی). پس از `width = 10`: پهنا ۱۰ × ۱۲۰ = ۱۲۰۰.
+
+**پاسخ ۶.** ‏`Compare-Object` همان یک ناهمسانی `diff` را نشان می‌دهد: `Escherichia	2` (R، `<=`) و `Escherichia	2.0` (پایتون، `=>`).
+
+**پاسخ ۷.** همان جمله؛ تنها خط `Running under:` نام ویندوز شما را دارد.
+
 </div>

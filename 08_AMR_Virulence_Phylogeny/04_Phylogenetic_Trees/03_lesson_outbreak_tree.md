@@ -277,7 +277,7 @@ python3 simulate_outbreak.py outbreak
 Rscript outbreak_tree.R outbreak/core_full.aln outbreak/metadata.tsv Ref outbreak_nj
 Rscript -e 'library(ape); is.monophyletic(read.tree("TREE.nwk"), c("TIP1","TIP2"))'
 Rscript -e 'library(ape); dist.topo(unroot(read.tree("A.nwk")), unroot(read.tree("B.nwk")))'
-iqtree -s outbreak_nj_snps.fasta -m MFP+ASC -B 1000 -alrt 1000 --prefix outbreak_ml   # lesson 2, not run here
+iqtree -s outbreak/core_full.aln -m MFP -B 1000 -alrt 1000 --prefix outbreak_ml   # lesson 2, section 4
 ```
 
 </div>

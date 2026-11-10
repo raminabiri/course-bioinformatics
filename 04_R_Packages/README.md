@@ -17,6 +17,8 @@
 
 **محیط:** `conda env create -f envs/r_packages.yml` و سپس `conda activate r_packages` (ماژول ۰۱).
 
+**مسیر ویندوز:** هر چهار ماژول فایل `00_lesson_windows.md` دارند: R از CRAN و بسته‌ها با `install.packages` و `BiocManager` (بی conda؛ bioconda ویندوز ندارد)، `Rscript` در PowerShell (دام کوتیشن‌ها)، pandas و Excel به جای `awk`، و خط لوله‌ی PowerShell (`run_all.ps1`، ✍️ آزموده‌نشده). فهرست در [مسیر ویندوز](../windows/README.md).
+
 **داده:** جدول `ground_truth.tsv` و ژنوم E. coli بخش ۰۱ (`01_Linux/99_scripts_data/data`)؛ شمارش RNA-seq **شبیه‌سازی‌شده** که اسکریپت ماژول ۰۳ می‌سازد؛ داده‌ی آماده‌ی بسته‌ی ape. همه‌ی اسکریپت‌ها و نمودارها در [99_scripts_data](99_scripts_data/) است.
 
 **یادآوری:** داده‌های این بخش **کوچک و آموزشی**‌اند (دو نمونه‌ی میکروبی، شش نمونه‌ی RNA-seq شبیه‌سازی‌شده). کار پژوهشی واقعی داده‌ی بسیار بزرگ‌تر، تکرارهای زیستی بیشتر و پایگاه‌های داده‌ی **کامل** می‌خواهد.

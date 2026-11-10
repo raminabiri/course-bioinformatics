@@ -7,9 +7,10 @@
 | **بخش** | `08_AMR_Virulence_Phylogeny` |
 | **پیش‌نیاز** | ماژول‌های [۰۱](../01_AMR_Resistance_Genes/) تا [۰۳](../03_Mobile_Elements_CRISPR/)؛ اجرای اسکریپت R (بخش ۰۴) |
 | **زمان تقریبی** | ۵ ساعت (۳ درس، نزدیک به ۲ ساعت و ۴۵ دقیقه، و تمرین‌ها) |
-| **ابزار** | ‏MAFFT 7.525، R با ape 5.8.1 و ggtree 4.2.0 (اجرا شده)؛ IQ-TREE 3.1.4 و Gubbins (از مستندات) |
+| **ابزار** | ‏MAFFT 7.525، R با ape 5.8.1 و ggtree 4.2.0، IQ-TREE 3.1.3 (اجرا شده)؛ Gubbins (از مستندات) |
 | **داده** | ‏۱۵ ژن بتالاکتاماز واقعی (۱۳ آلل CTX-M، ‏KLUC-1، ‏TEM-1) از پایگاه AMRFinderPlus؛ هم‌ردیفی core genome **شبیه‌سازی‌شده‌ی** ۲۰ ایزوله از سه بیمارستان با درخت درست معلوم (`simulate_outbreak.py`) |
-| **وضعیت** | درس‌های ۱ و ۳ ✅ اجرا شده (2026-10-24)؛ درس ۲ (IQ-TREE، Gubbins) ✍️ از مستندات |
+| **وضعیت** | درس‌های ۱ و ۳ ✅ اجرا شده (2026-10-24)؛ درس ۲: بخش ۴ (IQ-TREE، SNP-تنها) ✅ اجرا شده (2026-11-09)، باقی (Gubbins و …) ✍️ از مستندات |
+| **مسیر ویندوز** | ‏✍️ [00_lesson_windows.md](00_lesson_windows.md) (MAFFT، R و IQ-TREE ویندوزی؛ همه‌ی گام‌ها روی سرور اجرا شده، نصب و PowerShell از مستندات) |
 
 ## اهداف یادگیری
 پس از این ماژول می‌توانید:
@@ -20,6 +21,7 @@
 5. به سناریوی ۱ ماژول 00/01 پاسخ دهید: آیا انتقال میان بیمارستان‌ها رخ داده است؟
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **مسیر ویندوز** (بی لینوکس): MAFFT، درخت NJ و ML (IQ-TREE)، درخت شیوع، و SNP-تنها در برابر `-fconst`. اگر لینوکس دارید، از درس ۱ آغاز کنید.
 1. ‏[01_lesson_msa_nj.md](01_lesson_msa_nj.md): درس ۱، MAFFT، فاصله، NJ، bootstrap، روی ژن‌های CTX-M.
 2. ‏[02_lesson_ml_iqtree.md](02_lesson_ml_iqtree.md): درس ۲، ML با IQ-TREE و بازترکیبی با Gubbins.
 3. ‏[03_lesson_outbreak_tree.md](03_lesson_outbreak_tree.md): درس ۳، درخت شیوع ۲۰ ایزوله با metadata.

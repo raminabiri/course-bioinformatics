@@ -304,6 +304,37 @@ seqkit stats -T sample_R*.fastq.gz | awk -F'\t' 'NR>1{s+=$5} END{printf "coverag
 
 ---
 
+## پاسخ‌های مسیر ویندوز
+
+خروجی‌های پایتون همان‌های [مسیر ویندوز](00_lesson_windows.md) است: روی سرور دوره در 2026-11-10 اجرا شدند و روی ویندوز یکسان‌اند (همان اسکریپت‌ها، همان ژنوم با همان MD5). پاسخ‌های Excel، Galaxy و TYGS **انتظار** است (✍️)، نه خروجی دیده‌شده.
+
+**تمرین ۱.** همان پاسخ لینوکسی. اگر فهرست طول‌ها را در یک فایل FASTA ساختگی بنویسید، `asm_stats.py` همان N50 و L50 را می‌دهد.
+
+**تمرین ۲.** خروجی واقعی سطر پایتون و دو اجرای `repeat_report.py` (به جای `awk`):
+
+<div dir="ltr">
+
+```
+repeat blocks: 7  (35763 bp)
+contigs: 8  total: 4605889  largest: 2497193  N50: 2497193  L50: 1
+repeat blocks: 42  (51631 bp)
+contigs: 43  total: 4590021  largest: 776105  N50: 224159  L50: 6
+```
+
+</div>
+
+‏`rrna.gff` ‏۲۲ سطر دارد و `is.gff` ‏۵۰ سطر. عددها درست همان پاسخ لینوکسی (۲.۲) است. (۱)، (۳) و (۴): همان پاسخ.
+
+**تمرین ۳.** همان پاسخ لینوکسی. (۴) روی سرور، سطر پایتون گام ۳ و `seqkit stats … | awk` روی دو فایل `minigut` یک عدد دادند (۲٫۲۹۰۹×).
+
+**تمرین ۴.** همان تصمیم‌ها. با Conditional Formatting، ایزوله‌ی B در ستون‌های پوشش، شمار کانتیگ و Completeness، ایزوله‌ی C در طول کل، ایزوله‌ی D در طول کل، GC و Contamination، و ایزوله‌ی E در GC (و طول کل، کمی بالای ۵٫۵ مگاباز) رنگ می‌گیرد (✍️). ‏TYGS برای E باید گونه‌ای جز *E. coli* بگوید (✍️، انتظار).
+
+**تمرین ۵.** ستون نسبت در Excel: contig001 ≈ ۰٫۹۹، contig002 ≈ ۱٫۰۲، contig017 ≈ ۶٫۹، contig031 ≈ ۲٫۰، contig048 ≈ ۰٫۹۸، contig077 ≈ ۰٫۰۲۵، contig084 ≈ ۷٫۲. تفسیر همان پاسخ لینوکسی.
+
+**تمرین ۶.** همان پاسخ.
+
+---
+
 ## منابع پاسخ‌ها
 - Robertson J, Nash JHE (2018). MOB-suite: software tools for clustering, reconstruction and typing of plasmids from draft assemblies. *Microbial Genomics* 4:e000206. https://doi.org/10.1099/mgen.0.000206
 - Carattoli A, et al. (2014). In silico detection and typing of plasmids using PlasmidFinder and plasmid multilocus sequence typing. *Antimicrob Agents Chemother* 58:3895–3903. https://doi.org/10.1128/AAC.02412-14

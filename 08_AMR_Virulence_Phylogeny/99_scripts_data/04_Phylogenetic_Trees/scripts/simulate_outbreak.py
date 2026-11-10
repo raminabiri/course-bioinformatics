@@ -72,13 +72,13 @@ def newick(node):
 
 evolve(tree, base)
 
-with open(f'{outdir}/core_full.aln', 'w') as out:
+with open(f'{outdir}/core_full.aln', 'w', newline='\n') as out:  # same bytes on Windows
     for name in sorted(seqs):
         out.write(f'>{name}\n')
         s = seqs[name]
         for i in range(0, L, 80):
             out.write(s[i:i + 80] + '\n')
-with open(f'{outdir}/true_tree.nwk', 'w') as out:
+with open(f'{outdir}/true_tree.nwk', 'w', newline='\n') as out:  # same bytes on Windows
     out.write(newick(tree) + '\n')
 
 clone_a_tips = {'H1-01', 'H1-02', 'H1-03', 'H2-01', 'H2-02', 'H2-03'}
@@ -87,7 +87,7 @@ st_other = iter('cdefghijk')
 # clone A appears in H1 first, then in H2; clone B within a few weeks in H3
 MONTH = {'H1-01': 2, 'H1-02': 3, 'H1-03': 4, 'H2-01': 5, 'H2-02': 5, 'H2-03': 6,
          'H3-01': 3, 'H3-02': 3, 'H3-03': 4, 'H3-04': 4, 'H3-05': 5}
-with open(f'{outdir}/metadata.tsv', 'w') as out:
+with open(f'{outdir}/metadata.tsv', 'w', newline='\n') as out:  # same bytes on Windows
     out.write('isolate\thospital\tmonth\tST\tblaKPC\tiuc\n')
     for name in sorted(seqs):
         if name == 'Ref':

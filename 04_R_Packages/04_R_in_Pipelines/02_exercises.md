@@ -11,6 +11,8 @@ conda activate r_packages
 cd ~/r_practice/pipeline
 P=~/course-bioinformatics-main/04_R_Packages/99_scripts_data
 R02=$P/02_Run_Rscript/scripts
+
+> **مسیر ویندوز:** نخست [مسیر ویندوز](00_lesson_windows.md) را بخوانید؛ به جای سطرهای بالا، گام ۰ آن (`$HOME\r_practice\pipeline`، `$P`، `$R02`). خط لوله‌ی ویندوزی `run_all.ps1` است. زیر راهنمایی هر تمرین یک بند **ویندوز** آمده است. پاسخ‌های ویندوزی در پایان [پاسخ‌ها](03_solutions.md) هستند. ✍️ فرمان‌های PowerShell این تمرین‌ها هنوز روی ویندوز آزموده نشده‌اند.
 ```
 
 </div>
@@ -19,6 +21,7 @@ R02=$P/02_Run_Rscript/scripts
 
 ## تمرین ۱: سه چراغ
 > **راهنمایی:** درس، بخش ۲ (جدول کدهای خروج). `> /dev/null 2>&1` همه‌ی پیام‌ها را دور می‌ریزد تا تنها کد خروج را ببینید.
+> **ویندوز:** ‏`Rscript $R02\composition.R ground_truth.tsv minigut a.png *> $null; $LASTEXITCODE` (و همین برای `Minigut` و برای `composition.R` بی مسیر).
 
 پیش از اجرا پیش‌بینی کنید هر دستور چه کد خروجی می‌دهد؛ سپس پس از هر کدام `echo $?` بزنید و بسنجید.
 
@@ -36,6 +39,7 @@ Rscript composition.R ground_truth.tsv minigut a.png > /dev/null 2>&1
 
 ## تمرین ۲: حلقه‌ی خودتان
 > **راهنمایی:** درس، بخش ۳. نام نمونه‌ها را با `cut | tail -n +2 | sort -u` بگیرید و درون `$( )` به `for` بدهید (بخش ۰۱، ماژول ۰۹).
+> **ویندوز:** ‏``foreach ($s in Import-Csv ground_truth.tsv -Delimiter "`t" | ForEach-Object { $_.sample } | Sort-Object -Unique) { … }``؛ درون حلقه همان دو سطر بخش ۲ [مسیر ویندوز](00_lesson_windows.md)، با `logs\$s.log`.
 
 حلقه‌ای بنویسید که `composition.R` را برای **همه‌ی** نمونه‌های `ground_truth.tsv` اجرا کند، گزارش هر نمونه را در `logs/<نمونه>.log` بنویسد و کد خروج هر اجرا را چاپ کند. چند فایل گزارش ساخته شد؟
 
@@ -43,6 +47,7 @@ Rscript composition.R ground_truth.tsv minigut a.png > /dev/null 2>&1
 
 ## تمرین ۳: نمونه‌ی سوم
 > **راهنمایی:** دستور awk تمرین ۶ ماژول ۰۳ نمونه‌ی `minigut_copy` می‌سازد. درس، بخش ۴ (`run_all.sh`).
+> **ویندوز:** ‏`three.tsv` را با سطر پایتون تمرین ۶ مسیر ویندوز ماژول ۰۳ بسازید؛ سپس `powershell -ExecutionPolicy Bypass -File $P\04_R_in_Pipelines\scripts\run_all.ps1 three.tsv results3`. شمار PNGها: `(Get-ChildItem results3\*.png).Count`.
 
 <div dir="ltr">
 
@@ -59,6 +64,7 @@ awk -F'\t' 'BEGIN{OFS="\t"} {print} NR>1 && $1=="minigut" {$1="minigut_copy"; pr
 
 ## تمرین ۴: کارآگاه گزارش‌ها
 > **راهنمایی:** درس، بخش ۵: `grep -l "Error"` و سپس `cat`.
+> **ویندوز:** ‏`Select-String -Path results_broken\logs\*.log -Pattern "Error" -List | ForEach-Object { $_.Path }` و سپس `Get-Content` همان فایل.
 
 جدول خراب `broken.tsv` (بخش ۵ درس) را دوباره بسازید و `run_all.sh` را با پوشه‌ی `results_broken` اجرا کنید. (الف) کد خروج؟ (ب) کدام گزارش خطا دارد؟ (ج) علت را به زبان ساده بنویسید و بگویید جدول را چگونه درست می‌کنید.
 
@@ -66,6 +72,7 @@ awk -F'\t' 'BEGIN{OFS="\t"} {print} NR>1 && $1=="minigut" {$1="minigut_copy"; pr
 
 ## تمرین ۵: بی `set -e`
 > **راهنمایی:** درس، کادر ✋ بخش ۵. با `sed` یک کپی بی `set -e` بسازید. چون کپی در پوشه‌ی دیگری است، خط `here=` را هم باید به پوشه‌ی اصلی اسکریپت برگردانید.
+> **ویندوز:** کپی بی ایستادن: `$S = "$P\04_R_in_Pipelines\scripts"; (Get-Content $S\run_all.ps1) -replace '^        exit 1', '        # no exit' -replace '^\$here = \$PSScriptRoot.*', "`$here = '$S'" | Set-Content nostop.ps1`؛ سپس `powershell -ExecutionPolicy Bypass -File nostop.ps1 broken.tsv results_nose`.
 
 <div dir="ltr">
 
@@ -82,6 +89,7 @@ sed -e 's/^set -euo pipefail/# no set -e/' -e "s|^here=.*|here=$S|" $S/run_all.s
 
 ## تمرین ۶ (فکری): بی `realpath`
 > **راهنمایی:** درس، بخش ۴ (③) و اشتباه رایج ۲. پس از اجرا، `ls` پوشه‌ی خروجی و `cat` گزارش‌ها.
+> **ویندوز:** کپی بی `Resolve-Path`: همان روش تمرین ۵، با `-replace '^\$Table = \(Resolve-Path.*', '# no Resolve-Path'` (و همان جایگزینی `$here`).
 
 یک کپی بسازید که به‌جای `table=$(realpath "$1")` بنویسد `table=$1`:
 

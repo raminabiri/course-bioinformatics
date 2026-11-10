@@ -9,6 +9,7 @@
 | **زمان تقریبی** | ۱٫۵ ساعت |
 | **ابزار** | bash 5، R 4.6.1، ggplot2 4.0.3، vegan 2.7.6 |
 | **وضعیت** | ✅ قالب تازه (2026-10-20) |
+| **مسیر ویندوز** | ‏✅ [00_lesson_windows.md](00_lesson_windows.md) (2026-11-10؛ گام‌های ویژه‌ی ویندوز ✍️) |
 
 ## اهداف یادگیری
 پس از این ماژول می‌توانید:
@@ -20,6 +21,7 @@
 اجرای همین اسکریپت‌ها با Snakemake در [بخش ۰۵](../../05_Reproducible_Work/) می‌آید.
 
 ## ترتیب مطالعه
+0. ‏[00_lesson_windows.md](00_lesson_windows.md): **تنها در مسیر ویندوز**؛ خط لوله‌ی PowerShell (`run_all.ps1`)، کد خروج Rscript، `-ExecutionPolicy Bypass`. سپس درس اصلی را بخوانید.
 1. ‏[01_lesson.md](01_lesson.md): درس.
 2. ‏[02_exercises.md](02_exercises.md): تمرین‌ها؛ زیر عنوان هر تمرین راهنمایی آمده است.
 3. ‏[03_solutions.md](03_solutions.md): پاسخ تشریحی.
